@@ -39,4 +39,7 @@ if(t.closest('#lang')){send('language_toggle',{to:L()==='he'?'en':'he'});return}
 const ch=t.closest('.chip');if(ch){send('filter_change',{category:C[ch.dataset.cat]||ch.dataset.cat});return}
 const tb=t.closest('.tabs button');if(tb){send('tab_change',{tab:tb.dataset.tab});return}
 const so=t.closest('.social a');if(so){send('social_click',{network:so.getAttribute('aria-label')})}}catch(e){}};
+try{if(matchMedia('(hover:hover) and (pointer:fine)').matches){const seen=new WeakSet(),tm=new WeakMap();
+document.addEventListener('mouseover',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c||seen.has(c)||tm.has(c)||(e.relatedTarget&&c.contains(e.relatedTarget)))return;tm.set(c,setTimeout(()=>{tm.delete(c);seen.add(c);send('card_hover',{card_title:T.get(c)})},800))},true);
+document.addEventListener('mouseout',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c||!tm.has(c)||(e.relatedTarget&&c.contains(e.relatedTarget)))return;clearTimeout(tm.get(c));tm.delete(c)},true)}}catch(e){}
 document.addEventListener('click',on,true);document.addEventListener('auxclick',on,true)})();</script></body></html>
