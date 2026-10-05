@@ -47,18 +47,24 @@ els.forEach(el=>{el.addEventListener('touchstart',()=>{lp=false;clearTimeout(t);
 ['touchend','touchmove','touchcancel'].forEach(ev=>el.addEventListener(ev,()=>clearTimeout(t),{passive:true}));
 el.addEventListener('contextmenu',e=>{if(lp||e.pointerType==='touch'){e.preventDefault()}});
 el.addEventListener('click',e=>{if(lp){e.preventDefault();e.stopImmediatePropagation();lp=false}},true)})})();</script><style>@media(hover:none) and (pointer:coarse){.card .work,.card .work *{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}.card .work img{-webkit-user-drag:none}}</style><script>(()=>{if(!matchMedia('(hover:none) and (pointer:coarse)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-const MS=450,MOVE=10;let tm=null,sx=0,sy=0,card=null,fired=false,cur=null,blockUntil=0;
+const MS=450,MOVE=10;let manual=false,at=null,tm=null,sx=0,sy=0,card=null,fired=false,cur=null,blockUntil=0;
 const clip=c=>{const b=c.querySelector('.play[data-mp4]')||c.querySelector('[data-hv]');const w=c.querySelector('.image-well');if(!b||!w)return null;let v=c.querySelector('video.hv');if(!v){v=document.createElement('video');v.className='hv';v.muted=true;v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='none';v.setAttribute('aria-hidden','true');v.src=b.dataset.mp4||b.dataset.hv;w.appendChild(v)}return v};
-const stop=()=>{if(cur){cur.classList.remove('on');cur.pause();cur=null}};
-const start=c=>{const v=clip(c);if(!v)return false;stop();cur=v;v.play().then(()=>{if(cur===v)v.classList.add('on')}).catch(()=>{});return true};
+const stop=()=>{if(cur){cur.classList.remove('on');cur.pause();cur=null}manual=false};
+const start=(c,man)=>{const v=clip(c);if(!v)return false;stop();manual=!!man;cur=v;v.play().then(()=>{if(cur===v)v.classList.add('on')}).catch(()=>{});return true};
 document.addEventListener('touchstart',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c||e.target.closest('.play,.cicons')||e.touches.length>1){clearTimeout(tm);if(!c)stop();return}
-fired=false;card=c;sx=e.touches[0].clientX;sy=e.touches[0].clientY;clearTimeout(tm);tm=setTimeout(()=>{if(start(c)){fired=true;blockUntil=Date.now()+800;if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}}},MS)},{passive:true});
+fired=false;card=c;sx=e.touches[0].clientX;sy=e.touches[0].clientY;clearTimeout(tm);tm=setTimeout(()=>{if(start(c,true)){fired=true;blockUntil=Date.now()+800;if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}}},MS)},{passive:true});
 document.addEventListener('touchmove',e=>{if(!tm)return;const t=e.touches[0];if(Math.abs(t.clientX-sx)>MOVE||Math.abs(t.clientY-sy)>MOVE){clearTimeout(tm);tm=null}},{passive:true});
 ['touchend','touchcancel'].forEach(ev=>document.addEventListener(ev,()=>{clearTimeout(tm);tm=null;if(fired)blockUntil=Date.now()+800},{passive:true}));
 document.addEventListener('contextmenu',e=>{if(e.target.closest&&e.target.closest('.card')&&fired){e.preventDefault()}},true);
 window.addEventListener('click',e=>{if(fired&&Date.now()<blockUntil&&e.target.closest&&e.target.closest('.card')){e.preventDefault();e.stopImmediatePropagation();fired=false}},true);
 window.addEventListener('auxclick',e=>{if(fired&&Date.now()<blockUntil){e.preventDefault();e.stopImmediatePropagation()}},true);
-document.addEventListener('touchstart',e=>{if(cur&&!(e.target.closest&&e.target.closest('.card')&&e.target.closest('.card').contains(cur)))stop()},{passive:true,capture:true});
+document.addEventListener('touchstart',e=>{if(cur&&manual&&!(e.target.closest&&e.target.closest('.card')&&e.target.closest('.card').contains(cur)))stop()},{passive:true,capture:true});
+
+const sd=navigator.connection&&(navigator.connection.saveData||/(^|-)2g$/.test(navigator.connection.effectiveType||''));
+const one=()=>{const g=document.querySelector('.grid');return g&&getComputedStyle(g).gridTemplateColumns.split(' ').length===1};
+const evalCenter=()=>{if(sd||document.hidden||manual)return;if(!one()){if(cur)stop();return}const cy=innerHeight/2;let hit=null;for(const c of document.querySelectorAll('.card')){if(c.offsetParent===null)continue;const r=c.getBoundingClientRect();if(r.top<=cy&&r.bottom>=cy){hit=c;break}}
+if(!hit){if(cur)stop();return}const v=hit.querySelector('video.hv');if(v&&v===cur)return;if(!start(hit,false)&&cur)stop()};
+addEventListener('scroll',()=>{clearTimeout(at);at=setTimeout(evalCenter,250)},{passive:true});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});
 })();</script>
 </body></html>
