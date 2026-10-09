@@ -154,7 +154,7 @@ var y0=new Date(min).getFullYear(),y1=new Date(max).getFullYear()+1;
 var a=min-864e5*45,b=max+864e5*45;
 var X0=0,X1=1;function px(t){return X0+(X1-X0)*(t-a)/(b-a)}
 var ticks=[];for(var y=y0;y<=y1;y++){var ty=new Date(y,0,1).getTime();if(ty<a||ty>b)continue;var k=document.createElement('div');k.className='tl-tick';k.dataset.t=ty;k.textContent=y;tr.appendChild(k);ticks.push(k);}
-var fg=null;rls.forEach(function(r,g){r.addEventListener('click',function(e){e.stopPropagation();fg=(fg===g)?null:g;tr.dataset.f=fg===null?'':fg;rls.forEach(function(x,i){x.classList.toggle('sel',fg===i)})})});
+var fg=null;rls.forEach(function(r,g){r.addEventListener('click',function(e){e.stopPropagation();fg=(fg===g)?null:g;tr.dataset.f=fg===null?'':fg;rls.forEach(function(x,i){x.classList.toggle('sel',fg===i)});groups.forEach(function(h,i){var u=h.nextElementSibling;var hide=fg!==null&&fg!==i;h.style.display=hide?'none':'';if(u&&u.classList.contains('alist'))u.style.display=hide?'none':''})})});
 var touch=!window.matchMedia('(hover:hover)').matches;var cur=null;
 items.forEach(function(it){var d=document.createElement('button');d.type='button';d.className='tl-dot';paint(d,it.g);
 it.dot=d;var ln=document.createElementNS(NS,'polyline');svg.appendChild(ln);it.ln=ln;ln.setAttribute('data-g',it.g);d.setAttribute('data-g',it.g);
