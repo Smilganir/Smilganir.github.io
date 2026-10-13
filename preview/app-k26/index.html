@@ -38,6 +38,11 @@ if(HIDE.some(function(x){return t.indexOf(x)===0})&&l)l.style.display='none';
 else if(!done&&/אשכול חברתי/.test(t)&&r.closest('section,div')&&!r.checked){r.click()}});
 var s=rs.find(function(r){return /אשכול חברתי/.test((r.closest('label')||r.parentElement).innerText)});if(s&&s.checked)done=true}
 new MutationObserver(tidy).observe(document.documentElement,{childList:true,subtree:true});
+
+if(ON){var st=document.getElementById('k26css');if(!st){st=document.createElement('style');st.id='k26css';st.textContent='.kpi-panel__title-votes,.kpi-panel__no-data,[class*="strategic-drawer"]{display:none!important}';document.head.appendChild(st)}}
+function tidy2(){if(!ON)return;document.querySelectorAll('.kpi-panel__title-chip').forEach(function(c){var t=c.innerText;if(/אחוזי הצבעה|מפלגה מובילה/.test(t))c.style.display='none'});
+document.querySelectorAll('.side-filter-card').forEach(function(c){var t=(c.querySelector('.side-filter-card__title')||{}).innerText||'';if(/קולות לקואליציה|אחוזי הצבעה/.test(t))c.style.display='none'})}
+new MutationObserver(tidy2).observe(document.documentElement,{childList:true,subtree:true});
 new MutationObserver(addBtn).observe(document.documentElement,{childList:true,subtree:true});
 })();
 </script>
