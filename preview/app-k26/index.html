@@ -25,7 +25,7 @@ var prev=window.fetch.bind(window);
 window.fetch=async function(i,n){var r=await prev(i,n);if(!ON)return r;var u=typeof i==='string'?i:(i&&i.href)||(i&&i.url)||'';
 if(!/isr-socio-elections-data\.smilganir\.workers\.dev/.test(u)||!/\.(json|geojson)/.test(u))return r;
 if(/_k24/.test(u))return r;
-try{var d=await r.clone().json();strip(d);return new Response(JSON.stringify(d),{status:r.status,headers:{'content-type':'application/json'}})}catch(x){return r}};
+try{var d=await r.clone().json();if(/\/kalpi\.geojson/.test(u)&&d&&d.features)d.features=[];strip(d);return new Response(JSON.stringify(d),{status:r.status,headers:{'content-type':'application/json'}})}catch(x){return r}};
 function addBtn(){var g=document.querySelector('.election-toggle');if(!g||g.querySelector('.k26btn'))return;
 var b=document.createElement('button');b.type='button';b.className='election-toggle__btn k26btn'+(ON?' election-toggle__btn--active':'');b.textContent='כנסת 26';b.style.whiteSpace='nowrap';
 b.onclick=function(){location.href=location.pathname};g.insertBefore(b,g.firstChild);
@@ -42,8 +42,8 @@ else if(!done&&/אשכול חברתי/.test(t)&&r.closest('section,div')&&!r.che
 var s=rs.find(function(r){return /אשכול חברתי/.test((r.closest('label')||r.parentElement).innerText)});if(s&&s.checked)done=true}
 new MutationObserver(tidy).observe(document.documentElement,{childList:true,subtree:true});
 
-if(ON){var st=document.getElementById('k26css');if(!st){st=document.createElement('style');st.id='k26css';st.textContent='.kpi-panel__title-votes,.kpi-panel__no-data,[class*="strategic-drawer"],.mobile-kpi-bottom{display:none!important}';document.head.appendChild(st)}}
-function tidy2(){if(!ON)return;document.querySelectorAll('.kpi-panel__title-chip').forEach(function(c){var t=c.innerText;if(/אחוזי הצבעה|מפלגה מובילה/.test(t))c.style.display='none'});
+if(ON){var st=document.getElementById('k26css');if(!st){st=document.createElement('style');st.id='k26css';st.textContent='.kpi-panel__title-votes,.kpi-panel__no-data,[class*="strategic-drawer"],.mobile-kpi-bottom{display:none!important}.election-toggle--compact .election-toggle__btn{padding-inline:6px!important;font-size:12px!important;min-width:0!important}';document.head.appendChild(st)}}
+function tidy2(){if(!ON)return;document.querySelectorAll('div,section,aside').forEach(function(e){if(e.children.length<8&&/^מפלגה מובילה \(קלפיות\)/.test((e.innerText||'').trim())&&(e.innerText||'').length<120)e.style.display='none'});document.querySelectorAll('.kpi-panel__title-chip').forEach(function(c){var t=c.innerText;if(/אחוזי הצבעה|מפלגה מובילה/.test(t))c.style.display='none'});
 document.querySelectorAll('.side-filter-card').forEach(function(c){var t=(c.querySelector('.side-filter-card__title')||{}).innerText||'';if(/קולות לקואליציה|אחוזי הצבעה/.test(t))c.style.display='none'})}
 new MutationObserver(tidy2).observe(document.documentElement,{childList:true,subtree:true});
 new MutationObserver(addBtn).observe(document.documentElement,{childList:true,subtree:true});
