@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="he"><head><meta charset="UTF-8" /><meta name="robots" content="noindex,nofollow" />
+<link rel="icon" href="https://smilganir.github.io/isr-socio-elections/favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://smilganir.github.io/isr-socio-elections/maplibre-gl.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>עותק תצוגה מקדימה - מפת הבחירות (מחוץ לאוויר)</title>
+<script src="https://smilganir.github.io/isr-socio-elections/maplibre-gl.js"></script>
+<script src="https://smilganir.github.io/isr-socio-elections/runtime-config.js"></script>
+</head><body><div id="root"></div><div id="ldr" style="font:14px system-ui;padding:16px">טוען עותק תצוגה מקדימה...</div>
+<script type="module">
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const st=m=>document.getElementById('ldr').textContent=m;
+try{
+ const man=await (await fetch('manifest.json?'+Date.now())).json();
+ const get=async l=>{const ps=await Promise.all(l.map(async n=>{const r=await fetch(n);if(!r.ok)throw new Error(n+' '+r.status);return r.text()}));return ps.join('')};
+ const css=await get(man.css),js=await get(man.js);
+ const [hc,hj]=await Promise.all([sha(css),sha(js)]);
+ if(hc!==man.css_sha||hj!==man.js_sha)throw new Error('hash mismatch css:'+(hc===man.css_sha)+' js:'+(hj===man.js_sha)+' len '+js.length+'/'+man.js_len);
+ const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
+ const u=URL.createObjectURL(new Blob([js],{type:'text/javascript'}));
+ st('');await import(u);document.getElementById('ldr').remove();
+}catch(e){st('הטעינה נכשלה: '+e.message)}
+</script></body></html>
