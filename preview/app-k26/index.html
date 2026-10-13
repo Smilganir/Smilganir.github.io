@@ -40,6 +40,7 @@ if(m&&m.loaded&&m.loaded()&&!moved&&el<9000){var c=m.getCenter();if(Math.abs(m.g
 else if(did&&!clicked&&el>2500&&st.sel){clicked=true;try{var pt=m.project([st.sel.lng,st.sel.lat]);m.fire('click',{lngLat:st.sel,point:pt,originalEvent:new MouseEvent('click')})}catch(e){}}}
 if(!tgt&&(st.t==24||st.t==25)&&el>1500){var bs=document.querySelectorAll('.election-toggle__btn:not(.k26btn)');for(var i=0;i<bs.length;i++){if(bs[i].textContent.indexOf(String(st.t))>-1){if(!bs[i].classList.contains('election-toggle__btn--active'))bs[i].click();tgt=true}}}
 if(el>10000)clearInterval(it)},400)})();
+document.addEventListener('click',function(e){var bt=e.target&&e.target.closest&&e.target.closest('.election-toggle__btn');if(!bt||bt.classList.contains('k26btn'))return;if(ON){e.stopPropagation();e.preventDefault();kgo(/24/.test(bt.textContent)?24:25,location.pathname+'?k=25')}},true);
 function addBtn(){var g=document.querySelector('.election-toggle');if(!g||g.querySelector('.k26btn'))return;
 var b=document.createElement('button');b.type='button';b.className='election-toggle__btn k26btn'+(ON?' election-toggle__btn--active':'');b.textContent='כנסת 26';b.style.whiteSpace='nowrap';
 b.onclick=function(){kgo(26,location.pathname)};g.insertBefore(b,g.firstChild);
