@@ -15,11 +15,12 @@ const B='https://isr-socio-elections-data.smilganir.workers.dev/data/';
 const map=new maplibre.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',center:[34.95,31.8],zoom:7.3,attributionControl:{compact:true}});
 map.addControl(new maplibre.NavigationControl({showCompass:false}),'bottom-left');
 let K26=null,K25=null,mode='k26';const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function loadK26(){const m=await j('k26_meta.json');const ps=await Promise.all([...Array(m.parts).keys()].map(i=>j('k26_part'+i+'.json')));m.sites=[];m.places=[];ps.forEach(p=>{const off=m.places.length;m.places.push(...p.places);p.sites.forEach(s=>{s[6]+=off;m.sites.push(s)})});return m}
 const j=async u=>{const r=await fetch(u);if(!r.ok)throw new Error(u+' '+r.status);return r.json()};
 function hatch(){const c=document.createElement('canvas');c.width=c.height=12;const x=c.getContext('2d');x.strokeStyle='rgba(60,60,60,.75)';x.lineWidth=1.4;x.beginPath();x.moveTo(-2,12);x.lineTo(12,-2);x.moveTo(0,14);x.lineTo(14,0);x.stroke();return x.getImageData(0,0,12,12)}
 map.on('load',async()=>{
  try{
-  const [sa,se,k25,k26]=await Promise.all([j(B+'statistical_areas_2022_socio_web.geojson'),j(B+'settlements_2022.geojson'),j(B+'kalpi.geojson'),j('k26_ballots.json')]);
+  const [sa,se,k25,k26]=await Promise.all([j(B+'statistical_areas_2022_socio_web.geojson'),j(B+'settlements_2022.geojson'),j(B+'kalpi.geojson'),loadK26()]);
   K26=k26;K25=k25;
   const area=k26.areas;sa.features.forEach(f=>{const p=f.properties,a=area[p.SEMEL_YISHUV+':'+Math.trunc(p.STAT_2022)];p.B26=a?a[0]:0;p.V26=a?a[1]:0});
   const pts={type:'FeatureCollection',features:k26.sites.map(s=>({type:'Feature',geometry:{type:'Point',coordinates:[s[0],s[1]]},properties:{loc:s[2],stat:s[3],n:s[4],v:s[5],place:k26.places[s[6]],q:s[7]}}))};
