@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
 <title>עותק עם תיקונים - מפת הבחירות (מחוץ לאוויר)</title>
 <script>
-(function(){var FIX={"3000:1031":"קריית משה, בית וגן (דרום - מזרח)","3000:1032":"קריית משה, בית וגן (צפון - מזרח), מרכז רפואי שערי צדק","6100:315":"קריית נדבורנא, שיכון ג' (הפועל המזרחי ג'), שיכון ההסתדרות","5000:423":"הצפון החדש - החלק הצפוני","5000:113":"רמת אביב, תכנית ל' (צפון)"};
+(function(){var FIX={"3000:1031":"קריית משה, בית וגן (דרום - מזרח)","3000:1032":"קריית משה, בית וגן (צפון - מזרח), מרכז רפואי שערי צדק","6100:315":"קריית נדבורנא, שיכון ג' (הפועל המזרחי ג'), שיכון ההסתדרות","5000:423":"הצפון החדש - החלק הצפוני","5000:421":"הצפון החדש - החלק הצפוני","5000:422":"הצפון החדש - החלק הצפוני","5000:314":"הצפון הישן - החלק הצפוני","5000:113":"רמת אביב, תכנית ל' (צפון)"};
 function rep(o,a,b){return JSON.parse(JSON.stringify(o).split(JSON.stringify(a).slice(1,-1)).join(JSON.stringify(b).slice(1,-1)))}
 var base=window.fetch.bind(window);
 window.fetch=async function(i,n){var r=await base(i,n);var u=typeof i==='string'?i:(i&&i.href)||(i&&i.url)||'';var L=/stat_areas_lookup/.test(u),G=/statistical_areas_2022_socio_web/.test(u);if(!r.ok||(!L&&!G))return r;
