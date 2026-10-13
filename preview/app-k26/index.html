@@ -36,10 +36,10 @@ if(!st||Date.now()-st.ts>60000)return;
 var moved=false;['mousedown','wheel','touchstart','keydown'].forEach(function(ev){window.addEventListener(ev,function(){moved=true},true)});
 var t0=Date.now(),did=false,clicked=false,tgt=false;
 var it=setInterval(function(){var m=gmap();var el=Date.now()-t0;
-if(m&&m.loaded&&m.loaded()&&!moved&&el<9000){var c=m.getCenter();if(Math.abs(m.getZoom()-st.z)>0.02||Math.abs(c.lng-st.lng)>1e-4||Math.abs(c.lat-st.lat)>1e-4||Math.abs(m.getPitch()-st.p)>0.5||Math.abs(m.getBearing()-st.b)>0.5){m.jumpTo({center:[st.lng,st.lat],zoom:st.z,pitch:st.p,bearing:st.b});did=true}
+if(m&&!moved&&el<30000){var c=m.getCenter();if(Math.abs(m.getZoom()-st.z)>0.02||Math.abs(c.lng-st.lng)>1e-4||Math.abs(c.lat-st.lat)>1e-4||Math.abs(m.getPitch()-st.p)>0.5||Math.abs(m.getBearing()-st.b)>0.5){m.jumpTo({center:[st.lng,st.lat],zoom:st.z,pitch:st.p,bearing:st.b});did=true}
 else if(did&&!clicked&&el>2500&&st.sel){clicked=true;try{var pt=m.project([st.sel.lng,st.sel.lat]);m.fire('click',{lngLat:st.sel,point:pt,originalEvent:new MouseEvent('click')})}catch(e){}}}
 if(!tgt&&(st.t==24||st.t==25)&&el>1500){var bs=document.querySelectorAll('.election-toggle__btn:not(.k26btn)');for(var i=0;i<bs.length;i++){if(bs[i].textContent.indexOf(String(st.t))>-1){if(!bs[i].classList.contains('election-toggle__btn--active'))bs[i].click();tgt=true}}}
-if(el>10000)clearInterval(it)},400)})();
+if(el>32000)clearInterval(it)},400)})();
 document.addEventListener('click',function(e){var bt=e.target&&e.target.closest&&e.target.closest('.election-toggle__btn');if(!bt||bt.classList.contains('k26btn'))return;if(ON){e.stopPropagation();e.preventDefault();kgo(/24/.test(bt.textContent)?24:25,location.pathname+'?k=25')}},true);
 function addBtn(){var g=document.querySelector('.election-toggle');if(!g||g.querySelector('.k26btn'))return;
 var b=document.createElement('button');b.type='button';b.className='election-toggle__btn k26btn'+(ON?' election-toggle__btn--active':'');b.textContent='כנסת 26';b.style.whiteSpace='nowrap';
