@@ -1,4 +1,4 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>מפת דמה - כנסת 26 (טיוטה)</title>
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>מפת דמה + תיקונים - כנסת 26 (טיוטה)</title>
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <style>html,body{margin:0;height:100%;font-family:system-ui,Arial,sans-serif}#map{position:absolute;inset:0}
 .bar{position:absolute;top:10px;right:10px;left:10px;z-index:5;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;pointer-events:none}
@@ -7,9 +7,9 @@
 .draft{background:#fff8e1;border-color:#e8d48a;max-width:520px}.legend{position:absolute;bottom:24px;right:10px;z-index:5;font-size:12px}.legend i{display:inline-block;width:16px;height:12px;margin-left:5px;vertical-align:middle;border:1px solid #888}
 .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-left:5px;vertical-align:middle;box-sizing:border-box}
 details summary{cursor:pointer}.um{max-height:180px;overflow:auto;margin-top:6px}.um div{padding:1px 0}</style></head><body><div id="map"></div>
-<div class="bar"><div class="box tog" id="tg"><button data-e="k26" class="on">כנסת 26</button><button data-e="k25">כנסת 25</button><button data-e="k24">כנסת 24</button></div>
+<div class="bar"><div class="box tog" id="tabs"><button data-t="main" class="on">מפת דמה</button><button data-t="rahat">תיקון: רהט/הוזייל</button><button data-t="ng">תיקון: נווה גן</button></div><div class="box tog" id="tg"><button data-e="k26" class="on">כנסת 26</button><button data-e="k25">כנסת 25</button><button data-e="k24">כנסת 24</button></div>
 <div class="box draft" id="msg">טיוטה מחוץ לאוויר. כנסת 26: מיפוי קלפיות על אזורים סטטיסטיים, בלי תוצאות. מדד חברתי-כלכלי בלבד.</div></div>
-<div class="box legend" id="lg"></div>
+<div class="box" id="fx" style="display:none;position:absolute;top:92px;right:10px;z-index:5;max-width:420px"></div><div class="box legend" id="lg"></div>
 <script>
 const B='https://isr-socio-elections-data.smilganir.workers.dev/data/';
 const map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',center:[34.95,31.8],zoom:7.3,attributionControl:{compact:true}});
@@ -21,7 +21,7 @@ function hatch(){const c=document.createElement('canvas');c.width=c.height=12;co
 map.on('load',async()=>{
  try{
   const [sa,se,k25,k26]=await Promise.all([j(B+'statistical_areas_2022_socio_web.geojson'),j(B+'settlements_2022.geojson'),j(B+'kalpi.geojson'),loadK26()]);
-  K26=k26;K25=k25;
+  K26=k26;K25=k25;window._sa=sa;
   const area=k26.areas;sa.features.forEach(f=>{const p=f.properties,a=area[p.SEMEL_YISHUV+':'+Math.trunc(p.STAT_2022)];p.B26=a?a[0]:0;p.V26=a?a[1]:0});
   const pts={type:'FeatureCollection',features:k26.sites.map(s=>({type:'Feature',geometry:{type:'Point',coordinates:[s[0],s[1]]},properties:{loc:s[2],stat:s[3],n:s[4],v:s[5],place:k26.places[s[6]],q:s[7]}}))};
   map.addImage('hatch',hatch(),{pixelRatio:1});
@@ -35,7 +35,7 @@ map.on('load',async()=>{
   const R=['interpolate',['linear'],['zoom'],8,2,12,5,15,8];
   map.addLayer({id:'d26',type:'circle',source:'p26',paint:{'circle-radius':R,'circle-color':['case',['==',['get','q'],0],'#1c2127','#ffffff'],'circle-stroke-color':'#1c2127','circle-stroke-width':1.3,'circle-opacity':.95}});
   map.addLayer({id:'d25',type:'circle',source:'p25',layout:{visibility:'none'},paint:{'circle-radius':R,'circle-color':'#1c2127','circle-stroke-color':'#fff','circle-stroke-width':1}});
-  setMode('k26');
+  setMode('k26');applyNG();
   map.on('click','d26',e=>{const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.place)}</b><br>${p.n} קלפיות, ${(+p.v).toLocaleString()} בעלי זכות בחירה באזור זה<br><small>${p.q==0?'מיקום: אתר הקלפי מ-2022 (אותו אזור)':'מיקום משוער: מרכז האזור הסטטיסטי'}</small></div>`).addTo(map)});
   map.on('click','d25',e=>{const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.KALPI_NAME||'')}</b><br>${esc(p.SHEM_YISHUV||'')} · קלפיות: ${esc(p.KALPI||'')}</div>`).addTo(map)});
   map.on('click','sa-fill',e=>{if(map.queryRenderedFeatures(e.point,{layers:['d26','d25']}).length)return;const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.SHEM_YISHUV)} · ${esc(p.STAT_AREA_NAME_LABEL||p.STAT_AREA_NAME||'')}</b><br>אשכול חברתי-כלכלי 2021: ${p.CLUSTER_2021??'אין מידע'}${p.EST_HATCH==1?'<br><small>הערכה (מקווקו), לא נמדד</small>':''}${mode=='k26'?`<br>כנסת 26: ${p.B26} קלפיות, ${(+p.V26).toLocaleString()} בעלי זכות בחירה`:''}</div>`).addTo(map)});
@@ -64,4 +64,21 @@ async function setMode(m){if(m=='k24'){try{await loadK24()}catch(e){k24=false;do
  document.getElementById('lg').innerHTML=`<div><b>מדד חברתי-כלכלי</b> (גוון האזור, כמו במפה)</div><div><i style="background:url(${hatchUrl()})"></i>הערכה או נפילה לרמת הרשות: מקווקו, לא נמדד</div>`+(m=='k26'?`<div><span class="dot" style="background:#1c2127;border:1px solid #1c2127"></span>אתר קלפי מ-2022, באותו אזור</div><div><span class="dot" style="background:#fff;border:1.3px solid #1c2127"></span>מיקום משוער: מרכז האזור</div>`:'<div><span class="dot" style="background:#1c2127"></span>אתר קלפי '+(m=='k24'?'כנסת 24':'2022')+'</div>')}
 function hatchUrl(){const c=document.createElement('canvas');c.width=c.height=12;const x=c.getContext('2d');x.fillStyle='#eee';x.fillRect(0,0,12,12);x.strokeStyle='#444';x.beginPath();x.moveTo(-2,12);x.lineTo(12,-2);x.moveTo(0,14);x.lineTo(14,0);x.stroke();return c.toDataURL()}
 document.getElementById('tg').addEventListener('click',e=>{if(e.target.dataset.e&&K26)setMode(e.target.dataset.e)});
+
+/* fixes applied in K25 view (preview only) */
+let fixRahat=true,fixNG=true,tab='main';
+const NG={'7900:121':'נווה גן · צפון','7900:122':'נווה גן · מרכז'};let ngOrig={},ngMk=[];
+function applyNG(){const src=map.getSource('sa');if(!src||!window._sa)return;window._sa.features.forEach(f=>{const p=f.properties,k=p.SEMEL_YISHUV+':'+Math.trunc(p.STAT_2022);if(NG[k]){if(!(k in ngOrig))ngOrig[k]=p.STAT_AREA_NAME_LABEL||p.STAT_AREA_NAME||'';p.STAT_AREA_NAME_LABEL=fixNG?NG[k]:ngOrig[k]}});src.setData(window._sa);
+ ngMk.forEach(m=>m.remove());ngMk=[];if(tab=='ng'){window._sa.features.forEach(f=>{const p=f.properties,k=p.SEMEL_YISHUV+':'+Math.trunc(p.STAT_2022);if(NG[k]){const c=cen(f.geometry);const d=document.createElement('div');d.style.cssText='background:#fff;border:1px solid #1c2127;border-radius:4px;padding:2px 6px;font-size:12px;white-space:nowrap';d.textContent=(fixNG?NG[k]:ngOrig[k])+' ('+k.split(':')[1]+')';ngMk.push(new maplibregl.Marker({element:d}).setLngLat(c).addTo(map))}})}}
+function cen(g){let xs=0,ys=0,n=0;const w=a=>typeof a[0]=='number'?(xs+=a[0],ys+=a[1],n++):a.forEach(w);w(g.coordinates);return[xs/n,ys/n]}
+function rFilter(){const c=1161,sem=['==',['to-number',['get','SEMEL_YISHUV']],c];return fixRahat?['any',sem,['==',['to-number',['get','PHYSICAL_AREA_SEMEL']],c]]:sem}
+function setTab(t){tab=t;document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t==t));const fx=document.getElementById('fx');
+ if(t=='main'){fx.style.display='none';map.setFilter('d25',null);applyNG();return}
+ setMode('k25');fx.style.display='block';
+ if(t=='rahat'){map.setFilter('d25',rFilter());map.fitBounds([[34.70,31.33],[34.80,31.44]],{duration:0});drawFx()}
+ else{map.setFilter('d25',null);map.jumpTo({center:[34.8745,32.0865],zoom:15.2});applyNG();drawFx()}}
+function drawFx(){const fx=document.getElementById('fx');const n=tab=='rahat'?`<b>רהט: קלפיות הוזייל</b><br>הסינון בתצוגת יישוב: SEMEL_YISHUV = 1161 או PHYSICAL_AREA_SEMEL = 1161. בלי שינוי בשיוך, בסכומים או במיקומים.<br><label><input type=checkbox id=fxc ${fixRahat?'checked':''}> התיקון פעיל</label> <span id=fxn></span>`:`<b>נווה גן, פתח תקווה</b><br>שינוי שם בלבד: אזורים 121 ו-122. תרגום אנגלי הוא הצעה בלבד.<br><label><input type=checkbox id=fxc ${fixNG?'checked':''}> השם החדש פעיל</label>`;fx.innerHTML=n;
+ document.getElementById('fxc').onchange=e=>{if(tab=='rahat'){fixRahat=e.target.checked;map.setFilter('d25',rFilter());cnt()}else{fixNG=e.target.checked;applyNG()}};if(tab=='rahat')cnt()}
+function cnt(){setTimeout(()=>{const n=map.queryRenderedFeatures({layers:['d25']}).length;const e=document.getElementById('fxn');if(e)e.textContent='נקודות במסך: '+n},400)}
+document.getElementById('tabs').addEventListener('click',e=>{if(e.target.dataset.t&&K26)setTab(e.target.dataset.t)});
 </script></body></html>
