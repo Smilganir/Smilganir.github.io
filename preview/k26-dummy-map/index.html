@@ -12,8 +12,8 @@ details summary{cursor:pointer}.um{max-height:180px;overflow:auto;margin-top:6px
 <div class="box legend" id="lg"></div>
 <script>
 const B='https://isr-socio-elections-data.smilganir.workers.dev/data/';
-const map=new maplibre.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',center:[34.95,31.8],zoom:7.3,attributionControl:{compact:true}});
-map.addControl(new maplibre.NavigationControl({showCompass:false}),'bottom-left');
+const map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/positron',center:[34.95,31.8],zoom:7.3,attributionControl:{compact:true}});
+map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-left');
 let K26=null,K25=null,mode='k26';const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 async function loadK26(){const m=await j('k26_meta.json');const ps=await Promise.all([...Array(m.parts).keys()].map(i=>j('k26_part'+i+'.json')));m.sites=[];m.places=[];ps.forEach(p=>{const off=m.places.length;m.places.push(...p.places);p.sites.forEach(s=>{s[6]+=off;m.sites.push(s)})});return m}
 const j=async u=>{const r=await fetch(u);if(!r.ok)throw new Error(u+' '+r.status);return r.json()};
@@ -36,9 +36,9 @@ map.on('load',async()=>{
   map.addLayer({id:'d26',type:'circle',source:'p26',paint:{'circle-radius':R,'circle-color':['case',['==',['get','q'],0],'#1c2127','#ffffff'],'circle-stroke-color':'#1c2127','circle-stroke-width':1.3,'circle-opacity':.95}});
   map.addLayer({id:'d25',type:'circle',source:'p25',layout:{visibility:'none'},paint:{'circle-radius':R,'circle-color':'#1c2127','circle-stroke-color':'#fff','circle-stroke-width':1}});
   setMode('k26');
-  map.on('click','d26',e=>{const p=e.features[0].properties;new maplibre.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.place)}</b><br>${p.n} קלפיות, ${(+p.v).toLocaleString()} בעלי זכות בחירה באזור זה<br><small>${p.q==0?'מיקום: אתר הקלפי מ-2022 (אותו אזור)':'מיקום משוער: מרכז האזור הסטטיסטי'}</small></div>`).addTo(map)});
-  map.on('click','d25',e=>{const p=e.features[0].properties;new maplibre.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.KALPI_NAME||'')}</b><br>${esc(p.SHEM_YISHUV||'')} · קלפיות: ${esc(p.KALPI||'')}</div>`).addTo(map)});
-  map.on('click','sa-fill',e=>{if(map.queryRenderedFeatures(e.point,{layers:['d26','d25']}).length)return;const p=e.features[0].properties;new maplibre.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.SHEM_YISHUV)} · ${esc(p.STAT_AREA_NAME_LABEL||p.STAT_AREA_NAME||'')}</b><br>אשכול חברתי-כלכלי 2021: ${p.CLUSTER_2021??'אין מידע'}${p.EST_HATCH==1?'<br><small>הערכה (מקווקו), לא נמדד</small>':''}${mode=='k26'?`<br>כנסת 26: ${p.B26} קלפיות, ${(+p.V26).toLocaleString()} בעלי זכות בחירה`:''}</div>`).addTo(map)});
+  map.on('click','d26',e=>{const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.place)}</b><br>${p.n} קלפיות, ${(+p.v).toLocaleString()} בעלי זכות בחירה באזור זה<br><small>${p.q==0?'מיקום: אתר הקלפי מ-2022 (אותו אזור)':'מיקום משוער: מרכז האזור הסטטיסטי'}</small></div>`).addTo(map)});
+  map.on('click','d25',e=>{const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.KALPI_NAME||'')}</b><br>${esc(p.SHEM_YISHUV||'')} · קלפיות: ${esc(p.KALPI||'')}</div>`).addTo(map)});
+  map.on('click','sa-fill',e=>{if(map.queryRenderedFeatures(e.point,{layers:['d26','d25']}).length)return;const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.SHEM_YISHUV)} · ${esc(p.STAT_AREA_NAME_LABEL||p.STAT_AREA_NAME||'')}</b><br>אשכול חברתי-כלכלי 2021: ${p.CLUSTER_2021??'אין מידע'}${p.EST_HATCH==1?'<br><small>הערכה (מקווקו), לא נמדד</small>':''}${mode=='k26'?`<br>כנסת 26: ${p.B26} קלפיות, ${(+p.V26).toLocaleString()} בעלי זכות בחירה`:''}</div>`).addTo(map)});
   ['d26','d25','sa-fill'].forEach(l=>{map.on('mouseenter',l,()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave',l,()=>map.getCanvas().style.cursor='')});
  }catch(err){document.getElementById('msg').textContent='טעינת הנתונים נכשלה: '+err.message+'. הדף רץ רק מ-smilganir.github.io.'}
 });
