@@ -1,0 +1,39 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>תיקונים - תצוגה מקדימה (טיוטה)</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f6f7f8;color:#1c2127;line-height:1.5}main{max-width:1000px;margin:0 auto;padding:14px}h1{font-size:21px}h2{font-size:17px;margin-top:22px}.note{background:#fff8e1;border:1px solid #e8d48a;padding:8px 12px;border-radius:6px;font-size:13px}.row{display:flex;gap:10px;flex-wrap:wrap}.col{flex:1 1 440px}.m{height:340px;border:1px solid #cfd4d9}.cap{font-size:13px;font-weight:600;margin:6px 0 2px}table{border-collapse:collapse;width:100%;background:#fff;font-size:12.5px}th,td{border:1px solid #dde1e5;padding:4px 7px;text-align:right}th{background:#eef0f2}.lbl{background:#fff;border:1px solid #333;border-radius:4px;padding:1px 6px;font-size:12px;white-space:nowrap}.lbl.old{border-color:#b83232;color:#b83232}.lbl.new{border-color:#1a6b3a;color:#1a6b3a}</style></head><body><main>
+<h1>תיקונים בתצוגה מקדימה: רהט/הוזייל ושם נווה גן</h1>
+<p class="note">מחוץ לאוויר. דף הדגמה עצמאי על נתוני K25 האמיתיים מה-Worker. הוא מראה את ההיגיון של התיקון, לא את האפליקציה עצמה. האפליקציה לא שונתה ולא נבנתה מחדש.</p>
+<h2>1. קלפיות הוזייל ברהט (סינון נקודות בתצוגת יישוב)</h2>
+<div class="row"><div class="col"><div class="cap">היום: סינון לפי SEMEL_YISHUV = 1161</div><div id="a" class="m"></div></div><div class="col"><div class="cap">אחרי התיקון: SEMEL_YISHUV = 1161 או PHYSICAL_AREA_SEMEL = 1161</div><div id="b" class="m"></div></div></div>
+<p id="cnt"></p>
+<h2>2. שם אזורים 121 ו-122 בפתח תקווה (שם בלבד)</h2>
+<div class="row"><div class="col"><div class="cap">היום (מקובץ השמות)</div><div id="c" class="m"></div></div><div class="col"><div class="cap">שם מאושר</div><div id="d" class="m"></div></div></div>
+<h2>3. כמה עוד פספסנו: נקודות קלפי ששמורות תחת יישוב אחר מזה שהן נמצאות בו</h2><div id="tbl"></div>
+<script>
+const B='https://isr-socio-elections-data.smilganir.workers.dev/data/';const S='https://tiles.openfreemap.org/styles/positron';
+const j=u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u+' '+r.status);return r.json()});
+const mk=(id,c,z)=>new maplibregl.Map({container:id,style:S,center:c,zoom:z,attributionControl:false});
+(async()=>{try{
+ const [k,se,sa]=await Promise.all([j(B+'kalpi.geojson'),j(B+'settlements_2022.geojson'),j(B+'statistical_areas_2022_socio_web.geojson')]);
+ const old=['==',['get','SEMEL_YISHUV'],1161],nw=['any',old,['==',['get','PHYSICAL_AREA_SEMEL'],1161]];
+ const rahat={type:'FeatureCollection',features:se.features.filter(f=>f.properties.SEMEL_YISHUV==1161)};
+ const inb=(f,F)=>F[0]=='any'?F.slice(1).some(x=>inb(f,x)):f.properties[F[1][1]]==F[2];
+ const nOld=k.features.filter(f=>inb(f,old)).length,nNew=k.features.filter(f=>inb(f,nw)).length;
+ document.getElementById('cnt').textContent=`נקודות קלפי במסנן רהט: היום ${nOld}, אחרי התיקון ${nNew} (הנקודה שנוספה: בי"ס אלהוזייל, קלפיות 2.1, 2.2). מסתכמים בסינון בלבד, בלי שינוי בשיוך, בסכומים או במיקומים.`;
+ for(const [id,F] of [['a',old],['b',nw]]){const m=mk(id,[34.761,31.415],11.7);m.addControl(new maplibregl.NavigationControl({showCompass:false}));
+  m.on('load',()=>{m.addSource('r',{type:'geojson',data:rahat});m.addSource('k',{type:'geojson',data:k});
+   m.addLayer({id:'rf',type:'fill',source:'r',paint:{'fill-color':'#9ecae1','fill-opacity':.45}});m.addLayer({id:'rl',type:'line',source:'r',paint:{'line-color':'#2b6cb0','line-width':1.5}});
+   m.addLayer({id:'kc',type:'circle',source:'k',filter:F,paint:{'circle-radius':6,'circle-color':'#1c2127','circle-stroke-color':'#fff','circle-stroke-width':1.5}});
+   m.addLayer({id:'kh',type:'circle',source:'k',filter:['all',F,['==',['get','SEMEL_YISHUV'],956]],paint:{'circle-radius':12,'circle-color':'rgba(0,0,0,0)','circle-stroke-color':'#d9382c','circle-stroke-width':2.5}})})}
+ const ng=sa.features.filter(f=>f.properties.SEMEL_YISHUV==7900&&[121,122].includes(Math.trunc(f.properties.STAT_2022)));
+ const ctr=f=>{const r=f.geometry.coordinates[0];return [r.reduce((a,c)=>a+c[0],0)/r.length,r.reduce((a,c)=>a+c[1],0)/r.length]};
+ const names={old:{121:'נווה גן · האחים ישראלית',122:'נווה גן · האחים ישראלית'},nw:{121:'נווה גן · צפון',122:'נווה גן · מרכז'}};
+ for(const [id,key] of [['c','old'],['d','nw']]){const m=mk(id,[34.8755,32.0957],15.2);m.addControl(new maplibregl.NavigationControl({showCompass:false}));
+  m.on('load',()=>{m.addSource('n',{type:'geojson',data:{type:'FeatureCollection',features:ng}});m.addLayer({id:'nf',type:'fill',source:'n',paint:{'fill-color':['match',['to-number',['get','STAT_2022']],121,'#f6c343',122,'#2aa8c4','#ccc'],'fill-opacity':.45}});m.addLayer({id:'nl',type:'line',source:'n',paint:{'line-color':'#333','line-width':1.2}});
+   ng.forEach(f=>{const n=Math.trunc(f.properties.STAT_2022);const e=document.createElement('div');e.className='lbl '+(key=='old'?'old':'new');e.textContent=names[key][n]+' ('+n+')';new maplibregl.Marker({element:e}).setLngLat(ctr(f)).addTo(m)})})}
+ const by={};k.features.forEach(f=>{const p=f.properties,ph=p.PHYSICAL_AREA_SEMEL;if(ph!=null&&Number(ph)!=Number(p.SEMEL_YISHUV))(by[ph]=by[ph]||[]).push(p)});
+ const nm={};k.features.forEach(f=>nm[f.properties.SEMEL_YISHUV]=f.properties.SHEM_YISHUV);
+ const rows=Object.entries(by).sort((a,b)=>b[1].length-a[1].length).map(([c,v])=>`<tr><td>${nm[c]||c}</td><td>${c}</td><td>${[...new Set(v.map(x=>x.SHEM_YISHUV))].join(', ')}</td><td>${v.length}</td><td>${v.filter(x=>x.ALWAYS_VISIBLE!==true).length}</td></tr>`).join('');
+ document.getElementById('tbl').innerHTML=`<p>${Object.values(by).flat().length} נקודות ב-${Object.keys(by).length} יישובים מארחים. בעמודה האחרונה: הנקודות שנסתרות היום בתצוגת יישוב (ALWAYS_VISIBLE שאינו true).</p><table><thead><tr><th>יישוב מארח</th><th>סמל</th><th>נקודות רשומות תחת</th><th>נקודות</th><th>נסתרות היום</th></tr></thead><tbody>${rows}</tbody></table>`;
+}catch(e){document.body.insertAdjacentHTML('afterbegin','<p class="note">טעינה נכשלה: '+e.message+'. רץ רק מ-smilganir.github.io.</p>')}})();
+</script></main></body></html>
