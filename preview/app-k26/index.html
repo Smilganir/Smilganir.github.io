@@ -20,7 +20,7 @@ return new Response(JSON.stringify(d),{status:r.status,headers:{'content-type':'
 var ON=!/[?&]k=25/.test(location.search);window.__K26__=ON;
 var DROP=new Set(["right_votes","left_votes","bzb","kosher","voted","not_voted","coalition_pct","left_pct","turnout_pct","no_turnout_pct","winner","winner_label","winner_he","winner_color","parties","COALITION_PCT","TURNOUT_PCT","KOSHER_SUM","WINNER","WINNER_COLOR","WINNER_LABEL","FILL_COALITION","FILL_TURNOUT","FILL_PARTY","BZB","VOTED","KOSHER","RIGHT_VOTES","LEFT_VOTES"]);
 function strip(o){if(Array.isArray(o)){for(var i=0;i<o.length;i++)strip(o[i]);return o}
-if(o&&typeof o==='object'){for(var k in o){if(DROP.has(k)){delete o[k]}else strip(o[k])}}return o}
+if(o&&typeof o==='object'){for(var k in o){if(DROP.has(k)){if(k==='parties')o[k]=[];else delete o[k]}else strip(o[k])}}return o}
 var prev=window.fetch.bind(window);
 window.fetch=async function(i,n){var r=await prev(i,n);if(!ON)return r;var u=typeof i==='string'?i:(i&&i.href)||(i&&i.url)||'';
 if(!/isr-socio-elections-data\.smilganir\.workers\.dev/.test(u)||!/\.(json|geojson)/.test(u))return r;
