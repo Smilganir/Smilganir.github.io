@@ -3,11 +3,11 @@
 <style>html,body{margin:0;height:100%;font-family:system-ui,Arial,sans-serif}#map{position:absolute;inset:0}
 .bar{position:absolute;top:10px;right:10px;left:10px;z-index:5;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;pointer-events:none}
 .box{background:rgba(255,255,255,.96);border:1px solid #cfd4d9;border-radius:8px;padding:8px 12px;font-size:13px;pointer-events:auto;box-shadow:0 1px 4px rgba(0,0,0,.15)}
-.tog button{border:1px solid #1c2127;background:#fff;padding:6px 16px;font-size:14px;cursor:pointer}.tog button:first-child{border-radius:0 6px 6px 0}.tog button:last-child{border-radius:6px 0 0 6px;border-right:0}.tog button.on{background:#1c2127;color:#fff}
+.tog button{border:1px solid #1c2127;background:#fff;padding:6px 16px;font-size:14px;cursor:pointer}.tog button:first-child{border-radius:0 6px 6px 0}.tog button:last-child{border-radius:6px 0 0 6px}.tog button:not(:first-child){border-right:0}.tog button.on{background:#1c2127;color:#fff}
 .draft{background:#fff8e1;border-color:#e8d48a;max-width:520px}.legend{position:absolute;bottom:24px;right:10px;z-index:5;font-size:12px}.legend i{display:inline-block;width:16px;height:12px;margin-left:5px;vertical-align:middle;border:1px solid #888}
 .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-left:5px;vertical-align:middle;box-sizing:border-box}
 details summary{cursor:pointer}.um{max-height:180px;overflow:auto;margin-top:6px}.um div{padding:1px 0}</style></head><body><div id="map"></div>
-<div class="bar"><div class="box tog" id="tg"><button data-e="k26" class="on">כנסת 26</button><button data-e="k25">כנסת 25</button></div>
+<div class="bar"><div class="box tog" id="tg"><button data-e="k26" class="on">כנסת 26</button><button data-e="k25">כנסת 25</button><button data-e="k24">כנסת 24</button></div>
 <div class="box draft" id="msg">טיוטה מחוץ לאוויר. כנסת 26: מיפוי קלפיות על אזורים סטטיסטיים, בלי תוצאות. מדד חברתי-כלכלי בלבד.</div></div>
 <div class="box legend" id="lg"></div>
 <script>
@@ -42,11 +42,26 @@ map.on('load',async()=>{
   ['d26','d25','sa-fill'].forEach(l=>{map.on('mouseenter',l,()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave',l,()=>map.getCanvas().style.cursor='')});
  }catch(err){document.getElementById('msg').textContent='טעינת הנתונים נכשלה: '+err.message+'. הדף רץ רק מ-smilganir.github.io.'}
 });
-function setMode(m){mode=m;document.querySelectorAll('#tg button').forEach(b=>b.classList.toggle('on',b.dataset.e==m));
+let k24=false;
+async function loadK24(){if(k24)return;k24=true;const[sa,se,pt]=await Promise.all([j(B+'statistical_areas_2022_socio_web_k24.geojson'),j(B+'settlements_2022_k24.geojson'),j(B+'kalpi_k24.geojson')]);
+ map.addSource('se24',{type:'geojson',data:se});map.addSource('sa24',{type:'geojson',data:sa});map.addSource('p24',{type:'geojson',data:pt});
+ const V={visibility:'none'},fc=['coalesce',['get','FILL_SOCIO'],'#ddd'];
+ map.addLayer({id:'se24-fill',type:'fill',source:'se24',maxzoom:11,layout:V,paint:{'fill-color':fc,'fill-opacity':.75}},'d26');
+ map.addLayer({id:'se24-line',type:'line',source:'se24',layout:V,paint:{'line-color':'#555','line-width':.5}},'d26');
+ map.addLayer({id:'sa24-fill',type:'fill',source:'sa24',minzoom:10,layout:V,paint:{'fill-color':fc,'fill-opacity':.8}},'d26');
+ map.addLayer({id:'sa24-hatch',type:'fill',source:'sa24',minzoom:10,layout:V,filter:['==',['get','EST_HATCH'],1],paint:{'fill-pattern':'hatch','fill-opacity':.9}},'d26');
+ map.addLayer({id:'sa24-line',type:'line',source:'sa24',minzoom:10,layout:V,paint:{'line-color':'#444','line-width':.6}},'d26');
+ map.addLayer({id:'d24',type:'circle',source:'p24',layout:V,paint:{'circle-radius':['interpolate',['linear'],['zoom'],8,2,12,5,15,8],'circle-color':'#1c2127','circle-stroke-color':'#fff','circle-stroke-width':1}});
+ map.on('click','d24',e=>{const p=e.features[0].properties;new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<div dir=rtl style="font-size:13px"><b>${esc(p.KALPI_NAME||'')}</b><br>${esc(p.SHEM_YISHUV||'')} · קלפיות: ${esc(p.KALPI||'')}</div>`).addTo(map)});
+ map.on('mouseenter','d24',()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave','d24',()=>map.getCanvas().style.cursor='')}
+async function setMode(m){if(m=='k24'){try{await loadK24()}catch(e){k24=false;document.getElementById('msg').textContent='טעינת כנסת 24 נכשלה: '+e.message;return}}
+ const vis=(ids,on)=>ids.forEach(l=>map.getLayer(l)&&map.setLayoutProperty(l,'visibility',on?'visible':'none'));
+ vis(['se-fill','se-hatch','se-line','sa-fill','sa-hatch','sa-line'],m!='k24');vis(['se24-fill','se24-line','sa24-fill','sa24-hatch','sa24-line','d24'],m=='k24');
+ mode=m;document.querySelectorAll('#tg button').forEach(b=>b.classList.toggle('on',b.dataset.e==m));
  map.setLayoutProperty('d26','visibility',m=='k26'?'visible':'none');map.setLayoutProperty('d25','visibility',m=='k25'?'visible':'none');
  const t=K26.totals,um=K26.unmapped,us=um.reduce((a,r)=>a+r[2],0);
- document.getElementById('msg').innerHTML=m=='k26'?`<b>כנסת 26 (טיוטה, מחוץ לאוויר)</b>: ${t.mapped.toLocaleString()} מתוך ${t.ballots.toLocaleString()} קלפיות משויכות לאזור סטטיסטי. אין תוצאות בחירות.<details><summary>${us.toLocaleString()} קלפיות ב-${um.length} יישובים ללא שיוך: אין מידע</summary><div class="um">${um.slice(0,25).map(r=>`<div>${esc(r[1])} (${r[2]})</div>`).join('')}</div></details>`:'<b>כנסת 25</b>: אותו מדד חברתי-כלכלי, אתרי קלפיות מ-2022. טיוטה מחוץ לאוויר.';
- document.getElementById('lg').innerHTML=`<div><b>מדד חברתי-כלכלי</b> (גוון האזור, כמו במפה)</div><div><i style="background:url(${hatchUrl()})"></i>הערכה או נפילה לרמת הרשות: מקווקו, לא נמדד</div>`+(m=='k26'?`<div><span class="dot" style="background:#1c2127;border:1px solid #1c2127"></span>אתר קלפי מ-2022, באותו אזור</div><div><span class="dot" style="background:#fff;border:1.3px solid #1c2127"></span>מיקום משוער: מרכז האזור</div>`:'<div><span class="dot" style="background:#1c2127"></span>אתר קלפי 2022</div>')}
+ document.getElementById('msg').innerHTML=m=='k26'?`<b>כנסת 26 (טיוטה, מחוץ לאוויר)</b>: ${t.mapped.toLocaleString()} מתוך ${t.ballots.toLocaleString()} קלפיות משויכות לאזור סטטיסטי. אין תוצאות בחירות.<details><summary>${us.toLocaleString()} קלפיות ב-${um.length} יישובים ללא שיוך: אין מידע</summary><div class="um">${um.slice(0,25).map(r=>`<div>${esc(r[1])} (${r[2]})</div>`).join('')}</div></details>`:m=='k25'?'<b>כנסת 25</b>: אותו מדד חברתי-כלכלי, אתרי קלפיות מ-2022. טיוטה מחוץ לאוויר.':'<b>כנסת 24</b>: אותו מדד חברתי-כלכלי, אתרי קלפיות מכנסת 24. טיוטה מחוץ לאוויר.';
+ document.getElementById('lg').innerHTML=`<div><b>מדד חברתי-כלכלי</b> (גוון האזור, כמו במפה)</div><div><i style="background:url(${hatchUrl()})"></i>הערכה או נפילה לרמת הרשות: מקווקו, לא נמדד</div>`+(m=='k26'?`<div><span class="dot" style="background:#1c2127;border:1px solid #1c2127"></span>אתר קלפי מ-2022, באותו אזור</div><div><span class="dot" style="background:#fff;border:1.3px solid #1c2127"></span>מיקום משוער: מרכז האזור</div>`:'<div><span class="dot" style="background:#1c2127"></span>אתר קלפי '+(m=='k24'?'כנסת 24':'2022')+'</div>')}
 function hatchUrl(){const c=document.createElement('canvas');c.width=c.height=12;const x=c.getContext('2d');x.fillStyle='#eee';x.fillRect(0,0,12,12);x.strokeStyle='#444';x.beginPath();x.moveTo(-2,12);x.lineTo(12,-2);x.moveTo(0,14);x.lineTo(14,0);x.stroke();return c.toDataURL()}
 document.getElementById('tg').addEventListener('click',e=>{if(e.target.dataset.e&&K26)setMode(e.target.dataset.e)});
 </script></body></html>
