@@ -76,7 +76,7 @@ function setTab(t){tab=t;document.querySelectorAll('#tabs button').forEach(b=>b.
  if(t=='main'){fx.style.display='none';map.setFilter('d25',null);applyNG();return}
  setMode('k25');fx.style.display='block';
  if(t=='rahat'){map.setFilter('d25',rFilter());map.fitBounds([[34.70,31.33],[34.80,31.44]],{duration:0});drawFx()}
- else{map.setFilter('d25',null);map.jumpTo({center:[34.8745,32.0865],zoom:15.2});applyNG();drawFx()}}
+ else{map.setFilter('d25',null);const b=new maplibregl.LngLatBounds();window._sa.features.forEach(f=>{const p=f.properties;if(NG[p.SEMEL_YISHUV+':'+Math.trunc(p.STAT_2022)]){const w=a=>typeof a[0]=='number'?b.extend(a):a.forEach(w);w(f.geometry.coordinates)}});map.fitBounds(b,{padding:{top:140,bottom:60,left:60,right:60},duration:0,maxZoom:17});applyNG();drawFx()}}
 function drawFx(){const fx=document.getElementById('fx');const n=tab=='rahat'?`<b>רהט: קלפיות הוזייל</b><br>הסינון בתצוגת יישוב: SEMEL_YISHUV = 1161 או PHYSICAL_AREA_SEMEL = 1161. בלי שינוי בשיוך, בסכומים או במיקומים.<br><label><input type=checkbox id=fxc ${fixRahat?'checked':''}> התיקון פעיל</label> <span id=fxn></span>`:`<b>נווה גן, פתח תקווה</b><br>שינוי שם בלבד: אזורים 121 ו-122. תרגום אנגלי הוא הצעה בלבד.<br><label><input type=checkbox id=fxc ${fixNG?'checked':''}> השם החדש פעיל</label>`;fx.innerHTML=n;
  document.getElementById('fxc').onchange=e=>{if(tab=='rahat'){fixRahat=e.target.checked;map.setFilter('d25',rFilter());cnt()}else{fixNG=e.target.checked;applyNG()}};if(tab=='rahat')cnt()}
 function cnt(){setTimeout(()=>{const n=map.queryRenderedFeatures({layers:['d25']}).length;const e=document.getElementById('fxn');if(e)e.textContent='נקודות במסך: '+n},400)}
