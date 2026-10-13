@@ -1,0 +1,24 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>הדגמת עדכון חי - טיוטה</title>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f6f7f8;color:#1c2127;line-height:1.5}main{max-width:900px;margin:0 auto;padding:16px}h1{font-size:22px}table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}th,td{border:1px solid #dde1e5;padding:5px 8px;text-align:right}th{background:#eef0f2}.note{background:#fff8e1;border:1px solid #e8d48a;padding:8px 12px;border-radius:6px;font-size:13px}.badge{display:inline-block;color:#fff;padding:6px 14px;border-radius:6px;font-size:16px}.live{background:#1c2127}.stale{background:#b7791f}.error{background:#b83232}.idle{background:#6b7280}.bar{display:flex;height:22px;margin:8px 0;border:1px solid #ccc}.bar div{height:100%}</style></head><body><main>
+<h1>הדגמת עדכון חי (הרצה חוזרת של כנסת 25)</h1>
+<p class="note">מחוץ לאוויר. מצב הדגמה: אותו קוד polling ש-Worker החדש יזין, מול שרת מדומה שמגיש ארבעה צעדים ברצף: תמונת 04:41, תמונת 07:43, כשל שרת (500), ותמונת 10:45 (שעון ישראל). נתוני K25, לא K26. אין חיבור לשום דבר חי.</p>
+<p><span id="b" class="badge idle">ממתין לנתונים</span> <span id="a"></span></p>
+<div class="bar"><div id="r" style="width:0;background:#2b6cb0"></div><div id="u" style="width:0;background:#c8ccd0"></div></div>
+<p id="t"></p><p id="step"></p>
+<table><thead><tr><th>יישוב</th><th>סמל</th><th>קלפיות שנספרו</th><th>כשרים</th></tr></thead><tbody id="rows"></tbody></table>
+<script type="module">
+import {createPoller} from '../../files/k26_live_poller.js'
+const files=['replay_20221102024153.json','replay_20221102054358.json','FAIL','replay_20221102084537.json'];
+const labels=['תמונת 04:41','תמונת 07:43','כשל שרת (500): ממשיכים להציג את האחרון','תמונת 10:45'];
+let i=-1, clock=Date.now(); const names={};
+async function fake(){ const f=files[i]; if(f==='FAIL') return {ok:false,status:500,json:async()=>({})}; const r=await fetch(f); const j=await r.json(); j.election='k26'; return {ok:true,status:200,json:async()=>j} }
+const p=createPoller({url:'mock',fetchImpl:fake,now:()=>clock,staleAfterMs:60000});
+const T={live:'חי',stale:'לא עדכני',error:'שגיאה',idle:'ממתין לנתונים'};
+function draw(s){ const d=s.data; document.getElementById('b').className='badge '+s.state; document.getElementById('b').textContent=d?`${T[s.state]}: נספרו ${d.pct_counted}% מהקלפיות (${d.ballots_counted.toLocaleString()} מתוך ${d.ballots_total.toLocaleString()})`:T[s.state];
+ document.getElementById('a').textContent=s.ageMs!=null?`עודכן לפני ${Math.round(s.ageMs/1000)} שניות (שעון מדומה)`:''; if(!d)return;
+ const v=d.valid_total,b=d.bloc_votes; document.getElementById('r').style.width=100*b.right/v+'%'; document.getElementById('u').style.width=100*b.unknown/v+'%';
+ document.getElementById('t').textContent=`כשרים ${v.toLocaleString()}. ימין (4 אותיות, בדיקה בלבד) ${(100*b.right/v).toFixed(1)}%, אין מידע ${(100*b.unknown/v).toFixed(1)}%.`;
+ Object.assign(names,d.names||{}); const top=Object.entries(d.localities).sort((x,y)=>y[1][1]-x[1][1]).slice(0,6); document.getElementById('rows').innerHTML=top.map(([k,l])=>`<tr><td>${names[k]||''}</td><td>${k}</td><td>${l[0]}</td><td>${l[1].toLocaleString()}</td></tr>`).join('') }
+async function next(){ i=(i+1)%files.length; clock+= (i===2?120000:20000); document.getElementById('step').textContent='צעד '+(i+1)+' מתוך 4: '+labels[i]; draw(await p.tick()); if(i===2){clock+=0}; setTimeout(next,3500) }
+next();
+</script></main></body></html>
