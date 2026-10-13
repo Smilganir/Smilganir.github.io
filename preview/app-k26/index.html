@@ -30,6 +30,14 @@ function addBtn(){var g=document.querySelector('.election-toggle');if(!g||g.quer
 var b=document.createElement('button');b.type='button';b.className='election-toggle__btn k26btn'+(ON?' election-toggle__btn--active':'');b.textContent='כנסת 26';
 b.onclick=function(){location.href=location.pathname};g.insertBefore(b,g.firstChild);
 if(ON){g.querySelectorAll('.election-toggle__btn').forEach(function(x){if(x!==b){x.classList.remove('election-toggle__btn--active');x.onclick=function(e){e.stopPropagation();location.href=location.pathname+'?k=25'}}})}}
+
+var HIDE=['% קולות לקואליציה','אחוזי הצבעה','מפלגה מובילה','תזוזה בין מפלגות','תזוזה בין כנסות','מיקוד קמפיין'];var done=false;
+function tidy(){if(!ON)return;var rs=[...document.querySelectorAll('input[type=radio]')];if(!rs.length)return;
+rs.forEach(function(r){var l=r.closest('label')||r.parentElement;var t=(l&&l.innerText||'').trim();
+if(HIDE.some(function(x){return t.indexOf(x)===0})&&l)l.style.display='none';
+else if(!done&&/אשכול חברתי/.test(t)&&r.closest('section,div')&&!r.checked){r.click()}});
+var s=rs.find(function(r){return /אשכול חברתי/.test((r.closest('label')||r.parentElement).innerText)});if(s&&s.checked)done=true}
+new MutationObserver(tidy).observe(document.documentElement,{childList:true,subtree:true});
 new MutationObserver(addBtn).observe(document.documentElement,{childList:true,subtree:true});
 })();
 </script>
