@@ -1,42 +1,40 @@
 <!doctype html>
-<html lang="he"><head><meta charset="UTF-8" /><meta name="robots" content="noindex,nofollow" />
-<link rel="icon" href="https://smilganir.github.io/isr-socio-elections/favicon.svg" />
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://smilganir.github.io/isr-socio-elections/maplibre-gl.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-<title>תצוגה מקדימה - תיקון ספירת הערכות כנסת 25 (מחוץ לאוויר)</title>
-<script src="https://smilganir.github.io/isr-socio-elections/maplibre-gl.js"></script>
-<script src="https://smilganir.github.io/isr-socio-elections/runtime-config.js"></script>
-<script>
-/* Shared estimate count boundary for K25 and K26 preview. */
-(()=>{
- const counts=['right_votes','left_votes','right_votes_no_jl','left_votes_no_jl','bzb','kosher','voted','not_voted'];
- const realFetch=window.fetch.bind(window);
- window.__estimateAudit={areas:0,copiedVotesRemoved:0,geoAreas:0};
- window.fetch=async(...args)=>{
-  const response=await realFetch(...args);
-  const url=String(args[0] instanceof Request?args[0].url:args[0]);
-  if(url.includes('_k24')||!/stat_areas_lookup|statistical_areas_2022_socio_web/.test(url))return response;
-  const data=await response.clone().json();
-  if(url.includes('stat_areas_lookup')){
-   for(const [key,meta] of Object.entries(data)){
-    if(!meta.est||!meta.kpi)continue;
-    const k=meta.kpi;
-    meta.estimateProfile={coalition_pct:k.coalition_pct,left_pct:k.left_pct,turnout_pct:k.turnout_pct,winner:k.winner,parties:(k.parties||[]).map(({code,name,pct,color})=>({code,name,pct,color})),donor:meta.estDonor};
-    window.__estimateAudit.areas++;window.__estimateAudit.copiedVotesRemoved+=k.kosher||0;
-    for(const field of counts)k[field]=0;
-    k.parties=[];k.src='estimate';k.neighborhood='פרופיל משוער בלבד. אין קלפי באזור. לא נספרים כאן קולות או בעלי זכות בחירה. '+(k.neighborhood||'');
-   }
-   window.__estimateAreas=data;
-  }else{
-   for(const f of data.features||[]){if(f.properties.EST_HATCH!==1)continue;f.properties.KOSHER_SUM=0;f.properties.VALID_BALLOTS=0;window.__estimateAudit.geoAreas++;}
-   window.__estimateGeo=data;
-  }
-  return new Response(JSON.stringify(data),{status:response.status,headers:response.headers});
- };
-})();
-
-</script>
-<script type="module" crossorigin src="https://smilganir.github.io/isr-socio-elections/assets/index-D8UjkpqB.js"></script>
-<link rel="stylesheet" crossorigin href="https://smilganir.github.io/isr-socio-elections/assets/index-BuAOP71v.css">
-</head><body><div id="root"></div></body></html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- Google tag (gtag.js) — same property as other Smilganir sites -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z0X9ZJFH9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8Z0X9ZJFH9');
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/isr-socio-elections/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/isr-socio-elections/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/isr-socio-elections/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/isr-socio-elections/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/isr-socio-elections/maplibre-gl.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <title>תצוגה מקדימה - K25 תיקון ספירת הערכות (מחוץ לאוויר)</title>
+    <link rel="canonical" href="https://smilganir.github.io/isr-socio-elections/" />
+    <!-- MapLibre: load before the app module so workers are ready -->
+    <script src="/isr-socio-elections/maplibre-gl.js"></script>
+    <script src="/isr-socio-elections/runtime-config.js"></script>
+    <script type="module" crossorigin src="./assets/index-Ba6VAE1U.js"></script>
+    <link rel="stylesheet" crossorigin href="/isr-socio-elections/assets/index-BuAOP71v.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
