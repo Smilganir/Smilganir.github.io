@@ -21,8 +21,11 @@ function rep(o,a,b){return JSON.parse(JSON.stringify(o).split(JSON.stringify(a).
 var base=window.fetch.bind(window);
 window.fetch=async function(i,n){var r=await base(i,n);var u=typeof i==='string'?i:(i&&i.href)||(i&&i.url)||'';var L=/stat_areas_lookup/.test(u),G=/statistical_areas_2022_socio_web/.test(u);if(!r.ok||(!L&&!G))return r;
 try{var d=await r.clone().json();
-if(L){for(var k in FIX){var e=d[k];if(e&&e.fullName&&e.fullName!==FIX[k])d[k]=rep(e,e.fullName,FIX[k])}
-for(var g in NG){var e2=d[g];if(e2)e2.name=NG[g]}}
+if(L){var K24=/_k24/.test(u),d5=null;if(K24){try{d5=await (await window.fetch(u.replace('_k24',''))).json()}catch(x){}}
+var all=Object.assign({},FIX);for(var g0 in NG)all[g0]=1;
+for(var k in all){var e=d[k];if(!e)continue;var f5=d5&&d5[k];
+if(f5&&f5.fullName&&e.fullName){if(e.fullName!==f5.fullName)e=d[k]=rep(e,e.fullName,f5.fullName);if(f5.name)e.name=f5.name;continue}
+if(FIX[k]&&e.fullName&&e.fullName!==FIX[k])e=d[k]=rep(e,e.fullName,FIX[k]);if(NG[k])e.name=NG[k]}}
 else if(d.features){d.features.forEach(function(f){var p=f.properties||{};var k=Number(p.SEMEL_YISHUV)+':'+Number(p.STAT_2022);if(FIX[k]&&p.STAT_AREA_NAME&&p.STAT_AREA_NAME!==FIX[k])f.properties=p=rep(p,p.STAT_AREA_NAME,FIX[k]);if(NG[k])p.STAT_AREA_NAME_LABEL=NG[k]})}
 return new Response(JSON.stringify(d),{status:r.status,headers:{'content-type':'application/json'}})}catch(x){return r}}})();
 </script>
