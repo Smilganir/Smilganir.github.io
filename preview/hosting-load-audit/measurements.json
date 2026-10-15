@@ -1,0 +1,984 @@
+{
+  "measuredAt": "2026-10-15T12:16:00+03:00",
+  "unit": "bytes transferred including protocol response overhead (CDP encodedDataLength)",
+  "viewport": "390x844",
+  "cache": "fresh browser contexts, browser cache disabled",
+  "plan": "Workers Paid, owner-confirmed upgrade 2026-09-30; subscription not inferred from HTTP headers",
+  "runs": [
+    {
+      "host": "smilganir.github.io",
+      "mode": "lite",
+      "dataBase": "https://isr-socio-elections-data.smilganir.workers.dev/data/",
+      "files": [
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/?lite=1",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1720,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/maplibre-gl.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 10416,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/maplibre-gl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 279728,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/runtime-config.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 403,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/index-DoByw9Fl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 84973,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/index-BuAOP71v.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 634,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/App-BtSCcvgD.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 177390,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/religion-1qoqB1f4.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 397495,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/PriorityGaugeCell-xyAeJ1OM.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3283,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/PriorityGaugeCell-ZL8sM25r.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 6485,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/scatter-Tn72kFBd.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 2020,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/App-DROPk6Mu.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 30545,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/favicon.svg",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 9234,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/info-icon-sWuK57Sk.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 34008,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_2022.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 308559,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 190004,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/national_kpi.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1202,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlement_religion.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3691,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/neighborhood_underlay.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 688,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 8801,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_deep_frames.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 576086,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/statistical_areas_2022_socio_web.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 1194451,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/stat_areas_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 520885,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 8837,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpis_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 513985,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpi.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 368695,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "host": "smilganir.github.io",
+      "mode": "full",
+      "dataBase": "https://isr-socio-elections-data.smilganir.workers.dev/data/",
+      "files": [
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/?lite=0",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1721,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/maplibre-gl.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 10417,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/maplibre-gl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 279728,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/runtime-config.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 415,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/index-DoByw9Fl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 84964,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/index-BuAOP71v.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 634,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/App-BtSCcvgD.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 177374,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/religion-1qoqB1f4.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 397505,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/PriorityGaugeCell-xyAeJ1OM.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3301,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/PriorityGaugeCell-ZL8sM25r.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 6499,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/scatter-Tn72kFBd.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 2029,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/App-DROPk6Mu.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 30747,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/favicon.svg",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 9024,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/info-icon-sWuK57Sk.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 34189,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_2022.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 308555,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 190472,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/national_kpi.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1238,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/stat_areas_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 520734,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpis_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 514118,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlement_religion.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3655,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/neighborhood_underlay.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 694,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 8629,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/statistical_areas_2022_socio_web.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1194477,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_deep_frames.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 576000,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpi.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 368810,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://smilganir.github.io/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 8682,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        }
+      ]
+    },
+    {
+      "host": "nirsmilga.com",
+      "mode": "lite",
+      "dataBase": "https://isr-socio-elections-data.smilganir.workers.dev/data/",
+      "files": [
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/?lite=1",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1690,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/maplibre-gl.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 10513,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/maplibre-gl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 279790,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/runtime-config.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 467,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/index-DoByw9Fl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 84748,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/index-BuAOP71v.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 678,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/App-BtSCcvgD.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 177359,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/religion-1qoqB1f4.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 397526,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/PriorityGaugeCell-xyAeJ1OM.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3275,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/PriorityGaugeCell-ZL8sM25r.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 6491,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/scatter-Tn72kFBd.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1924,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/App-DROPk6Mu.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 30581,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/favicon.svg",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 9134,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/info-icon-sWuK57Sk.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 34058,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_2022.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 308749,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 190253,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/national_kpi.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1190,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlement_religion.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3648,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/neighborhood_underlay.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 733,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 8607,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_deep_frames.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 576055,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/statistical_areas_2022_socio_web.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 1195017,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/stat_areas_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 520467,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 8715,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpis_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 513503,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpi.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 368524,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "host": "nirsmilga.com",
+      "mode": "full",
+      "dataBase": "https://isr-socio-elections-data.smilganir.workers.dev/data/",
+      "files": [
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/?lite=0",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1691,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/maplibre-gl.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 10445,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/maplibre-gl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 279728,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/runtime-config.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 395,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/index-DoByw9Fl.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 84919,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/index-BuAOP71v.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 681,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/App-BtSCcvgD.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 177374,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/religion-1qoqB1f4.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 397638,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/PriorityGaugeCell-xyAeJ1OM.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3302,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/PriorityGaugeCell-ZL8sM25r.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 6446,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/scatter-Tn72kFBd.js",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1840,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/App-DROPk6Mu.css",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 30545,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/favicon.svg",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 9183,
+          "server": "GitHub.com",
+          "contentEncoding": "gzip",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/info-icon-sWuK57Sk.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 34034,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_2022.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 308185,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 190048,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/national_kpi.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1223,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/stat_areas_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 520220,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpis_lookup.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 513537,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlement_religion.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 3415,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/neighborhood_underlay.json?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 455,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 8606,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/statistical_areas_2022_socio_web.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 1194719,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/settlements_deep_frames.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 576286,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://isr-socio-elections-data.smilganir.workers.dev/data/kalpi.geojson?v=20260930-unified-en-3-names-872d4d3ed15b",
+          "phase": "cold",
+          "status": 200,
+          "bytes": 368319,
+          "server": "cloudflare",
+          "contentEncoding": "zstd",
+          "cacheControl": "public, max-age=3600"
+        },
+        {
+          "url": "https://nirsmilga.com/isr-socio-elections/assets/map-reset-icon-CHrc35rI.png",
+          "phase": "drill",
+          "status": 200,
+          "bytes": 8689,
+          "server": "GitHub.com",
+          "cacheControl": "max-age=600"
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "lite",
+      "title": "lite ללא כניסה לעיר",
+      "gh": 1047135,
+      "cf": 504144,
+      "req": 5
+    },
+    {
+      "id": "full",
+      "title": "full בטעינה ראשונה",
+      "gh": 1047176,
+      "cf": 3678753,
+      "req": 10
+    },
+    {
+      "id": "drill",
+      "title": "lite וכניסה ראשונה לעיר",
+      "gh": 1055972,
+      "cf": 3678246,
+      "req": 10
+    }
+  ]
+}
