@@ -44,17 +44,17 @@ dfn{font-style:normal;font-weight:700}
 <h2>מה זה lite?</h2>
 <p><dfn>lite</dfn> הוא מצב מפה קל. במקום לטעון את כל נתוני המפה מראש, הוא טוען רק את הבסיס, והמפה עולה מהר יותר. נתוני הפירוט של עיר נטענים רק כשנכנסים אליה.</p>
 <div class="vs">
-<div><b>מצב lite</b><strong>0.5 MB</strong>נתוני מפה בפתיחה<br>5 קבצים</div>
-<div><b>מצב מלא (full)</b><strong>3.7 MB</strong>נתוני מפה בפתיחה<br>10 קבצים</div>
+<div><b>מצב lite</b><strong dir="ltr">0.5 MB</strong>נתוני מפה בפתיחה<br>5 קבצים</div>
+<div><b>מצב מלא (full)</b><strong dir="ltr">3.7 MB</strong>נתוני מפה בפתיחה<br>10 קבצים</div>
 </div>
-<p>כשמבקר ב-lite נכנס לעיר בפעם הראשונה, נטענים עוד כ-3.2 MB (5 קבצים). לכן lite חוסך בעיקר למי שרק מסתכל על המפה הכללית.</p>
-<p class="note">ההבדל בין שני המצבים נוגע ל-Cloudflare בלבד. ל-GitHub אין הבדל: בשני המצבים הוא שולח את אותו האתר (כ-1 MB).</p>
+<p>כשמבקר ב-lite נכנס לעיר בפעם הראשונה, נטענים עוד כ-<bdi dir="ltr">3.2 MB</bdi> (5 קבצים). לכן lite חוסך בעיקר למי שרק מסתכל על המפה הכללית.</p>
+<p class="note">ההבדל בין שני המצבים נוגע ל-Cloudflare בלבד. ל-GitHub אין הבדל: בשני המצבים הוא שולח את אותו האתר (כ-<bdi dir="ltr">1 MB</bdi>).</p>
 </section>
 
 <section>
 <h2>איך זה בנוי</h2>
 <div class="flow">
-<div class="box"><b>GitHub Pages</b>שולח את האתר עצמו (העמוד, הקוד והעיצוב), כ-1 MB לכל מבקר חדש. יש לו מכסה חודשית מומלצת של 100 GB.</div>
+<div class="box"><b>GitHub Pages</b>שולח את האתר עצמו (העמוד, הקוד והעיצוב), כ-<bdi dir="ltr">1 MB</bdi> לכל מבקר חדש. יש לו מכסה חודשית מומלצת של <bdi dir="ltr">100 GB</bdi>.</div>
 <div class="box"><b>Cloudflare (בתשלום)</b>שולח את נתוני המפה. כלולים בתוכנית 10 מיליון בקשות בחודש, ואין תשלום נוסף על נפח.</div>
 </div>
 <p class="note">הנתונים הוצאו מ-GitHub אל Cloudflare עוד לפני הבדיקה, בשני הכתובות של האתר (github.io ו-nirsmilga.com).</p>
