@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><script>
+(()=>{
+const nativeFetch=fetch.bind(window),variant=new URLSearchParams(location.search).get('variant')||'blank';
+if(!['blank','map','govmap'].includes(variant))throw Error('Invalid isolation variant');
+window.__isolation={variant,storyReplacements:0,source:'mirror-not-N12-origin'};
+window.fetch=async(input,init)=>{const url=typeof input==='string'?input:input.url;
+if(url.includes('/story.json')||url==='./story.json'){
+ const r=await nativeFetch('story-'+variant+'.json');let j=await r.json();window.__isolation.storyReplacements++;
+ if(location.port)j={story:{...j,storyVersions:{latest:j.storyVersion}}};
+ return new Response(JSON.stringify(j),{headers:{'Content-Type':'application/json'}});
+}
+return nativeFetch(input,init)};
+})();
+</script>
+<script>
+window.STORIES_DOMAIN="storycards.co";
+window.STORY_BASE_PATH="mako/elections2026";
+window.STORY_JSON_PATH="mako/elections2026/story.json";
+window.STORY_METADATA_PATH="mako/metadata.json";
+
+</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WQC32T9BHT"></script>
+<script>
+var STORYCARDS_GA_ID = 'G-WQC32T9BHT';
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', STORYCARDS_GA_ID, { send_page_view: false });
+</script><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content"><title>בחירות 2026: מתחם אינטראקטיבי | N12</title><meta name="description" content="מתחם הבחירות המיוחד של N12 לצפייה אינטרקאטיבית בסקרים האחרונים וקבלת כל הכתבות והפרשנויות וצפו בתוצאות העבר"><meta name="keywords" content="Storycards"><meta property="og:title" content="בחירות 2026: מתחם אינטראקטיבי | N12"><meta property="og:description" content="מתחם הבחירות המיוחד של N12 לצפייה אינטרקאטיבית בסקרים האחרונים וקבלת כל הכתבות והפרשנויות וצפו בתוצאות העבר"><meta property="og:image" content="https://ix.stories.sc/2026/02/12/1770884377270-f8ca7118-da81-40e5-95e1-fef5c02f853f.jpg?q=70&amp;auto=format"><link rel="icon" type="image/x-icon" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link rel="icon" type="image/png" sizes="32x32" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link rel="icon" type="image/png" sizes="96x96" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link rel="icon" type="image/png" sizes="192x192" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link rel="icon" type="image/png" sizes="512x512" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link rel="apple-touch-icon" sizes="192x192" href="https://storycards.co/mako/elections2026/assets/images/favicon.png"><meta name="msapplication-TileImage" content="assets/images/favicon.png"><meta name="msapplication-TileColor" content="#00a87e"><script>window.STORY_INITIAL_TIME=Date.now()</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700;800&amp;display=swap" rel="stylesheet"><link rel="icon" href="https://ix.stories.sc/2025/11/03/1762158352566-e8bcebbf-ab81-4782-9e87-c76be309483d.png"><link href="main.css" rel="stylesheet"><style> @font-face { font-family: "Open Sans"; src: url("https://assets.storycards.co/2023/02/26/1677401375688-b7501aa0-29ae-4d1a-ad6f-e9cc17c37342.ttf"); font-weight: 400; font-style: Normal; } </style><style> @font-face { font-family: "Open Sans Medium"; src: url("https://assets.storycards.co/2023/02/26/1677401373278-8be9ed56-aecd-4489-95a6-2dd5280b1720.ttf"); font-weight: 500; font-style: Normal; } </style><style> @font-face { font-family: "Open Sans"; src: url("https://assets.storycards.co/2023/02/26/1677401363315-82cb8e2f-3370-4ad3-9448-e2234272b25a.ttf"); font-weight: 400; font-style: Italic; } </style><style> @font-face { font-family: "Open Sans"; src: url("https://assets.storycards.co/2023/02/26/1677401357749-af62f0f5-887e-4eee-a51d-68c3388c67fd.ttf"); font-weight: 700; font-style: Normal; } </style><style> @font-face { font-family: "Open Sans"; src: url("https://assets.storycards.co/2023/02/26/1677401358673-951bb9d4-4272-4ff5-a8a2-a9060ae3b652.ttf"); font-weight: 700; font-style: Italic; } </style><style> @font-face { font-family: "Open Sans Medium"; src: url("https://assets.storycards.co/2023/02/26/1677401374480-420274d6-898e-4f68-b9fc-21a88453e971.ttf"); font-weight: 500; font-style: Italic; } </style><style> @font-face { font-family: "FbReformaNarrow Medium"; src: url("https://assets.storycards.co/2022/04/06/1649250386068-4ab347f7-4d44-4491-9281-a8a5e9f4fa6a.otf"); font-weight: 400; font-style: Normal; } </style><style> @font-face { font-family: "FbReformaNarrow Light"; src: url("https://assets.storycards.co/2022/04/06/1649250386116-5548d1e0-7185-4730-9449-a83ff14ad059.otf"); font-weight: 400; font-style: Normal; } </style><style> @font-face { font-family: "Yonit Bold"; src: url("https://assets.storycards.co/2022/04/06/1649250402613-332dbf8c-7e83-45d2-9dd8-1dc0a097d8a0.ttf"); font-weight: 700; font-style: Normal; } </style><style> @font-face { font-family: "Yonit Light"; src: url("https://assets.storycards.co/2022/04/06/1649250402568-786d0520-c94d-4f62-b2d3-1deba866436d.ttf"); font-weight: 300; font-style: Normal; } </style><style> @font-face { font-family: "Yonit"; src: url("https://assets.storycards.co/2022/04/06/1649250402565-a99c83f5-0b74-429c-8114-8e6946a10a7b.ttf"); font-weight: 400; font-style: Normal; } </style><style> @font-face { font-family: "FbReformaNarrow Regular"; src: url("https://assets.storycards.co/2022/04/06/1649250386305-5b80a99a-50b3-4f73-a5b5-e31e03f78e0c.otf"); font-weight: 400; font-style: Normal; } </style><style> @font-face { font-family: "Yonit Medium"; src: url("https://assets.storycards.co/2022/04/06/1649250402497-5cd63180-a481-45f7-8ad9-42c80b706391.ttf"); font-weight: 500; font-style: Normal; } </style><style> @font-face { font-family: "FbReformaNarrow Bold"; src: url("https://assets.storycards.co/2022/04/06/1649250386300-432fd50c-0357-432f-9ac5-a42c9954eccd.otf"); font-weight: 700; font-style: Normal; } </style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css?family=Merriweather:300,regular,700" rel="stylesheet"><script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>window.googletag = window.googletag || {cmd: []};</script><script>
+			function getApexDomain(url) {
+				var parts = url.split('/');
+				var domain = parts[2]; // Extract the hostname
+
+				const domainParts = domain.split('.');
+
+				if (domainParts.length <= 1) {
+					return null; // Not a valid domain
+				}
+
+				const tld = domainParts.slice(-2).join('.');
+				if (['co.uk', 'com.au', 'com.br', 'co.il'].includes(tld)) {
+					return domainParts.slice(-3).join('.');
+				}
+
+				return tld;
+			}
+
+			if (window.location.search) {
+				var url = window.location.search.substring(1).split('redirectUrl=')[1];
+				if (url) {
+					url = decodeURIComponent(url.split('&')[0]);
+					if (getApexDomain(window.location.href) === getApexDomain(url)) {
+						window.location.replace(url);
+					}
+				}
+			}
+			</script><script async="" src="https://widgets.outbrain.com/outbrain.js"></script><!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '164066977347596');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=164066977347596&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WH7Q78');</script>
+<!-- End Google Tag Manager --><meta name="twitter:image" content="https://ix.stories.sc/2026/02/12/1770884377270-f8ca7118-da81-40e5-95e1-fef5c02f853f.jpg?q=70&amp;auto=format"><script>
+gtag('set', 'page_path',  'mako/elections2026/GLrxGbWrG/rXMrx');
+gtag('set', 'page_title',  'בחירות 2026: מתחם אינטראקטיבי | N12');
+gtag('config', 'G-LSXKB0KGE9', { send_page_view: false });
+</script><link rel="canonical" href="https://special.n12.co.il/elections2026"><meta name="twitter:card" content="summary_large_image"></head><body data-version="1.126.4"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WH7Q78"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<aside style="position:fixed;z-index:2147483647;top:0;left:0;background:#ffeb8a;color:#111;font:11px sans-serif;pointer-events:none">ISOLATION MIRROR, NOT N12 ORIGIN</aside><div id="root"></div><div class="resizer"></div><script defer="defer" src="main.js"></script></body></html>
