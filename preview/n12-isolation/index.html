@@ -5,7 +5,7 @@ if(!['blank','map','govmap'].includes(variant))throw Error('Invalid isolation va
 window.__isolation={variant,storyReplacements:0,source:'mirror-not-N12-origin'};
 window.fetch=async(input,init)=>{const url=typeof input==='string'?input:input.url;
 if(url.includes('/story.json')||url==='./story.json'){
- const r=await nativeFetch('story-'+variant+'.json');let j=await r.json();window.__isolation.storyReplacements++;
+ const r=await nativeFetch('story-'+variant+'.json?rev=1039331',{cache:'no-store'});let j=await r.json();window.__isolation.storyReplacements++;
  if(location.port)j={story:{...j,storyVersions:{latest:j.storyVersion}}};
  return new Response(JSON.stringify(j),{headers:{'Content-Type':'application/json'}});
 }
