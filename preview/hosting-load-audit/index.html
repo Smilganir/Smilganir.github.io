@@ -19,24 +19,10 @@ dfn{font-style:normal;font-weight:700}
 @media(max-width:560px){body{font-size:16px}.flow,.vs{grid-template-columns:1fr}}
 </style></head><body><main>
 <p class="muted">בדיקת אחסון · מפת הבחירות · 15.10.2026</p>
-<h1>האם המפה תחזיק מעמד כשיבואו הרבה מבקרים?</h1>
+<h1>10,000 כניסות ביום = 15% מהקיבולת</h1>
 <div class="answer"><b>יש כאן שני דליים נפרדים:</b>
 <ul><li>נתוני המפה (החלק הכבד) מגיעים מ-Cloudflare Workers Paid, עם 10 מיליון בקשות כלולות בחודש.</li>
 <li>המעטפת (הדף והקוד: HTML/JS/CSS) מוגשת מ-GitHub Pages בשני הדומיינים. היא כ-<bdi dir="ltr">1.05 MB</bdi> בטעינה קרה; הסף הרך של GitHub, <bdi dir="ltr">100 GB</bdi> בחודש, חל רק עליה - בערך 3,200 טעינות ביום בממוצע חודשי.</li></ul></div>
-
-<section>
-<h2>שלושה תרחישים</h2>
-<p class="muted">החישוב מניח 30 יום בחודש וכל טעינה קרה אחת מורידה כ-<bdi dir="ltr">1.05 MB</bdi> של מעטפת. הסף הרך של GitHub Pages חל על המעטפת בלבד. ב-Cloudflare, טעינת lite עושה 5 בקשות בפתיחה ועוד עד 5 בכניסה הראשונה לעיר; מצב מלא עושה 10 בפתיחה. התוכנית כוללת 10 מיליון בקשות בחודש.</p>
-<div class="cards">
-<div class="card"><div class="n">1,000 טעינות קרות ביום</div><h3>GitHub Pages: כ-<bdi dir="ltr">31.5 GB</bdi> בחודש</h3>
-<p>כ-32% מהסף הרך של 100 GB למעטפת. Cloudflare Workers: כ-1.5% ב-lite בפתיחה ועד 3% אם כולם נכנסים לעיר; כ-3% במצב מלא.</p></div>
-<div class="card"><div class="n">2,000 טעינות קרות ביום</div><h3>GitHub Pages: כ-<bdi dir="ltr">63 GB</bdi> בחודש</h3>
-<p>כ-63% מהסף הרך של 100 GB למעטפת. Cloudflare Workers: כ-3% ב-lite בפתיחה ועד 6% אם כולם נכנסים לעיר; כ-6% במצב מלא.</p></div>
-<div class="card"><div class="n">5,000 טעינות קרות ביום</div><h3>GitHub Pages: כ-<bdi dir="ltr">157.5 GB</bdi> בחודש</h3>
-<p>כ-158% מהסף הרך של 100 GB למעטפת. Cloudflare Workers: כ-7.5% ב-lite בפתיחה ועד 15% אם כולם נכנסים לעיר; כ-15% במצב מלא.</p></div>
-</div>
-<p class="note">לדוגמה, 5,000 טעינות ביום יוצרות כ-750,000 עד 1,500,000 בקשות נתונים בחודש (5-10 לכל טעינה) - 7.5%-15% מתוך 10 מיליון. גם במצב מלא, זה פחות משישית מהמכסה.</p>
-</section>
 
 <section>
 <h2>מתי לייט ומתי מלא?</h2>
@@ -46,6 +32,7 @@ dfn{font-style:normal;font-weight:700}
 <div><b>מצב מלא (full)</b><strong dir="ltr">3.7 MB</strong>כל 10 קובצי הנתונים בפתיחה</div>
 </div>
 <p>ב-lite, נתוני פירוט העיר - כ-<bdi dir="ltr">3.2 MB</bdi> (5 קבצים) - נטענים רק בפעם הראשונה שנכנסים לעיר. לכן lite מציג את המפה מהר יותר, אבל פרטי העיר מגיעים מעט מאוחר יותר; מצב מלא טוען הכול מראש, בטעינה ראשונה כבדה יותר.</p>
+<p class="note">ב-10,000 כניסות ביום, 5 בקשות בפתיחת lite הן 15% ממכסת Cloudflare בחודש. במצב מלא (10 בקשות בפתיחה) זה כ-30%; אם כל מבקר ב-lite גם נכנס לעיר, השימוש יכול להגיע עד כ-30%.</p>
 </section>
 
 <section>
@@ -54,6 +41,6 @@ dfn{font-style:normal;font-weight:700}
 <div class="box"><b>Cloudflare Workers Paid</b>מגיש את קובצי הנתונים. התוכנית כוללת 10 מיליון בקשות בחודש.</div>
 <div class="box">GitHub Pages מגיש את מעטפת HTML/JS/CSS בשני הדומיינים. הסף הרך של 100 GB בחודש חל רק על המעטפת.</div>
 </div>
-<p>אם יהיו אלפי טעינות ביום לאורך זמן, לפי התוכנית הקיימת נעביר גם את המעטפת ל-Cloudflare, ואז סף GitHub לא יחול עליה.</p>
+<p>ב-10,000 כניסות קרות ביום, המעטפת לבדה היא כ-<bdi dir="ltr">315 GB</bdi> בחודש. אם יהיו אלפי כניסות ביום לאורך זמן, לפי התוכנית הקיימת נעביר גם אותה ל-Cloudflare, ואז סף GitHub לא יחול עליה.</p>
 </section>
 </main></body></html>
