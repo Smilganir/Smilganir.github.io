@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>איך עובד מיקוד הקמפיין במפה</title>
+<style>
+:root{--ink:#1d2733;--mute:#5b6775;--line:#dde3ea;--bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Heebo,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:17px}
+main{max-width:820px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:30px;line-height:1.25;margin:0 0 6px}
+h2{font-size:22px;margin:38px 0 8px}
+.lead{color:var(--mute);margin:0 0 18px}
+img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;margin:14px 0 4px}
+figcaption{color:var(--mute);font-size:14px;margin-bottom:10px}
+figure{margin:0}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.cat{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--bg)}
+.cat b{display:flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:right;vertical-align:top}
+th{background:var(--bg)}
+td.n{white-space:nowrap;font-weight:600}
+blockquote{margin:14px 0;padding:10px 16px;border-inline-start:4px solid #9b59b6;background:var(--bg)}
+.note{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:15px}
+@media(max-width:560px){.cats{grid-template-columns:1fr}h1{font-size:25px}}
+footer{margin-top:40px;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>איך עובד מיקוד הקמפיין במפה</h1>
+<p class="lead">מפת הבחירות לכנסת ה-25 · הסבר על שיטת הסיווג, הערכים הקבועים ומה אפשר לשנות</p>
+
+<h2>מה המפה עושה</h2>
+<p>המפה בוחנת כל יישוב, ובתוכו גם אזורים סטטיסטיים, ביחס ליעד שבוחרים: גוש (קואליציה או אופוזיציה) או מפלגה אחת. כל מקום מסווג לאחת מארבע קטגוריות. ההשוואה היא תמיד בין הבחירות לכנסת ה-24 לבין הבחירות לכנסת ה-25.</p>
+<figure>
+<img src="map.jpg" alt="מסך המפה במצב מיקוד קמפיין, יעד: גוש האופוזיציה">
+<figcaption>המפה במצב מיקוד קמפיין, עם יעד אופוזיציה. הצבעים הם הקטגוריות שלמטה.</figcaption>
+</figure>
+
+<h2>ארבע הקטגוריות</h2>
+<div class="cats">
+<div class="cat"><b><span class="dot" style="background:#27AE60"></span>בטוח</b>תמיכה חזקה בנתח הקולות של היעד, ואחוז ההצבעה גבוה מהממוצע בפער שנקבע.</div>
+<div class="cat"><b><span class="dot" style="background:#E67E22"></span>עידוד הצבעה</b>תמיכה חזקה בנתח הקולות של היעד, אבל אחוז ההצבעה אינו גבוה מספיק.</div>
+<div class="cat"><b><span class="dot" style="background:#9B59B6"></span>שכנוע</b>כל השאר: אזורים שאינם בסיס חזק של היעד, ואינם בסיס חלש עם שינוי קטן.</div>
+<div class="cat"><b><span class="dot" style="background:#95A5A6"></span>עדיפות נמוכה</b>בסיס חלש של היעד ושינוי קטן מהכנסת הקודמת.</div>
+</div>
+
+<h2>על מה הסיווג נשען</h2>
+<p>שלושה נתונים: חלקו של היעד בקולות באותו מקום בכנסת ה-25, אחוז ההצבעה שם לעומת הממוצע (הממוצע הארצי הוא 70.6%), והשינוי בחלק של היעד לעומת הכנסת ה-24.</p>
+<p>לצד הקטגוריה מחושב גם ציון עדיפות. הוא משקלל את מספר בעלי זכות הבחירה יחד עם פער ההצבעה מהממוצע (משקל 40%), את עוצמת השינוי מהכנסת ה-24 (35%) ואת חלקו של היעד (25%). הציון מתאר הזדמנות לפי הנתונים של הבחירות האחרונות. הוא אינו תחזית ואינו בוחן מי יצביע אם אחוז ההצבעה יעלה.</p>
+
+<h2>הכללים והערכים הקבועים</h2>
+<p>אלה ערכי ברירת המחדל. כולם פרמטרים שאפשר לשנות במפה (ראו בהמשך).</p>
+<table>
+<tr><th>פרמטר (כפי שמופיע במפה)</th><th>ברירת מחדל</th><th>מה הוא קובע</th></tr>
+<tr><td>סף בסיס חזק (גוש)</td><td class="n">51%</td><td>מעל נתח זה האזור נחשב "בסיס חזק" של הגוש. אז הוא "בטוח" אם ההצבעה גבוהה, ו"עידוד הצבעה" אם לא.</td></tr>
+<tr><td>רצפת בסיס ותקרת בסיס (מפלגה)</td><td class="n">12% ו-30%</td><td>במפלגה בודדת הסף נקבע ביחס לחלקה הארצי, ותמיד בין שני הערכים האלה.</td></tr>
+<tr><td>מכפיל ממוצע יעד (מפלגה)</td><td class="n">1.35</td><td>סף מפלגה = הממוצע הארצי של המפלגה כפול המכפיל, בין הרצפה לתקרה.</td></tr>
+<tr><td>עודף הצבעה לבטוח (ארצי)</td><td class="n">3.5 נקודות אחוז</td><td>בבסיס חזק, כמה נקודות מעל הממוצע צריכה להיות ההצבעה כדי להיחשב "בטוח".</td></tr>
+<tr><td>עודף הצבעה לבטוח (מקומי)</td><td class="n">5 נקודות אחוז</td><td>אותו כלל בתוך יישוב: אזור סטטיסטי מול הממוצע של היישוב שלו. מופיע כשנכנסים ליישוב.</td></tr>
+<tr><td>בסיס חלש (עדיפות נמוכה)</td><td class="n">15%</td><td>מתחת לנתח זה, ואם גם השינוי קטן, האזור מסווג "עדיפות נמוכה".</td></tr>
+<tr><td>סף תנודתיות</td><td class="n">2.5 נקודות אחוז</td><td>שינוי בנתח מתחת לסף נחשב קטן. מעליו האזור נכנס ל"שכנוע".</td></tr>
+</table>
+<p class="note">בכל בחירה של יעד מוצגים רק הפרמטרים הרלוונטיים אליו. לגוש יופיע סף בסיס חזק אחד. למפלגה יופיעו הרצפה, התקרה והמכפיל. עודף ההצבעה הארצי מופיע ברמה הארצית והמקומי בתוך יישוב.</p>
+
+<h2>איך משנים את הערכים</h2>
+<p>בכרטיס הסיכום של מיקוד הקמפיין יש כפתור גלגל שיניים, "הגדרות סיווג". הוא פותח את הפרמטרים כמחוונים. אחרי שינוי הסיווג מחושב מחדש והסיכום, הטבלה והמפה משתנים בהתאם. אפשר לחזור לערכים המקוריים בלחיצה על "איפוס לברירת מחדל". השינוי נשמר רק בלשונית הפתוחה בדפדפן של מי שביצע אותו.</p>
+<figure>
+<img src="gear.jpg" alt="חלונית הגדרות סיווג עם מחוונים">
+<figcaption>חלונית "הגדרות סיווג" ברמה הארצית עם יעד של גוש האופוזיציה.</figcaption>
+</figure>
+
+<h2>שתי דרכי הצגה</h2>
+<p>הנתונים מוצגים בשתי הצגות, ואפשר לעבור ביניהן בכפתורים בראש הכרטיס. "סיכום" מראה כמה בעלי זכות בחירה נמצאים בכל קטגוריה, לצד טבלת יישובים. "מטריצה" מציבה כל יישוב לפי אחוז ההצבעה (ציר אופקי) ונתח הקולות של היעד (ציר אנכי), בצבע הקטגוריה ובגודל לפי מספר המצביעים הפוטנציאליים.</p>
+<figure>
+<img src="drawer.jpg" alt="תצוגת סיכום של מיקוד קמפיין">
+<figcaption>תצוגת "סיכום": חלוקת המצביעים הפוטנציאליים לפי קטגוריה, ולצדה טבלת היישובים.</figcaption>
+</figure>
+<figure>
+<img src="matrix.jpg" alt="תצוגת מטריצה של מיקוד קמפיין">
+<figcaption>תצוגת "מטריצה": כל נקודה היא יישוב.</figcaption>
+</figure>
+
+<h2>מה רואים בנתונים</h2>
+<blockquote>בגוש האופוזיציה כיעד, 48.2% מבעלי זכות הבחירה (3.2 מיליון מתוך 6.74 מיליון) גרים ב-426 יישובים שמסווגים "שכנוע", 42.8% ב-526 יישובים של "עידוד הצבעה", 5.8% בבטוחים ו-3.3% בעדיפות נמוכה. זה תיאור של המצב בבחירות האחרונות, לא תחזית.</blockquote>
+
+<h2>מה חשוב לדעת</h2>
+<ul>
+<li>הסיווג הוא כלי לקריאת התוצאות של הבחירות האחרונות. הוא אינו חיזוי של בחירות עתידיות.</li>
+<li>הספים הם החלטות מתודולוגיות, ולכן אפשר לשנות אותם ולראות איך התמונה משתנה.</li>
+<li>בהשוואה לכנסת ה-24 נתוני הרשימה המשותפת אינם נכללים בחישוב של הגושים. בשורת חד"ש-תע"ל-בל"ד היא מושווה לרשימה המשותפת של הכנסת ה-24.</li>
+<li>מקורות הנתונים: ועדת הבחירות המרכזית והלמ"ס.</li>
+</ul>
+<footer>נבנה על ידי ניר סמילגה · המפה: smilganir.github.io/isr-socio-elections</footer>
+</main>
+</body>
+</html>
