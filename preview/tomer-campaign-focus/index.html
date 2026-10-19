@@ -26,7 +26,8 @@ th{background:var(--bg)}
 td.n{white-space:nowrap;font-weight:600}
 blockquote{margin:14px 0;padding:10px 16px;border-inline-start:4px solid #9b59b6;background:var(--bg)}
 .note{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:15px}
-@media(max-width:560px){.cats{grid-template-columns:1fr}h1{font-size:25px}}
+.tw{overflow-x:auto}
+@media(max-width:560px){table{font-size:14px}.cats{grid-template-columns:1fr}h1{font-size:25px}}
 footer{margin-top:40px;color:var(--mute);font-size:14px}
 </style>
 </head>
@@ -104,13 +105,13 @@ footer{margin-top:40px;color:var(--mute);font-size:14px}
 <line x1="60" y1="278.0" x2="540" y2="278.0" stroke="#1d2733" stroke-width="2.5" stroke-dasharray="7 4"/>
 <line x1="349.19999999999993" y1="40.0" x2="349.19999999999993" y2="177.20000000000002" stroke="#1d2733" stroke-width="2.5" stroke-dasharray="7 4"/>
 <rect x="60" y="40" width="480" height="280" fill="none" stroke="#9aa5b1"/>
-<text x="10" y="181.20000000000002" text-anchor="start" font-size="14" fill="#1d2733" font-weight="700">51%</text>
-<text x="10" y="282.0" text-anchor="start" font-size="14" fill="#1d2733" font-weight="700">15%</text>
+<text x="56" y="181.20000000000002" text-anchor="end" font-size="14" fill="#1d2733" font-weight="700">51%</text>
+<text x="56" y="282.0" text-anchor="end" font-size="14" fill="#1d2733" font-weight="700">15%</text>
 <text x="349.19999999999993" y="34.0" text-anchor="middle" font-size="14" fill="#1d2733" font-weight="700">74.1%</text>
 <text x="444.59999999999997" y="76.4" text-anchor="middle" font-size="15" fill="#1e7a45" font-weight="700">בטוח</text>
 <text x="204.59999999999997" y="56.80000000000001" text-anchor="middle" font-size="15" fill="#b35a10" font-weight="700">עידוד הצבעה</text>
 <text x="300" y="244.4" text-anchor="middle" font-size="15" fill="#6f3a87" font-weight="700">שכנוע</text>
-<text x="300" y="291.6" text-anchor="middle" font-size="13" fill="#3f4a56" font-weight="600">מתחת ל-15%: עדיפות נמוכה או שכנוע, לפי גודל השינוי</text>
+<text x="66" y="293" text-anchor="start" font-size="12" fill="#3f4a56" font-weight="600">מתחת ל-15%: לפי השינוי</text>
 <circle cx="352.80000000000007" cy="115.32000000000002" r="6" fill="#27AE60" stroke="#1d2733" stroke-width="1.2"/>
 <text x="362.80000000000007" y="119.32000000000002" text-anchor="start" font-size="13" fill="#1d2733" font-weight="600">הוד השרון</text>
 <circle cx="298.80000000000007" cy="132.68" r="6" fill="#E67E22" stroke="#1d2733" stroke-width="1.2"/>
@@ -122,20 +123,20 @@ footer{margin-top:40px;color:var(--mute);font-size:14px}
 <circle cx="378.0" cy="314.4" r="6" fill="#95A5A6" stroke="#1d2733" stroke-width="1.2"/>
 <text x="368.0" y="318.4" text-anchor="end" font-size="13" fill="#1d2733" font-weight="600">בני ברק</text>
 <text x="300" y="352" text-anchor="middle" font-size="13" fill="#5b6775" font-weight="400">אחוז הצבעה (ציר אופקי), ממוצע ארצי 70.6%; קו הסף: ממוצע + 3.5 נקודות</text>
-<text transform="translate(18 180) rotate(-90)" text-anchor="middle" font-size="13" fill="#5b6775">נתח הקולות של היעד</text>
+<text transform="translate(12 180) rotate(-90)" text-anchor="middle" font-size="13" fill="#5b6775">נתח הקולות של היעד</text>
 </svg>
 <figcaption>תרשים הסבר של הספים (לא נתונים). הקווים המקווקווים הם הספים. הנקודות הן חמישה יישובים אמיתיים, במיקום של אחוז ההצבעה ונתח הקולות שלהם בכנסת ה-25.</figcaption>
 </figure>
 <h2>למה אזורים מתחת לנתח הקבוע הם לפעמים אפורים ולפעמים סגולים</h2>
 <p>מתחת לקו ה-15% הצבע אינו תלוי במקום על הצירים. הוא תלוי בנתון שלישי, השינוי בנתח היעד בין הכנסת ה-24 לכנסת ה-25 (בערך מוחלט). שינוי של 2.5 נקודות ומעלה, בעלייה או בירידה, מעביר את האזור מאפור לסגול. לכן שני יישובים עם נתח נמוך דומה יכולים להיראות שונה.</p>
-<table>
+<div class="tw"><table>
 <tr><th>יישוב</th><th>נתח האופוזיציה בכנסת ה-25</th><th>שינוי מהכנסת ה-24</th><th>אחוז הצבעה</th><th>קטגוריה ולמה</th></tr>
 <tr><td>בני ברק</td><td class="n">2.0%</td><td class="n">ירידה של 1.0 נקודות</td><td class="n">76.5%</td><td>עדיפות נמוכה (אפור): הנתח מתחת ל-15% והשינוי קטן מ-2.5.</td></tr>
 <tr><td>בית שמש</td><td class="n">8.8%</td><td class="n">ירידה של 7.6 נקודות</td><td class="n">66.1%</td><td>שכנוע (סגול): הנתח מתחת ל-15%, אבל השינוי גדול מ-2.5.</td></tr>
 <tr><td>לוד</td><td class="n">39.8%</td><td class="n">עלייה של 0.3 נקודות</td><td class="n">60.7%</td><td>שכנוע (סגול): הנתח בין 15% ל-51%, ולכן השינוי כבר לא משנה.</td></tr>
 <tr><td>כפר סבא</td><td class="n">66.9%</td><td class="n">ירידה של 5.8 נקודות</td><td class="n">69.9%</td><td>עידוד הצבעה: הנתח מעל 51%, אבל אחוז ההצבעה מתחת ל-74.1%.</td></tr>
 <tr><td>הוד השרון</td><td class="n">73.1%</td><td class="n">ירידה של 4.6 נקודות</td><td class="n">74.4%</td><td>בטוח: הנתח מעל 51% ואחוז ההצבעה מעל 74.1%. גודל השינוי לא נבדק בקטגוריה הזו.</td></tr>
-</table>
+</table></div>
 <p class="note">הנתונים הם של היישובים בשלמותם, בכנסת ה-25 ובהשוואה לכנסת ה-24 (בלי הרשימה המשותפת), ונבדקו מול הקובץ שהמפה טוענת. מי שמשנה את הספים בחלונית "הגדרות סיווג" יראה קטגוריות אחרות. הדוגמאות מתארות את הבחירות האחרונות, לא תחזית. במצב מיקוד של מפלגה בודדת הסף העליון נקבע אחרת (ראו הטבלה למעלה), והכלל המתחתון זהה.</p>
 
 <h2>מה רואים בנתונים</h2>
