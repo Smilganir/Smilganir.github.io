@@ -27,7 +27,7 @@ td.n{white-space:nowrap;font-weight:600}
 blockquote{margin:14px 0;padding:10px 16px;border-inline-start:4px solid #9b59b6;background:var(--bg)}
 .note{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:15px}
 .tw{overflow-x:auto}
-@media(max-width:560px){table{font-size:14px}.cats{grid-template-columns:1fr}h1{font-size:25px}}
+@media(max-width:560px){.tw table,.tw tr,.tw td{display:block;width:100%}.tw tr:first-child{display:none}.tw tr{border:1px solid var(--line);border-radius:8px;margin:10px 0;padding:6px 10px}.tw td{border:0;padding:3px 0}.tw td:first-child{font-weight:700;font-size:16px}.tw td[data-l]::before{content:attr(data-l);color:var(--mute)}.cats{grid-template-columns:1fr}h1{font-size:25px}}
 footer{margin-top:40px;color:var(--mute);font-size:14px}
 </style>
 </head>
@@ -131,11 +131,11 @@ footer{margin-top:40px;color:var(--mute);font-size:14px}
 <p>מתחת לקו ה-15% הצבע אינו תלוי במקום על הצירים. הוא תלוי בנתון שלישי, השינוי בנתח היעד בין הכנסת ה-24 לכנסת ה-25 (בערך מוחלט). שינוי של 2.5 נקודות ומעלה, בעלייה או בירידה, מעביר את האזור מאפור לסגול. לכן שני יישובים עם נתח נמוך דומה יכולים להיראות שונה.</p>
 <div class="tw"><table>
 <tr><th>יישוב</th><th>נתח האופוזיציה בכנסת ה-25</th><th>שינוי מהכנסת ה-24</th><th>אחוז הצבעה</th><th>קטגוריה ולמה</th></tr>
-<tr><td>בני ברק</td><td class="n">2.0%</td><td class="n">ירידה של 1.0 נקודות</td><td class="n">76.5%</td><td>עדיפות נמוכה (אפור): הנתח מתחת ל-15% והשינוי קטן מ-2.5.</td></tr>
-<tr><td>בית שמש</td><td class="n">8.8%</td><td class="n">ירידה של 7.6 נקודות</td><td class="n">66.1%</td><td>שכנוע (סגול): הנתח מתחת ל-15%, אבל השינוי גדול מ-2.5.</td></tr>
-<tr><td>לוד</td><td class="n">39.8%</td><td class="n">עלייה של 0.3 נקודות</td><td class="n">60.7%</td><td>שכנוע (סגול): הנתח בין 15% ל-51%, ולכן השינוי כבר לא משנה.</td></tr>
-<tr><td>כפר סבא</td><td class="n">66.9%</td><td class="n">ירידה של 5.8 נקודות</td><td class="n">69.9%</td><td>עידוד הצבעה: הנתח מעל 51%, אבל אחוז ההצבעה מתחת ל-74.1%.</td></tr>
-<tr><td>הוד השרון</td><td class="n">73.1%</td><td class="n">ירידה של 4.6 נקודות</td><td class="n">74.4%</td><td>בטוח: הנתח מעל 51% ואחוז ההצבעה מעל 74.1%. גודל השינוי לא נבדק בקטגוריה הזו.</td></tr>
+<tr><td>בני ברק</td><td data-l="נתח האופוזיציה בכנסת ה-25: " class="n">2.0%</td><td data-l="שינוי מהכנסת ה-24: " class="n">ירידה של 1.0 נקודות</td><td data-l="אחוז הצבעה: " class="n">76.5%</td><td>עדיפות נמוכה (אפור): הנתח מתחת ל-15% והשינוי קטן מ-2.5.</td></tr>
+<tr><td>בית שמש</td><td data-l="נתח האופוזיציה בכנסת ה-25: " class="n">8.8%</td><td data-l="שינוי מהכנסת ה-24: " class="n">ירידה של 7.6 נקודות</td><td data-l="אחוז הצבעה: " class="n">66.1%</td><td>שכנוע (סגול): הנתח מתחת ל-15%, אבל השינוי גדול מ-2.5.</td></tr>
+<tr><td>לוד</td><td data-l="נתח האופוזיציה בכנסת ה-25: " class="n">39.8%</td><td data-l="שינוי מהכנסת ה-24: " class="n">עלייה של 0.3 נקודות</td><td data-l="אחוז הצבעה: " class="n">60.7%</td><td>שכנוע (סגול): הנתח בין 15% ל-51%, ולכן השינוי כבר לא משנה.</td></tr>
+<tr><td>כפר סבא</td><td data-l="נתח האופוזיציה בכנסת ה-25: " class="n">66.9%</td><td data-l="שינוי מהכנסת ה-24: " class="n">ירידה של 5.8 נקודות</td><td data-l="אחוז הצבעה: " class="n">69.9%</td><td>עידוד הצבעה: הנתח מעל 51%, אבל אחוז ההצבעה מתחת ל-74.1%.</td></tr>
+<tr><td>הוד השרון</td><td data-l="נתח האופוזיציה בכנסת ה-25: " class="n">73.1%</td><td data-l="שינוי מהכנסת ה-24: " class="n">ירידה של 4.6 נקודות</td><td data-l="אחוז הצבעה: " class="n">74.4%</td><td>בטוח: הנתח מעל 51% ואחוז ההצבעה מעל 74.1%. גודל השינוי לא נבדק בקטגוריה הזו.</td></tr>
 </table></div>
 <p class="note">הנתונים הם של היישובים בשלמותם, בכנסת ה-25 ובהשוואה לכנסת ה-24 (בלי הרשימה המשותפת), ונבדקו מול הקובץ שהמפה טוענת. מי שמשנה את הספים בחלונית "הגדרות סיווג" יראה קטגוריות אחרות. הדוגמאות מתארות את הבחירות האחרונות, לא תחזית. במצב מיקוד של מפלגה בודדת הסף העליון נקבע אחרת (ראו הטבלה למעלה), והכלל המתחתון זהה.</p>
 
