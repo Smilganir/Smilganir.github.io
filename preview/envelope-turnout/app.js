@@ -41,7 +41,7 @@
   Promise.all([fetch('data.json').then(function (r) { return r.json() }), fetch('settlements.geojson').then(function (r) { return r.json() })]).then(function (r) {
     DATA = r[0]; GEO = r[1]
     // per-locality derived values: before / after / delta from the CEC file's own percentages
-    Object.keys(DATA).forEach(function (k) { var d = DATA[k]; d.d = Math.round((d.q - d.p) * 10) / 10 })
+    Object.keys(DATA).forEach(function (k) { var d = DATA[k]; d.dx = 100 * d.x / d.e; d.d = Math.floor(d.dx * 10 + 0.5) / 10 /* delta from unrounded envelopes / eligible, not from subtracting rounded percentages */ })
     GEO.features.forEach(function (f) {
       var d = DATA[f.properties.s]; f.properties.cw = d.q != null ? bucketColor(d.q, TURNOUT_BUCKETS) : '#fff'
     })
@@ -146,7 +146,7 @@
     var keys = Object.keys(DATA), q = query.trim()
     var rows = keys.filter(function (k) { return !q || DATA[k].n.indexOf(q) >= 0 })
     rows.sort(function (a, b) {
-      var x = DATA[a][sortKey], y = DATA[b][sortKey]
+      var kk = sortKey === 'd' ? 'dx' : sortKey, x = DATA[a][kk], y = DATA[b][kk]
       if (sortKey === 'n') return sortDir === 'asc' ? x.localeCompare(y, 'he') : y.localeCompare(x, 'he')
       return sortDir === 'asc' ? x - y : y - x
     })
