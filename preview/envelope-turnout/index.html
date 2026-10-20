@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>הצבעה ברמת יישוב: עם ובלי מעטפות כפולות · כנסת 25</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="maplibre-gl.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map"></div>
+
+<header id="top">
+  <h1>הצבעה ברמת יישוב · כנסת ה־25</h1>
+  <div id="mode" role="group" aria-label="מצב">
+    <button data-mode="without" aria-pressed="true">ללא מעטפות כפולות</button>
+    <button data-mode="with" aria-pressed="false">עם מעטפות כפולות</button>
+  </div>
+</header>
+
+<section id="metrics" aria-label="מדד">
+  <h2>ישובים</h2>
+  <label><input type="radio" name="metric" value="coalition" checked> % קולות לקואליציה</label>
+  <label><input type="radio" name="metric" value="party"> מפלגה מובילה</label>
+  <label><input type="radio" name="metric" value="turnout"> אחוזי הצבעה</label>
+</section>
+
+<section id="legend" aria-label="מקרא"></section>
+
+<aside id="card" hidden></aside>
+
+<button id="drawer-toggle" hidden aria-expanded="true">טבלת יישובים</button>
+<aside id="drawer" hidden>
+  <div class="drawer-head">
+    <strong>אחוזי הצבעה לפני ואחרי מעטפות כפולות</strong>
+    <input id="q" type="search" placeholder="חיפוש יישוב" aria-label="חיפוש יישוב">
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th data-key="n" class="name">יישוב</th>
+        <th data-key="p" class="num">ללא מעטפות</th>
+        <th data-key="q" class="num">עם מעטפות</th>
+        <th data-key="d" class="num sortable" tabindex="0" title="מיון לפי השינוי בנקודות אחוז">שינוי (נק׳ אחוז)<i></i></th>
+        <th data-key="x" class="num sortable" tabindex="0" title="מיון לפי מספר המעטפות">מעטפות חיצוניות (מצביעים)<i></i></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="drawer-foot">מקור: ועדת הבחירות. אחוז ההצבעה ללא מעטפות = מצביעים בקלפיות היישוב ÷ בעלי זכות בחירה. עם מעטפות = (מצביעים בקלפיות + מעטפות חיצוניות) ÷ בעלי זכות בחירה. המעטפות הן מצביעים שנוספו ולא קולות כשרים של מפלגה.</div>
+</aside>
+
+<script src="maplibre-gl.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7297 @@
+{
+ "source": "CEC (ועדת הבחירות) file received via Yuval Harpaz, elect-results_260927_203900.pdf; K25 (2022)",
+ "matched": [
+  {
+   "semel": "3785",
+   "app_name": "משכיות",
+   "file_name": "משכיות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1377",
+   "app_name": "שבי דרום",
+   "file_name": "שבי דרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1363",
+   "app_name": "בני נצרים",
+   "file_name": "בני נצרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3724",
+   "app_name": "נגוהות",
+   "file_name": "נגוהות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1366",
+   "app_name": "נווה",
+   "file_name": "נווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1368",
+   "app_name": "בני דקלים",
+   "file_name": "בני דקלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1364",
+   "app_name": "שלומית",
+   "file_name": "שלומית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3744",
+   "app_name": "ברוכין",
+   "file_name": "ברוכין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1265",
+   "app_name": "שומרייה",
+   "file_name": "שומריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1374",
+   "app_name": "כרמי קטיף",
+   "file_name": "כרמי קטיף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3822",
+   "app_name": "רחלים",
+   "file_name": "רחלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "440",
+   "app_name": "יסודות",
+   "file_name": "יסודות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3795",
+   "app_name": "רבבה",
+   "file_name": "רבבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1370",
+   "app_name": "מצפה אילן",
+   "file_name": "מצפה אילן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3824",
+   "app_name": "עמיחי",
+   "file_name": "עמיחי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3768",
+   "app_name": "פדואל",
+   "file_name": "פדואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3578",
+   "app_name": "שדמות מחולה",
+   "file_name": "שדמות מחולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1369",
+   "app_name": "נטע",
+   "file_name": "נטע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3788",
+   "app_name": "טלמון",
+   "file_name": "טלמון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1145",
+   "app_name": "אלומה",
+   "file_name": "אלומה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3646",
+   "app_name": "חמדת",
+   "file_name": "חמדת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3709",
+   "app_name": "מבוא חורון",
+   "file_name": "מבוא חורון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1083",
+   "app_name": "תושייה",
+   "file_name": "תושיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1065",
+   "app_name": "זמרת",
+   "file_name": "זמרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "818",
+   "app_name": "זרחיה",
+   "file_name": "זרחיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "400",
+   "app_name": "אבן שמואל",
+   "file_name": "אבן שמואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1094",
+   "app_name": "כרם יבנה (ישיבה)",
+   "file_name": "כרם יבנה ישיבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1178",
+   "app_name": "מורשת",
+   "file_name": "מורשת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3710",
+   "app_name": "ברכה",
+   "file_name": "ברכה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3723",
+   "app_name": "פני חבר",
+   "file_name": "פני חבר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "709",
+   "app_name": "תפרח",
+   "file_name": "תפרח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3777",
+   "app_name": "סנסנה",
+   "file_name": "סנסנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3746",
+   "app_name": "קריית נטפים",
+   "file_name": "קרית נטפים",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1082",
+   "app_name": "מעגלים",
+   "file_name": "מעגלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3764",
+   "app_name": "חגי",
+   "file_name": "חגי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2051",
+   "app_name": "רווחה",
+   "file_name": "רווחה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3579",
+   "app_name": "אלון מורה",
+   "file_name": "אלון מורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3659",
+   "app_name": "פסגות",
+   "file_name": "פסגות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3602",
+   "app_name": "ראש צורים",
+   "file_name": "ראש צורים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "363",
+   "app_name": "חפץ חיים",
+   "file_name": "חפץ חיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1162",
+   "app_name": "בית רימון",
+   "file_name": "בית רימון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "856",
+   "app_name": "שעלבים",
+   "file_name": "שעלבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3658",
+   "app_name": "עטרת",
+   "file_name": "עטרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3564",
+   "app_name": "כוכב השחר",
+   "file_name": "כוכב השחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3747",
+   "app_name": "דולב",
+   "file_name": "דולב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "592",
+   "app_name": "בני דרום",
+   "file_name": "בני דרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1365",
+   "app_name": "אליאב",
+   "file_name": "אליאב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1214",
+   "app_name": "טפחות",
+   "file_name": "טפחות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3575",
+   "app_name": "בית חורון",
+   "file_name": "בית חורון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1333",
+   "app_name": "נוף איילון",
+   "file_name": "נוף איילון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "749",
+   "app_name": "פטיש",
+   "file_name": "פטיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "746",
+   "app_name": "ברכיה",
+   "file_name": "ברכיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1372",
+   "app_name": "נצר חזני",
+   "file_name": "נצר חזני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3574",
+   "app_name": "בית אל",
+   "file_name": "בית אל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "815",
+   "app_name": "זבדיאל",
+   "file_name": "זבדיאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4006",
+   "app_name": "קשת",
+   "file_name": "קשת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3656",
+   "app_name": "כרמל",
+   "file_name": "כרמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "721",
+   "app_name": "שדה אילן",
+   "file_name": "שדה אילן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1371",
+   "app_name": "גני טל",
+   "file_name": "גני טל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3766",
+   "app_name": "כרמי צור",
+   "file_name": "כרמי צור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4017",
+   "app_name": "אלוני הבשן",
+   "file_name": "אלוני הבשן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "415",
+   "app_name": "שוקדה",
+   "file_name": "שוקדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4701",
+   "app_name": "רמת מגשימים",
+   "file_name": "רמת מגשימים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1186",
+   "app_name": "הושעיה",
+   "file_name": "הושעיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "720",
+   "app_name": "ניר גלים",
+   "file_name": "ניר גלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3647",
+   "app_name": "יקיר",
+   "file_name": "יקיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1282",
+   "app_name": "מירב",
+   "file_name": "מירב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "922",
+   "app_name": "רכסים",
+   "file_name": "רכסים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3756",
+   "app_name": "סוסיה",
+   "file_name": "סוסיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3560",
+   "app_name": "אלקנה",
+   "file_name": "אלקנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1098",
+   "app_name": "מרכז שפירא",
+   "file_name": "מרכז שפירא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1278",
+   "app_name": "באר מילכה",
+   "file_name": "באר מילכה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1043",
+   "app_name": "גיזו",
+   "file_name": "גיזו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3651",
+   "app_name": "מעלה מכמש",
+   "file_name": "מעלה מכמש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "797",
+   "app_name": "אחיעזר",
+   "file_name": "אחיעזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "59",
+   "app_name": "נחושה",
+   "file_name": "נחושה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3793",
+   "app_name": "אבני חפץ",
+   "file_name": "אבני חפץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3727",
+   "app_name": "עלי זהב",
+   "file_name": "עלי זהב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "665",
+   "app_name": "תקומה",
+   "file_name": "תקומה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3657",
+   "app_name": "מעון",
+   "file_name": "מעון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1127",
+   "app_name": "מעלה גלבוע",
+   "file_name": "מעלה גלבוע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "142",
+   "app_name": "שדה יעקב",
+   "file_name": "שדה יעקב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3752",
+   "app_name": "מעלה לבונה",
+   "file_name": "מעלה לבונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "307",
+   "app_name": "הזורעים",
+   "file_name": "הזורעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "723",
+   "app_name": "בית הגדי",
+   "file_name": "בית הגדי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3599",
+   "app_name": "מחולה",
+   "file_name": "מחולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "217",
+   "app_name": "כפר הרא\"ה",
+   "file_name": "כפר הראה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "745",
+   "app_name": "גמזו",
+   "file_name": "גמזו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "663",
+   "app_name": "טירת יהודה",
+   "file_name": "טירת יהודה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "620",
+   "app_name": "משואות יצחק",
+   "file_name": "משואות יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "670",
+   "app_name": "משמר איילון",
+   "file_name": "משמר איילון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "622",
+   "app_name": "עין צורים",
+   "file_name": "עין צורים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "449",
+   "app_name": "נחלים",
+   "file_name": "נחלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3748",
+   "app_name": "עתניאל",
+   "file_name": "עתניאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3571",
+   "app_name": "שבי שומרון",
+   "file_name": "שבי שומרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "803",
+   "app_name": "יושיביה",
+   "file_name": "יושיביה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1047",
+   "app_name": "חזון",
+   "file_name": "חזון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "692",
+   "app_name": "שפיר",
+   "file_name": "שפיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3641",
+   "app_name": "שילה",
+   "file_name": "שילה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1260",
+   "app_name": "רתמים",
+   "file_name": "רתמים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1229",
+   "app_name": "כלנית",
+   "file_name": "כלנית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "563",
+   "app_name": "משמר דוד",
+   "file_name": "משמר דוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1337",
+   "app_name": "שמשית",
+   "file_name": "שמשית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3557",
+   "app_name": "קדומים",
+   "file_name": "קדומים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "742",
+   "app_name": "מסילת ציון",
+   "file_name": "מסילת ציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "711",
+   "app_name": "עזריה",
+   "file_name": "עזריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1344",
+   "app_name": "גבעות בר",
+   "file_name": "גבעות בר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "189",
+   "app_name": "כפר פינס",
+   "file_name": "כפר פינס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1309",
+   "app_name": "אלעד",
+   "file_name": "אלעד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4005",
+   "app_name": "חספין",
+   "file_name": "חספין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "814",
+   "app_name": "תלמים",
+   "file_name": "תלמים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "848",
+   "app_name": "בית רבן",
+   "file_name": "בית רבן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3488",
+   "app_name": "כפר עציון",
+   "file_name": "כפר עציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2044",
+   "app_name": "מלילות",
+   "file_name": "מלילות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "431",
+   "app_name": "דלתון",
+   "file_name": "דלתון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1376",
+   "app_name": "באר גנים",
+   "file_name": "באר גנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2014",
+   "app_name": "גבעולים",
+   "file_name": "גבעולים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1095",
+   "app_name": "כפר מימון",
+   "file_name": "כפר מימון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "799",
+   "app_name": "זכריה",
+   "file_name": "זכריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3719",
+   "app_name": "תלם",
+   "file_name": "תלם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3645",
+   "app_name": "בית הערבה",
+   "file_name": "בית הערבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "577",
+   "app_name": "יד בנימין",
+   "file_name": "יד בנימין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2038",
+   "app_name": "ברקת",
+   "file_name": "ברקת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1077",
+   "app_name": "גבעת שפירא",
+   "file_name": "גבעת שפירא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "873",
+   "app_name": "שלווה",
+   "file_name": "שלווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1069",
+   "app_name": "רם-און",
+   "file_name": "רםאון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1340",
+   "app_name": "מרחב עם",
+   "file_name": "מרחב עם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3796",
+   "app_name": "כפר האורנים",
+   "file_name": "כפר האורנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3712",
+   "app_name": "ענב",
+   "file_name": "ענב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3779",
+   "app_name": "כוכב יעקב",
+   "file_name": "כוכב יעקב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "778",
+   "app_name": "תרום",
+   "file_name": "תרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1228",
+   "app_name": "רקפת",
+   "file_name": "רקפת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1336",
+   "app_name": "אירוס",
+   "file_name": "אירוס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3765",
+   "app_name": "עלי",
+   "file_name": "עלי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3762",
+   "app_name": "איתמר",
+   "file_name": "איתמר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "801",
+   "app_name": "חמ\"ד",
+   "file_name": "חמד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "219",
+   "app_name": "חיבת ציון",
+   "file_name": "חיבת ציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "351",
+   "app_name": "ניצן",
+   "file_name": "ניצן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "760",
+   "app_name": "בן זכאי",
+   "file_name": "בן זכאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3618",
+   "app_name": "אלעזר",
+   "file_name": "אלעזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "24",
+   "app_name": "לכיש",
+   "file_name": "לכיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "140",
+   "app_name": "כפר יהושע",
+   "file_name": "כפר יהושע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "837",
+   "app_name": "עזריאל",
+   "file_name": "עזריאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3749",
+   "app_name": "יצהר",
+   "file_name": "יצהר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "743",
+   "app_name": "כפר שמואל",
+   "file_name": "כפר שמואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "788",
+   "app_name": "זיתן",
+   "file_name": "זיתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "164",
+   "app_name": "מלאה",
+   "file_name": "מלאה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1103",
+   "app_name": "גני הדר",
+   "file_name": "גני הדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1190",
+   "app_name": "מצפה נטופה",
+   "file_name": "מצפה נטופה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1221",
+   "app_name": "צורית",
+   "file_name": "צורית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1115",
+   "app_name": "אביבים",
+   "file_name": "אביבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "155",
+   "app_name": "באר טוביה",
+   "file_name": "באר טוביה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2045",
+   "app_name": "נחלה",
+   "file_name": "נחלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3576",
+   "app_name": "מצפה יריחו",
+   "file_name": "מצפה יריחו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3617",
+   "app_name": "עפרה",
+   "file_name": "עופרה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "833",
+   "app_name": "נורית",
+   "file_name": "נורית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3604",
+   "app_name": "אלון שבות",
+   "file_name": "אלון שבות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "688",
+   "app_name": "עלמה",
+   "file_name": "עלמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "776",
+   "app_name": "מחסיה",
+   "file_name": "מחסיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3573",
+   "app_name": "נווה צוף",
+   "file_name": "נוה צוף",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "4011",
+   "app_name": "אבני איתן",
+   "file_name": "אבני איתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "419",
+   "app_name": "סעד",
+   "file_name": "סעד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "162",
+   "app_name": "חירות",
+   "file_name": "חירות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1283",
+   "app_name": "תל תאומים",
+   "file_name": "תל תאומים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "32",
+   "app_name": "עוצם",
+   "file_name": "עוצם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "268",
+   "app_name": "טירת צבי",
+   "file_name": "טירת צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "339",
+   "app_name": "רמת צבי",
+   "file_name": "רמת צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "425",
+   "app_name": "משמרת",
+   "file_name": "משמרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1226",
+   "app_name": "יובלים",
+   "file_name": "יובלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1070",
+   "app_name": "אביעזר",
+   "file_name": "אביעזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "864",
+   "app_name": "בקוע",
+   "file_name": "בקוע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "588",
+   "app_name": "בני ראם",
+   "file_name": "בני ראם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "762",
+   "app_name": "בטחה",
+   "file_name": "בטחה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "37",
+   "app_name": "איתן",
+   "file_name": "איתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3759",
+   "app_name": "אדורה",
+   "file_name": "אדורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "429",
+   "app_name": "אלוני אבא",
+   "file_name": "אלוני אבא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1222",
+   "app_name": "מצפה אבי\"ב",
+   "file_name": "מצפה אביב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "736",
+   "app_name": "גילת",
+   "file_name": "גילת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "71",
+   "app_name": "אשבול",
+   "file_name": "אשבול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2033",
+   "app_name": "בית חלקיה",
+   "file_name": "בית חלקיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "811",
+   "app_name": "יכיני",
+   "file_name": "יכיני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3743",
+   "app_name": "טנא",
+   "file_name": "טנא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "571",
+   "app_name": "בית גמליאל",
+   "file_name": "בית גמליאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3745",
+   "app_name": "מצדות יהודה",
+   "file_name": "מצדות יהודה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3722",
+   "app_name": "אשכולות",
+   "file_name": "אשכולות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "85",
+   "app_name": "כפר יחזקאל",
+   "file_name": "כפר יחזקאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "813",
+   "app_name": "עין יעקב",
+   "file_name": "עין יעקב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "819",
+   "app_name": "אביגדור",
+   "file_name": "אביגדור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "396",
+   "app_name": "נבטים",
+   "file_name": "נבטים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "800",
+   "app_name": "בית חנניה",
+   "file_name": "בית חנניה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3715",
+   "app_name": "עלמון",
+   "file_name": "עלמון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3567",
+   "app_name": "סלעית",
+   "file_name": "סלעית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "804",
+   "app_name": "אחיסמך",
+   "file_name": "אחיסמך",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "785",
+   "app_name": "אחיהוד",
+   "file_name": "אחיהוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2059",
+   "app_name": "פעמי תש\"ז",
+   "file_name": "פעמי תשז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1050",
+   "app_name": "בית חשמונאי",
+   "file_name": "בית חשמונאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1304",
+   "app_name": "שוהם",
+   "file_name": "שוהם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3780",
+   "app_name": "ביתר עילית",
+   "file_name": "ביתר עילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3638",
+   "app_name": "כפר אדומים",
+   "file_name": "כפר אדומים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "292",
+   "app_name": "שרונה",
+   "file_name": "שרונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2060",
+   "app_name": "ברוש",
+   "file_name": "ברוש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "205",
+   "app_name": "חגלה",
+   "file_name": "חגלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "594",
+   "app_name": "צפרייה",
+   "file_name": "צפריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "3643",
+   "app_name": "חיננית",
+   "file_name": "חיננית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1177",
+   "app_name": "טללים",
+   "file_name": "טללים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "196",
+   "app_name": "גיבתון",
+   "file_name": "גיבתון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1210",
+   "app_name": "כחל",
+   "file_name": "כחל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2030",
+   "app_name": "מנוחה",
+   "file_name": "מנוחה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "838",
+   "app_name": "פדיה",
+   "file_name": "פדיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "52",
+   "app_name": "לוזית",
+   "file_name": "לוזית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "448",
+   "app_name": "בני עטרות",
+   "file_name": "בני עטרות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1165",
+   "app_name": "שילת",
+   "file_name": "שילת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "798",
+   "app_name": "יגל",
+   "file_name": "יגל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1323",
+   "app_name": "בת הדר",
+   "file_name": "בת הדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2050",
+   "app_name": "תלמי ביל\"ו",
+   "file_name": "תלמי בילו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "731",
+   "app_name": "מישר",
+   "file_name": "מישר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2052",
+   "app_name": "אביטל",
+   "file_name": "אביטל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "888",
+   "app_name": "כפר הרי\"ף",
+   "file_name": "כפר הריף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "437",
+   "app_name": "רשפים",
+   "file_name": "רשפים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "18",
+   "app_name": "שדה משה",
+   "file_name": "שדה משה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "585",
+   "app_name": "לביא",
+   "file_name": "לביא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "809",
+   "app_name": "נחם",
+   "file_name": "נחם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "239",
+   "app_name": "גן חיים",
+   "file_name": "גן חיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1233",
+   "app_name": "שקף",
+   "file_name": "שקף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "752",
+   "app_name": "תעוז",
+   "file_name": "תעוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "367",
+   "app_name": "עין העמק",
+   "file_name": "עין העמק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1232",
+   "app_name": "יבול",
+   "file_name": "יבול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "684",
+   "app_name": "היוגב",
+   "file_name": "היוגב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1150",
+   "app_name": "צופר",
+   "file_name": "צופר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "593",
+   "app_name": "ערוגות",
+   "file_name": "ערוגות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1149",
+   "app_name": "עזר",
+   "file_name": "עזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3572",
+   "app_name": "כפר תפוח",
+   "file_name": "כפר תפוח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "133",
+   "app_name": "גבת",
+   "file_name": "גבת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "191",
+   "app_name": "הדר עם",
+   "file_name": "הדר עם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "218",
+   "app_name": "גני עם",
+   "file_name": "גני עם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "739",
+   "app_name": "שדה עוזיהו",
+   "file_name": "שדה עוזיהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4304",
+   "app_name": "נוב",
+   "file_name": "נוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "233",
+   "app_name": "כפר ידידיה",
+   "file_name": "כפר ידידיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1284",
+   "app_name": "נופית",
+   "file_name": "נופית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1242",
+   "app_name": "נתיב העשרה",
+   "file_name": "נתיב העשרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "213",
+   "app_name": "משמרות",
+   "file_name": "משמרות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "39",
+   "app_name": "גפן",
+   "file_name": "גפן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3613",
+   "app_name": "גיתית",
+   "file_name": "גיתית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3797",
+   "app_name": "מודיעין עילית",
+   "file_name": "מודיעין עילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "716",
+   "app_name": "אייל",
+   "file_name": "אייל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3619",
+   "app_name": "רועי",
+   "file_name": "רועי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "859",
+   "app_name": "כסלון",
+   "file_name": "כסלון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4008",
+   "app_name": "מעלה גמלא",
+   "file_name": "מעלה גמלא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2046",
+   "app_name": "סגולה",
+   "file_name": "סגולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "375",
+   "app_name": "מגל",
+   "file_name": "מגל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "364",
+   "app_name": "כפר אוריה",
+   "file_name": "כפר אוריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1207",
+   "app_name": "לבון",
+   "file_name": "לבון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4007",
+   "app_name": "יונתן",
+   "file_name": "יונתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1143",
+   "app_name": "נס עמים",
+   "file_name": "נס עמים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "685",
+   "app_name": "בניה",
+   "file_name": "בניה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "598",
+   "app_name": "בית קמה",
+   "file_name": "בית קמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "786",
+   "app_name": "כפר זיתים",
+   "file_name": "כפר זיתים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "207",
+   "app_name": "גבעת ח\"ן",
+   "file_name": "גבעת חן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1330",
+   "app_name": "אחוזת ברק",
+   "file_name": "אחוזת ברק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1204",
+   "app_name": "גילון",
+   "file_name": "גילון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "748",
+   "app_name": "מסלול",
+   "file_name": "מסלול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1345",
+   "app_name": "צור יצחק",
+   "file_name": "צור יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1182",
+   "app_name": "אלון הגליל",
+   "file_name": "אלון הגליל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "553",
+   "app_name": "ניר בנים",
+   "file_name": "ניר בנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1310",
+   "app_name": "לפיד",
+   "file_name": "לפיד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4014",
+   "app_name": "נטור",
+   "file_name": "נטור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "740",
+   "app_name": "אשתאול",
+   "file_name": "אשתאול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "865",
+   "app_name": "שיבולים",
+   "file_name": "שיבולים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "871",
+   "app_name": "עינת",
+   "file_name": "עינת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1138",
+   "app_name": "יעד",
+   "file_name": "יעד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "257",
+   "app_name": "נופך",
+   "file_name": "נופך",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1133",
+   "app_name": "ורדון",
+   "file_name": "ורדון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1297",
+   "app_name": "כפר חנניה",
+   "file_name": "כפר חנניה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "249",
+   "app_name": "כפר סירקין",
+   "file_name": "כפר סירקין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "761",
+   "app_name": "שובה",
+   "file_name": "שובה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3769",
+   "app_name": "הר אדר",
+   "file_name": "הר אדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1236",
+   "app_name": "נירית",
+   "file_name": "נירית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "287",
+   "app_name": "תל יצחק",
+   "file_name": "תל יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1315",
+   "app_name": "מתן",
+   "file_name": "מתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "160",
+   "app_name": "חולדה",
+   "file_name": "חולדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "187",
+   "app_name": "כפר הס",
+   "file_name": "כפר הס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3558",
+   "app_name": "תומר",
+   "file_name": "תומר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3612",
+   "app_name": "בקעות",
+   "file_name": "בקעות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1199",
+   "app_name": "עדי",
+   "file_name": "עדי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1185",
+   "app_name": "פלך",
+   "file_name": "פלך",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "435",
+   "app_name": "נצר סרני",
+   "file_name": "נצר סרני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "16",
+   "app_name": "בית ניר",
+   "file_name": "בית ניר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "604",
+   "app_name": "בית עריף",
+   "file_name": "בית עריף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "717",
+   "app_name": "חגור",
+   "file_name": "חגור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "817",
+   "app_name": "עזריקם",
+   "file_name": "עזריקם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2003",
+   "app_name": "תלמי אלעזר",
+   "file_name": "תלמי אלעזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "94",
+   "app_name": "בלפוריה",
+   "file_name": "בלפוריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1271",
+   "app_name": "להבים",
+   "file_name": "להבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "796",
+   "app_name": "צלפון",
+   "file_name": "צלפון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "97",
+   "app_name": "מרחביה (מושב)",
+   "file_name": "מרחביה מושב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1160",
+   "app_name": "שכניה",
+   "file_name": "שכניה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "276",
+   "app_name": "צור משה",
+   "file_name": "צור משה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1179",
+   "app_name": "קורנית",
+   "file_name": "קורנית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "810",
+   "app_name": "עופר",
+   "file_name": "עופר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "858",
+   "app_name": "נווה ירק",
+   "file_name": "נווה ירק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "132",
+   "app_name": "כפר ברוך",
+   "file_name": "כפר ברוך",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3791",
+   "app_name": "צופים",
+   "file_name": "צופים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "805",
+   "app_name": "ישעי",
+   "file_name": "ישעי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "248",
+   "app_name": "בית שערים",
+   "file_name": "בית שערים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "744",
+   "app_name": "תלמי יפה",
+   "file_name": "תלמי יפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "730",
+   "app_name": "אליפלט",
+   "file_name": "אליפלט",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "398",
+   "app_name": "שרשרת",
+   "file_name": "שרשרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "791",
+   "app_name": "משען",
+   "file_name": "משען",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3725",
+   "app_name": "נווה דניאל",
+   "file_name": "נווה דניאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3603",
+   "app_name": "הר גילה",
+   "file_name": "הר גילה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1268",
+   "app_name": "מיתר",
+   "file_name": "מיתר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "309",
+   "app_name": "נהורה",
+   "file_name": "נהורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "462",
+   "app_name": "טל שחר",
+   "file_name": "טל שחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1230",
+   "app_name": "לבנים",
+   "file_name": "לבנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "344",
+   "app_name": "מענית",
+   "file_name": "מענית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "618",
+   "app_name": "חדיד",
+   "file_name": "חדיד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "36",
+   "app_name": "שדה דוד",
+   "file_name": "שדה דוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "145",
+   "app_name": "גדיש",
+   "file_name": "גדיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1200",
+   "app_name": "מודיעין-מכבים-רעות*",
+   "file_name": "מודיעיןמכביםרעות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "756",
+   "app_name": "בית עזרא",
+   "file_name": "בית עזרא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1072",
+   "app_name": "גן הדרום",
+   "file_name": "גן הדרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2048",
+   "app_name": "ניר עקיבא",
+   "file_name": "ניר עקיבא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "763",
+   "app_name": "שתולים",
+   "file_name": "שתולים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3655",
+   "app_name": "ניל\"י",
+   "file_name": "נילי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "823",
+   "app_name": "בר גיורא",
+   "file_name": "בר גיורא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "919",
+   "app_name": "גבעת ישעיהו",
+   "file_name": "גבעת ישעיהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1163",
+   "app_name": "מורן",
+   "file_name": "מורן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "28",
+   "app_name": "מזכרת בתיה",
+   "file_name": "מזכרת בתיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3784",
+   "app_name": "שמעה",
+   "file_name": "שמעה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "386",
+   "app_name": "בני דרור",
+   "file_name": "בני דרור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "193",
+   "app_name": "כפר חיים",
+   "file_name": "כפר חיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1244",
+   "app_name": "תמרת",
+   "file_name": "תמרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "750",
+   "app_name": "פדויים",
+   "file_name": "פדויים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2057",
+   "app_name": "שדי תרומות",
+   "file_name": "שדי תרומות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1227",
+   "app_name": "יתד",
+   "file_name": "יתד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3781",
+   "app_name": "קדר",
+   "file_name": "קדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "23",
+   "app_name": "אמציה",
+   "file_name": "אמציה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1113",
+   "app_name": "צור הדסה",
+   "file_name": "צור הדסה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1314",
+   "app_name": "נווה זיו",
+   "file_name": "נווה זיו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1319",
+   "app_name": "בת חפר",
+   "file_name": "בת חפר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3751",
+   "app_name": "מגדלים",
+   "file_name": "מגדלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2054",
+   "app_name": "מיטב",
+   "file_name": "מיטב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "697",
+   "app_name": "בארותיים",
+   "file_name": "בארותיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4028",
+   "app_name": "כנף",
+   "file_name": "כנף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3823",
+   "app_name": "גני מודיעין",
+   "file_name": "גני מודיעין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "612",
+   "app_name": "צרופה",
+   "file_name": "צרופה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "157",
+   "app_name": "עין ורד",
+   "file_name": "עין ורד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "414",
+   "app_name": "קלחים",
+   "file_name": "קלחים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "841",
+   "app_name": "אלישמע",
+   "file_name": "אלישמע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "826",
+   "app_name": "עוזה",
+   "file_name": "עוזה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2055",
+   "app_name": "מאור",
+   "file_name": "מאור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "234",
+   "app_name": "ביצרון",
+   "file_name": "ביצרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "827",
+   "app_name": "נווה מבטח",
+   "file_name": "נווה מבטח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3730",
+   "app_name": "גבעת זאב",
+   "file_name": "גבעת זאב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "327",
+   "app_name": "שדות ים",
+   "file_name": "שדות ים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1198",
+   "app_name": "כרמים",
+   "file_name": "כרמים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "204",
+   "app_name": "אלישיב",
+   "file_name": "אלישיב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2010",
+   "app_name": "כפר בן נון",
+   "file_name": "כפר בן נון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1146",
+   "app_name": "עלומים",
+   "file_name": "עלומים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "445",
+   "app_name": "רמות מנשה",
+   "file_name": "רמות מנשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1045",
+   "app_name": "שתולה",
+   "file_name": "שתולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2061",
+   "app_name": "תדהר",
+   "file_name": "תדהר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "320",
+   "app_name": "כפר ורבורג",
+   "file_name": "כפר ורבורג",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1202",
+   "app_name": "מכמנים",
+   "file_name": "מכמנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "360",
+   "app_name": "גבעת ניל\"י",
+   "file_name": "גבעת נילי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1191",
+   "app_name": "בר יוחאי",
+   "file_name": "בר יוחאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "103",
+   "app_name": "תל עדשים",
+   "file_name": "תל עדשים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "758",
+   "app_name": "יד חנה",
+   "file_name": "יד חנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2009",
+   "app_name": "יובל",
+   "file_name": "יובל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "701",
+   "app_name": "ארבל",
+   "file_name": "ארבל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "135",
+   "app_name": "רמת דוד",
+   "file_name": "רמת דוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3770",
+   "app_name": "חשמונאים",
+   "file_name": "חשמונאים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1254",
+   "app_name": "נטף",
+   "file_name": "נטף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "732",
+   "app_name": "משמר הירדן",
+   "file_name": "משמר הירדן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "677",
+   "app_name": "הסוללים",
+   "file_name": "הסוללים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3760",
+   "app_name": "אורנית",
+   "file_name": "אורנית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "10",
+   "app_name": "תירוש",
+   "file_name": "תירוש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "839",
+   "app_name": "פתחיה",
+   "file_name": "פתחיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3640",
+   "app_name": "קרני שומרון",
+   "file_name": "קרני שומרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "174",
+   "app_name": "נטעים",
+   "file_name": "נטעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "281",
+   "app_name": "פקיעין חדשה",
+   "file_name": "פקיעין חדשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "67",
+   "app_name": "אור הנר",
+   "file_name": "אור הנר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "559",
+   "app_name": "בוסתן הגליל",
+   "file_name": "בוסתן הגליל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "595",
+   "app_name": "לוחמי הגיטאות",
+   "file_name": "לוחמי הגיטאות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "917",
+   "app_name": "עצמון שגב",
+   "file_name": "עצמון שגב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "232",
+   "app_name": "שפיים",
+   "file_name": "שפיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "154",
+   "app_name": "תל מונד",
+   "file_name": "תל מונד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "113",
+   "app_name": "אדירים",
+   "file_name": "אדירים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1181",
+   "app_name": "טל-אל",
+   "file_name": "טלאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "734",
+   "app_name": "גן יאשיה",
+   "file_name": "גן יאשיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "549",
+   "app_name": "גנות הדר",
+   "file_name": "גנות הדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3650",
+   "app_name": "אפרת",
+   "file_name": "אפרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "789",
+   "app_name": "רנן",
+   "file_name": "רנן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3787",
+   "app_name": "נעלה",
+   "file_name": "נעלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1205",
+   "app_name": "מנות",
+   "file_name": "מנות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "708",
+   "app_name": "עמקה",
+   "file_name": "עמקה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "699",
+   "app_name": "ניר ישראל",
+   "file_name": "ניר ישראל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1128",
+   "app_name": "מי עמי",
+   "file_name": "מי עמי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "192",
+   "app_name": "כפר החורש",
+   "file_name": "כפר החורש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1157",
+   "app_name": "אחווה",
+   "file_name": "אחווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "426",
+   "app_name": "עין כרמל",
+   "file_name": "עין כרמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1174",
+   "app_name": "מנוף",
+   "file_name": "מנוף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "33",
+   "app_name": "בת שלמה",
+   "file_name": "בת שלמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1155",
+   "app_name": "מגן שאול",
+   "file_name": "מגן שאול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "170",
+   "app_name": "כפר יעבץ",
+   "file_name": "כפר יעבץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "615",
+   "app_name": "קדרון",
+   "file_name": "קדרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "562",
+   "app_name": "בית אלעזרי",
+   "file_name": "בית אלעזרי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3653",
+   "app_name": "מעלה עמוס",
+   "file_name": "מעלה עמוס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "765",
+   "app_name": "משגב דב",
+   "file_name": "משגב דב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "306",
+   "app_name": "שדמות דבורה",
+   "file_name": "שדמות דבורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "229",
+   "app_name": "גני תקווה",
+   "file_name": "גני תקווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1112",
+   "app_name": "יודפת",
+   "file_name": "יודפת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2640",
+   "app_name": "ראש העין",
+   "file_name": "ראש העין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "171",
+   "app_name": "פרדסייה",
+   "file_name": "פרדסיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "794",
+   "app_name": "עגור",
+   "file_name": "עגור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "849",
+   "app_name": "דבירה",
+   "file_name": "דבירה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3767",
+   "app_name": "נחליאל",
+   "file_name": "נחליאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "700",
+   "app_name": "חצב",
+   "file_name": "חצב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1132",
+   "app_name": "שניר",
+   "file_name": "שניר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "269",
+   "app_name": "מולדת",
+   "file_name": "מולדת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "680",
+   "app_name": "אומץ",
+   "file_name": "אומץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "689",
+   "app_name": "מגדים",
+   "file_name": "מגדים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "877",
+   "app_name": "בית חירות",
+   "file_name": "בית חירות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "755",
+   "app_name": "גורן",
+   "file_name": "גורן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3639",
+   "app_name": "ורד יריחו",
+   "file_name": "ורד יריחו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "246",
+   "app_name": "נתיבות",
+   "file_name": "נתיבות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "342",
+   "app_name": "גברעם",
+   "file_name": "גברעם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "690",
+   "app_name": "כפר אחים",
+   "file_name": "כפר אחים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1201",
+   "app_name": "כמון",
+   "file_name": "כמון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3660",
+   "app_name": "עמנואל",
+   "file_name": "עמנואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "591",
+   "app_name": "עשרת",
+   "file_name": "עשרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1080",
+   "app_name": "מבועים",
+   "file_name": "מבועים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "41",
+   "app_name": "אליכין",
+   "file_name": "אליכין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "828",
+   "app_name": "ישרש",
+   "file_name": "ישרש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "687",
+   "app_name": "עין איילה",
+   "file_name": "עין איילה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "673",
+   "app_name": "כפר טרומן",
+   "file_name": "כפר טרומן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "764",
+   "app_name": "כפר מרדכי",
+   "file_name": "כפר מרדכי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2026",
+   "app_name": "ירדנה",
+   "file_name": "ירדנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "661",
+   "app_name": "שער אפרים",
+   "file_name": "שער אפרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1071",
+   "app_name": "נווה מיכאל",
+   "file_name": "נווה מיכאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "313",
+   "app_name": "אפק",
+   "file_name": "אפק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1288",
+   "app_name": "גבעת אלה",
+   "file_name": "גבעת אלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "806",
+   "app_name": "עין יהב",
+   "file_name": "עין יהב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "346",
+   "app_name": "גליל ים",
+   "file_name": "גליל ים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "177",
+   "app_name": "כפר ביל\"ו",
+   "file_name": "כפר בילו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4009",
+   "app_name": "שעל",
+   "file_name": "שעל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "681",
+   "app_name": "גבעת שמואל",
+   "file_name": "גבעת שמואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2049",
+   "app_name": "שדה צבי",
+   "file_name": "שדה צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "223",
+   "app_name": "עין עירון",
+   "file_name": "עין עירון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "715",
+   "app_name": "להבות חביבה",
+   "file_name": "להבות חביבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "664",
+   "app_name": "כרם בן זמרה",
+   "file_name": "כרם בן זמרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2011",
+   "app_name": "ינון",
+   "file_name": "ינון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2530",
+   "app_name": "באר יעקב",
+   "file_name": "באר יעקב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "127",
+   "app_name": "רמת רחל",
+   "file_name": "רמת רחל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "274",
+   "app_name": "כפר מנחם",
+   "file_name": "כפר מנחם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "294",
+   "app_name": "אילון",
+   "file_name": "אילון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "825",
+   "app_name": "נס הרים",
+   "file_name": "נס הרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3763",
+   "app_name": "גבע בנימין",
+   "file_name": "גבע בנימין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1361",
+   "app_name": "בת חן",
+   "file_name": "בת חן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1224",
+   "app_name": "כוכב יאיר",
+   "file_name": "כוכב יאיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "144",
+   "app_name": "גן שלמה",
+   "file_name": "גן שלמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1274",
+   "app_name": "גן נר",
+   "file_name": "גן נר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1123",
+   "app_name": "אדרת",
+   "file_name": "אדרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "165",
+   "app_name": "ניר יפה",
+   "file_name": "ניר יפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "766",
+   "app_name": "קוממיות",
+   "file_name": "קוממיות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "892",
+   "app_name": "עבדון",
+   "file_name": "עבדון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1223",
+   "app_name": "שדי אברהם",
+   "file_name": "שדי אברהם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1188",
+   "app_name": "אשחר",
+   "file_name": "אשחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "302",
+   "app_name": "דפנה",
+   "file_name": "דפנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "722",
+   "app_name": "מגשימים",
+   "file_name": "מגשימים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3754",
+   "app_name": "אספר",
+   "file_name": "אספר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1293",
+   "app_name": "גבעת אבני",
+   "file_name": "גבעת אבני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "880",
+   "app_name": "עין שריד",
+   "file_name": "עין שריד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2008",
+   "app_name": "שדה יצחק",
+   "file_name": "שדה יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "609",
+   "app_name": "כפר חושן",
+   "file_name": "כפר חושן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "589",
+   "app_name": "בצת",
+   "file_name": "בצת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "555",
+   "app_name": "שדמה",
+   "file_name": "שדמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "259",
+   "app_name": "שדה נחום",
+   "file_name": "שדה נחום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "850",
+   "app_name": "אחיטוב",
+   "file_name": "אחיטוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "527",
+   "app_name": "שזור",
+   "file_name": "שזור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "316",
+   "app_name": "כפר נטר",
+   "file_name": "כפר נטר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "383",
+   "app_name": "עין הנצי\"ב",
+   "file_name": "עין הנציב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "853",
+   "app_name": "גאליה",
+   "file_name": "גאליה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "206",
+   "app_name": "רמות השבים",
+   "file_name": "רמות השבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "389",
+   "app_name": "בצרה",
+   "file_name": "בצרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "757",
+   "app_name": "מצליח",
+   "file_name": "מצליח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1208",
+   "app_name": "הילה",
+   "file_name": "הילה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "64",
+   "app_name": "יד רמב\"ם",
+   "file_name": "יד רמבם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4702",
+   "app_name": "רמות",
+   "file_name": "רמות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "237",
+   "app_name": "שער העמקים",
+   "file_name": "שער העמקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "442",
+   "app_name": "גדעונה",
+   "file_name": "גדעונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "446",
+   "app_name": "אודים",
+   "file_name": "אודים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "586",
+   "app_name": "מגידו",
+   "file_name": "מגידו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1024",
+   "app_name": "חרוצים",
+   "file_name": "חרוצים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "195",
+   "app_name": "קדימה-צורן",
+   "file_name": "קדימהצורן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "44",
+   "app_name": "זוהר",
+   "file_name": "זוהר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3610",
+   "app_name": "מצפה שלם",
+   "file_name": "מצפה שלם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "916",
+   "app_name": "ישע",
+   "file_name": "ישע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "729",
+   "app_name": "משמר השבעה",
+   "file_name": "משמר השבעה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "359",
+   "app_name": "ניצנים",
+   "file_name": "ניצנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "672",
+   "app_name": "בית נקופה",
+   "file_name": "בית נקופה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "331",
+   "app_name": "ניר צבי",
+   "file_name": "ניר צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "190",
+   "app_name": "כפר ויתקין",
+   "file_name": "כפר ויתקין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2550",
+   "app_name": "גדרה",
+   "file_name": "גדרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "324",
+   "app_name": "שאר ישוב",
+   "file_name": "שאר ישוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1275",
+   "app_name": "אבטליון",
+   "file_name": "אבטליון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "863",
+   "app_name": "גינתון",
+   "file_name": "גינתון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2035",
+   "app_name": "עדנים",
+   "file_name": "עדנים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1147",
+   "app_name": "נטועה",
+   "file_name": "נטועה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2015",
+   "app_name": "שדי חמד",
+   "file_name": "שדי חמד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "737",
+   "app_name": "עולש",
+   "file_name": "עולש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "182",
+   "app_name": "אבן יהודה",
+   "file_name": "אבן יהודה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "845",
+   "app_name": "כפר עזה",
+   "file_name": "כפר עזה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "836",
+   "app_name": "גנות",
+   "file_name": "גנות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "582",
+   "app_name": "כפר הנגיד",
+   "file_name": "כפר הנגיד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "293",
+   "app_name": "שדה יואב",
+   "file_name": "שדה יואב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1257",
+   "app_name": "חנתון",
+   "file_name": "חנתון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "613",
+   "app_name": "ציפורי",
+   "file_name": "ציפורי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "422",
+   "app_name": "חרב לאת",
+   "file_name": "חרב לאת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1209",
+   "app_name": "חרשים",
+   "file_name": "חרשים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "399",
+   "app_name": "בארי",
+   "file_name": "בארי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2013",
+   "app_name": "בן שמן (מושב)",
+   "file_name": "בן שמן מושב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "619",
+   "app_name": "בית גוברין",
+   "file_name": "בית גוברין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "706",
+   "app_name": "גיאה",
+   "file_name": "גיאה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1110",
+   "app_name": "חבר",
+   "file_name": "חבר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "466",
+   "app_name": "בית דגן",
+   "file_name": "בית דגן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "793",
+   "app_name": "גבעתי",
+   "file_name": "גבעתי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "387",
+   "app_name": "כפר מונש",
+   "file_name": "כפר מונש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1291",
+   "app_name": "כמהין",
+   "file_name": "כמהין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1240",
+   "app_name": "עין הבשור",
+   "file_name": "עין הבשור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1140",
+   "app_name": "מדרשת בן גוריון",
+   "file_name": "מדרשת בן גוריון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "683",
+   "app_name": "גבע כרמל",
+   "file_name": "גבע כרמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "198",
+   "app_name": "צופית",
+   "file_name": "צופית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "433",
+   "app_name": "נחשולים",
+   "file_name": "נחשולים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2063",
+   "app_name": "דישון",
+   "file_name": "דישון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1151",
+   "app_name": "פארן",
+   "file_name": "פארן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "580",
+   "app_name": "כרם מהר\"ל",
+   "file_name": "כרם מהרל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "15",
+   "app_name": "נועם",
+   "file_name": "נועם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "759",
+   "app_name": "יציץ",
+   "file_name": "יציץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "741",
+   "app_name": "שואבה",
+   "file_name": "שואבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3615",
+   "app_name": "פצאל",
+   "file_name": "פצאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "166",
+   "app_name": "גן יבנה",
+   "file_name": "גן יבנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "303",
+   "app_name": "דן",
+   "file_name": "דן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "390",
+   "app_name": "רגבה",
+   "file_name": "רגבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "241",
+   "app_name": "יקנעם (מושבה)",
+   "file_name": "יקנעם מושבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "329",
+   "app_name": "שדה נחמיה",
+   "file_name": "שדה נחמיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "802",
+   "app_name": "גבעת כ\"ח",
+   "file_name": "גבעת כח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "122",
+   "app_name": "רמת ישי",
+   "file_name": "רמת ישי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1137",
+   "app_name": "קריית יערים",
+   "file_name": "קרית יערים",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "605",
+   "app_name": "כפר שמאי",
+   "file_name": "כפר שמאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "816",
+   "app_name": "זנוח",
+   "file_name": "זנוח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3569",
+   "app_name": "מבוא דותן",
+   "file_name": "מבוא דותן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1256",
+   "app_name": "אשרת",
+   "file_name": "אשרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "326",
+   "app_name": "בית יצחק-שער חפר",
+   "file_name": "בית יצחקשער חפר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "610",
+   "app_name": "סתרייה",
+   "file_name": "סתריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1258",
+   "app_name": "מסד",
+   "file_name": "מסד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3750",
+   "app_name": "אלפי מנשה",
+   "file_name": "אלפי מנשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4101",
+   "app_name": "מרום גולן",
+   "file_name": "מרום גולן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "301",
+   "app_name": "בית עוזיאל",
+   "file_name": "בית עוזיאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "417",
+   "app_name": "יקום",
+   "file_name": "יקום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "616",
+   "app_name": "רינתיה",
+   "file_name": "רינתיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "662",
+   "app_name": "חוסן",
+   "file_name": "חוסן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "430",
+   "app_name": "בית לחם הגלילית",
+   "file_name": "בית לחם הגלילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9800",
+   "app_name": "בנימינה-גבעת עדה*",
+   "file_name": "בנימינהגבעת עדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2043",
+   "app_name": "בחן",
+   "file_name": "בחן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7200",
+   "app_name": "נס ציונה",
+   "file_name": "נס ציונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "424",
+   "app_name": "גבים",
+   "file_name": "גבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "288",
+   "app_name": "בית יהושע",
+   "file_name": "בית יהושע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "106",
+   "app_name": "כפר גדעון",
+   "file_name": "כפר גדעון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7",
+   "app_name": "שחר",
+   "file_name": "שחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1249",
+   "app_name": "הרדוף",
+   "file_name": "הרדוף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "768",
+   "app_name": "כרמייה",
+   "file_name": "כרמיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "167",
+   "app_name": "עין החורש",
+   "file_name": "עין החורש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "373",
+   "app_name": "בית הלוי",
+   "file_name": "בית הלוי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1067",
+   "app_name": "דוב\"ב",
+   "file_name": "דובב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "861",
+   "app_name": "שדה אליעזר",
+   "file_name": "שדה אליעזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3649",
+   "app_name": "שקד",
+   "file_name": "שקד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "58",
+   "app_name": "מצפה",
+   "file_name": "מצפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9700",
+   "app_name": "הוד השרון",
+   "file_name": "הוד השרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "47",
+   "app_name": "כפר תבור",
+   "file_name": "כפר תבור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "771",
+   "app_name": "מבוא ביתר",
+   "file_name": "מבוא ביתר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1173",
+   "app_name": "לפידות",
+   "file_name": "לפידות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2023",
+   "app_name": "להב",
+   "file_name": "להב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "682",
+   "app_name": "אליקים",
+   "file_name": "אליקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "134",
+   "app_name": "יפעת",
+   "file_name": "יפעת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1044",
+   "app_name": "יעף",
+   "file_name": "יעף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "368",
+   "app_name": "בירייה",
+   "file_name": "ביריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "774",
+   "app_name": "צוריאל",
+   "file_name": "צוריאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "773",
+   "app_name": "עמיקם",
+   "file_name": "עמיקם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "870",
+   "app_name": "גבעת השלושה",
+   "file_name": "גבעת השלושה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1166",
+   "app_name": "כפר רות",
+   "file_name": "כפר רות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "775",
+   "app_name": "יד נתן",
+   "file_name": "יד נתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "792",
+   "app_name": "נתיב השיירה",
+   "file_name": "נתיב השיירה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "851",
+   "app_name": "ניצני עוז",
+   "file_name": "ניצני עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "98",
+   "app_name": "כפר מל\"ל",
+   "file_name": "כפר מלל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "573",
+   "app_name": "מבקיעים",
+   "file_name": "מבקיעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6100",
+   "app_name": "בני ברק",
+   "file_name": "בני ברק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "376",
+   "app_name": "עברון",
+   "file_name": "עברון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "718",
+   "app_name": "ירחיב",
+   "file_name": "ירחיב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1419",
+   "app_name": "ניצן ב'",
+   "file_name": "ניצן ב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "397",
+   "app_name": "חצרים",
+   "file_name": "חצרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2660",
+   "app_name": "יבנה",
+   "file_name": "יבנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2012",
+   "app_name": "אורות",
+   "file_name": "אורות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "679",
+   "app_name": "אביאל",
+   "file_name": "אביאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "72",
+   "app_name": "גן שמואל",
+   "file_name": "גן שמואל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3726",
+   "app_name": "נוקדים",
+   "file_name": "נוקדים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "220",
+   "app_name": "כפר ביאליק",
+   "file_name": "כפר ביאליק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "753",
+   "app_name": "ינוב",
+   "file_name": "ינוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "130",
+   "app_name": "משמר העמק",
+   "file_name": "משמר העמק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "112",
+   "app_name": "כפר חסידים א'",
+   "file_name": "כפר חסידים א",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "570",
+   "app_name": "מעונה",
+   "file_name": "מעונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "712",
+   "app_name": "בן עמי",
+   "file_name": "בן עמי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3601",
+   "app_name": "קליה",
+   "file_name": "קליה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "727",
+   "app_name": "תלמי יחיאל",
+   "file_name": "תלמי יחיאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "21",
+   "app_name": "באר אורה",
+   "file_name": "באר אורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "322",
+   "app_name": "בית הלל",
+   "file_name": "בית הלל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1114",
+   "app_name": "שריגים (לי-און)",
+   "file_name": "שריגים ליאון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "693",
+   "app_name": "נתיב הל\"ה",
+   "file_name": "נתיב הלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "13",
+   "app_name": "חצבה",
+   "file_name": "חצבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1264",
+   "app_name": "כרמי יוסף",
+   "file_name": "כרמי יוסף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "202",
+   "app_name": "בית עובד",
+   "file_name": "בית עובד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "377",
+   "app_name": "המעפיל",
+   "file_name": "המעפיל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4021",
+   "app_name": "גבעת יואב",
+   "file_name": "גבעת יואב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "141",
+   "app_name": "ברק",
+   "file_name": "ברק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "738",
+   "app_name": "דור",
+   "file_name": "דור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "184",
+   "app_name": "רמת הכובש",
+   "file_name": "רמת הכובש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "27",
+   "app_name": "שדות מיכה",
+   "file_name": "שדות מיכה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "447",
+   "app_name": "נורדייה",
+   "file_name": "נורדיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "698",
+   "app_name": "בורגתה",
+   "file_name": "בורגתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1213",
+   "app_name": "צבעון",
+   "file_name": "צבעון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1294",
+   "app_name": "אור הגנוז",
+   "file_name": "אור הגנוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1285",
+   "app_name": "כרכום",
+   "file_name": "כרכום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3568",
+   "app_name": "ריחן",
+   "file_name": "ריחן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "674",
+   "app_name": "לימן",
+   "file_name": "לימן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "606",
+   "app_name": "מזור",
+   "file_name": "מזור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "842",
+   "app_name": "געש",
+   "file_name": "געש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9300",
+   "app_name": "זכרון יעקב",
+   "file_name": "זכרון יעקב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "772",
+   "app_name": "אמונים",
+   "file_name": "אמונים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1235",
+   "app_name": "שורשים",
+   "file_name": "שורשים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "418",
+   "app_name": "בני ציון",
+   "file_name": "בני ציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "225",
+   "app_name": "גן השומרון",
+   "file_name": "גן השומרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "265",
+   "app_name": "בית יוסף",
+   "file_name": "בית יוסף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "784",
+   "app_name": "בית נחמיה",
+   "file_name": "בית נחמיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3790",
+   "app_name": "נופים",
+   "file_name": "נופים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "168",
+   "app_name": "כפר יונה",
+   "file_name": "כפר יונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "199",
+   "app_name": "אשדות יעקב (איחוד)",
+   "file_name": "אשדות יעקב איחוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "284",
+   "app_name": "שדה ורבורג",
+   "file_name": "שדה ורבורג",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "369",
+   "app_name": "גלעד (אבן יצחק)",
+   "file_name": "גלעד אבן יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2064",
+   "app_name": "זרועה",
+   "file_name": "זרועה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "854",
+   "app_name": "רחוב",
+   "file_name": "רחוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3565",
+   "app_name": "רימונים",
+   "file_name": "רימונים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1171",
+   "app_name": "לוטם",
+   "file_name": "לוטם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "787",
+   "app_name": "גבעת יערים",
+   "file_name": "גבעת יערים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3616",
+   "app_name": "מעלה אדומים",
+   "file_name": "מעלה אדומים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "769",
+   "app_name": "ניר עציון",
+   "file_name": "ניר עציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4010",
+   "app_name": "אודם",
+   "file_name": "אודם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3611",
+   "app_name": "קריית ארבע",
+   "file_name": "קרית ארבע",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "707",
+   "app_name": "כפר דניאל",
+   "file_name": "כפר דניאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "564",
+   "app_name": "רבדים",
+   "file_name": "רבדים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "434",
+   "app_name": "החותרים",
+   "file_name": "החותרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "289",
+   "app_name": "עין המפרץ",
+   "file_name": "עין המפרץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "767",
+   "app_name": "פורת",
+   "file_name": "פורת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "379",
+   "app_name": "גאולים",
+   "file_name": "גאולים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3605",
+   "app_name": "משואה",
+   "file_name": "משואה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "80",
+   "app_name": "נהלל",
+   "file_name": "נהלל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2053",
+   "app_name": "פרזון",
+   "file_name": "פרזון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3652",
+   "app_name": "בית אריה-עופרים",
+   "file_name": "בית אריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "783",
+   "app_name": "אבן ספיר",
+   "file_name": "אבן ספיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "824",
+   "app_name": "כוכב מיכאל",
+   "file_name": "כוכב מיכאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "285",
+   "app_name": "אלונים",
+   "file_name": "אלונים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "862",
+   "app_name": "גני יוחנן",
+   "file_name": "גני יוחנן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "872",
+   "app_name": "גאולי תימן",
+   "file_name": "גאולי תימן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "334",
+   "app_name": "קבוצת יבנה",
+   "file_name": "קבוצת יבנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "666",
+   "app_name": "עומר",
+   "file_name": "עומר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2062",
+   "app_name": "תאשור",
+   "file_name": "תאשור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "710",
+   "app_name": "בית זית",
+   "file_name": "בית זית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "159",
+   "app_name": "בית חנן",
+   "file_name": "בית חנן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2002",
+   "app_name": "תנובות",
+   "file_name": "תנובות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "713",
+   "app_name": "רעים",
+   "file_name": "רעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1015",
+   "app_name": "מבשרת ציון",
+   "file_name": "מבשרת ציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "416",
+   "app_name": "מעיין ברוך",
+   "file_name": "מעין ברוך",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1211",
+   "app_name": "קדרים",
+   "file_name": "קדרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "230",
+   "app_name": "מעש",
+   "file_name": "מעש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "253",
+   "app_name": "חולתה",
+   "file_name": "חולתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3563",
+   "app_name": "תקוע",
+   "file_name": "תקוע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1125",
+   "app_name": "אלמגור",
+   "file_name": "אלמגור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9400",
+   "app_name": "יהוד",
+   "file_name": "יהודמונוסון",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "820",
+   "app_name": "חלץ",
+   "file_name": "חלץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2620",
+   "app_name": "קריית אונו",
+   "file_name": "קרית אונו",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "456",
+   "app_name": "שורש",
+   "file_name": "שורש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "576",
+   "app_name": "כברי",
+   "file_name": "כברי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "29",
+   "app_name": "יסוד המעלה",
+   "file_name": "יסוד המעלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "311",
+   "app_name": "גן שורק",
+   "file_name": "גן שורק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2034",
+   "app_name": "חצור הגלילית",
+   "file_name": "חצור הגלילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "63",
+   "app_name": "כנרת (מושבה)",
+   "file_name": "כנרת מושבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "780",
+   "app_name": "אורה",
+   "file_name": "אורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "183",
+   "app_name": "ירקונה",
+   "file_name": "ירקונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "857",
+   "app_name": "כפר אביב",
+   "file_name": "כפר אביב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "808",
+   "app_name": "ניר אליהו",
+   "file_name": "ניר אליהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1081",
+   "app_name": "אבן מנחם",
+   "file_name": "אבן מנחם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1130",
+   "app_name": "כפר רוזנואלד (זרעית)",
+   "file_name": "כפר רוזנואלד זרעית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3598",
+   "app_name": "ארגמן",
+   "file_name": "ארגמן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "394",
+   "app_name": "שובל",
+   "file_name": "שובל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2029",
+   "app_name": "מדרך עוז",
+   "file_name": "מדרך עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "147",
+   "app_name": "גבעת ברנר",
+   "file_name": "גבעת ברנר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "247",
+   "app_name": "רשפון",
+   "file_name": "רשפון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4003",
+   "app_name": "אל -רום",
+   "file_name": "אלרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9200",
+   "app_name": "בית שאן",
+   "file_name": "בית שאן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "668",
+   "app_name": "מפלסים",
+   "file_name": "מפלסים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4025",
+   "app_name": "קדמת צבי",
+   "file_name": "קדמת צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1046",
+   "app_name": "אוהד",
+   "file_name": "אוהד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1180",
+   "app_name": "צביה",
+   "file_name": "צביה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2018",
+   "app_name": "גבעת חיים (איחוד)",
+   "file_name": "גבעת חיים איחוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "846",
+   "app_name": "שפר",
+   "file_name": "שפר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "366",
+   "app_name": "שמיר",
+   "file_name": "שמיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "53",
+   "app_name": "עתלית",
+   "file_name": "עתלית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1253",
+   "app_name": "אמנון",
+   "file_name": "אמנון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "607",
+   "app_name": "מירון",
+   "file_name": "מירון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "356",
+   "app_name": "הגושרים",
+   "file_name": "הגושרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "439",
+   "app_name": "שלוחות",
+   "file_name": "שלוחות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "602",
+   "app_name": "נירים",
+   "file_name": "נירים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1104",
+   "app_name": "פורייה - כפר עבודה",
+   "file_name": "פוריה כפר עבודה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "208",
+   "app_name": "מוצא עילית",
+   "file_name": "מוצא עילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4019",
+   "app_name": "מיצר",
+   "file_name": "מיצר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "432",
+   "app_name": "שמרת",
+   "file_name": "שמרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "460",
+   "app_name": "רמת רזיאל",
+   "file_name": "רמת רזיאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "686",
+   "app_name": "נווה ימין",
+   "file_name": "נווה ימין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1220",
+   "app_name": "אבירים",
+   "file_name": "אבירים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "256",
+   "app_name": "ניר דוד (תל עמל)",
+   "file_name": "ניר דוד תל עמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "457",
+   "app_name": "גזית",
+   "file_name": "גזית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "79",
+   "app_name": "דגניה ב'",
+   "file_name": "דגניה ב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "319",
+   "app_name": "עמיר",
+   "file_name": "עמיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "777",
+   "app_name": "נחשון",
+   "file_name": "נחשון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "714",
+   "app_name": "ארז",
+   "file_name": "ארז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3782",
+   "app_name": "רותם",
+   "file_name": "רותם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "821",
+   "app_name": "אחוזם",
+   "file_name": "אחוזם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "255",
+   "app_name": "כפר חיטים",
+   "file_name": "כפר חיטים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4002",
+   "app_name": "אלי-עד",
+   "file_name": "אליעד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "264",
+   "app_name": "שער הגולן",
+   "file_name": "שער הגולן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "318",
+   "app_name": "עמיעוז",
+   "file_name": "עמיעוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "325",
+   "app_name": "מצובה",
+   "file_name": "מצובה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "407",
+   "app_name": "דברת",
+   "file_name": "דברת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "77",
+   "app_name": "איילת השחר",
+   "file_name": "איילת השחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "779",
+   "app_name": "עמינדב",
+   "file_name": "עמינדב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "163",
+   "app_name": "תימורים",
+   "file_name": "תימורים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "579",
+   "app_name": "כפר ראש הנקרה",
+   "file_name": "כפר ראש הנקרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "388",
+   "app_name": "כפר קיש",
+   "file_name": "כפר קיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "278",
+   "app_name": "אושה",
+   "file_name": "אושה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "822",
+   "app_name": "מטע",
+   "file_name": "מטע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1231",
+   "app_name": "פרי גן",
+   "file_name": "פרי גן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "89",
+   "app_name": "עין חרוד (איחוד)",
+   "file_name": "עין חרוד איחוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "69",
+   "app_name": "ניר עוז",
+   "file_name": "ניר עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "86",
+   "app_name": "גבע",
+   "file_name": "גבע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "22",
+   "app_name": "מקווה ישראל",
+   "file_name": "מקווה ישראל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2016",
+   "app_name": "רוויה",
+   "file_name": "רוויה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1203",
+   "app_name": "הררית",
+   "file_name": "הררית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "747",
+   "app_name": "בית שקמה",
+   "file_name": "בית שקמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1152",
+   "app_name": "אשלים",
+   "file_name": "אשלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "308",
+   "app_name": "מחניים",
+   "file_name": "מחניים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "115",
+   "app_name": "חופית",
+   "file_name": "חופית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1263",
+   "app_name": "כפר ורדים",
+   "file_name": "כפר ורדים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "469",
+   "app_name": "קריית עקרון",
+   "file_name": "קרית עקרון",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "603",
+   "app_name": "אלקוש",
+   "file_name": "אלקוש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "90",
+   "app_name": "חפצי-בה",
+   "file_name": "חפציבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "46",
+   "app_name": "יבנאל",
+   "file_name": "יבנאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "453",
+   "app_name": "יפתח",
+   "file_name": "יפתח",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "197",
+   "app_name": "מעברות",
+   "file_name": "מעברות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "128",
+   "app_name": "גת רימון",
+   "file_name": "גת רימון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1272",
+   "app_name": "חלוץ",
+   "file_name": "חלוץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "300",
+   "app_name": "דלייה",
+   "file_name": "דליה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "597",
+   "app_name": "פלמחים",
+   "file_name": "פלמחים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1105",
+   "app_name": "פורייה - נווה עובד",
+   "file_name": "פוריה נווה עובד",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "4013",
+   "app_name": "אורטל",
+   "file_name": "אורטל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "336",
+   "app_name": "דורות",
+   "file_name": "דורות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2650",
+   "app_name": "רמת השרון",
+   "file_name": "רמת השרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3654",
+   "app_name": "ברקן",
+   "file_name": "ברקן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "175",
+   "app_name": "אביחיל",
+   "file_name": "אביחיל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3644",
+   "app_name": "גבעון החדשה",
+   "file_name": "גבעון החדשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "158",
+   "app_name": "נען",
+   "file_name": "נען",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "574",
+   "app_name": "גשר הזיו",
+   "file_name": "גשר הזיו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "252",
+   "app_name": "ביתן אהרן",
+   "file_name": "ביתן אהרן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1079",
+   "app_name": "צפרירים",
+   "file_name": "צפרירים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2400",
+   "app_name": "אור יהודה",
+   "file_name": "אור יהודה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1259",
+   "app_name": "נווה שלום",
+   "file_name": "נווה שלום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1247",
+   "app_name": "חריש",
+   "file_name": "חריש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1134",
+   "app_name": "יד השמונה",
+   "file_name": "יד השמונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "413",
+   "app_name": "צאלים",
+   "file_name": "צאלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "95",
+   "app_name": "בית אלפא",
+   "file_name": "בית אלפא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "104",
+   "app_name": "מזרע",
+   "file_name": "מזרע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "735",
+   "app_name": "רמות מאיר",
+   "file_name": "רמות מאיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "26",
+   "app_name": "ראש פינה",
+   "file_name": "ראש פינה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1184",
+   "app_name": "מתת",
+   "file_name": "מתת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "254",
+   "app_name": "כפר המכבי",
+   "file_name": "כפר המכבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1239",
+   "app_name": "חולית",
+   "file_name": "חולית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4012",
+   "app_name": "אניעם",
+   "file_name": "אניעם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "719",
+   "app_name": "תל קציר",
+   "file_name": "תל קציר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "290",
+   "app_name": "מעיין צבי",
+   "file_name": "מעין צבי",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "393",
+   "app_name": "גלאון",
+   "file_name": "גלאון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1136",
+   "app_name": "צוחר",
+   "file_name": "צוחר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "402",
+   "app_name": "ניר יצחק",
+   "file_name": "ניר יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "889",
+   "app_name": "כפר חסידים ב'",
+   "file_name": "כפר חסידים ב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1316",
+   "app_name": "אל -עריאן",
+   "file_name": "אלעריאן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1251",
+   "app_name": "עין תמר",
+   "file_name": "עין תמר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "82",
+   "app_name": "עין חרוד (מאוחד)",
+   "file_name": "עין חרוד מאוחד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "406",
+   "app_name": "חצור-אשדוד",
+   "file_name": "חצוראשדוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "408",
+   "app_name": "נאות מרדכי",
+   "file_name": "נאות מרדכי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "312",
+   "app_name": "נווה ים",
+   "file_name": "נווה ים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "55",
+   "app_name": "נוגה",
+   "file_name": "נוגה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "345",
+   "app_name": "כפר סאלד",
+   "file_name": "כפר סאלד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "372",
+   "app_name": "רמות נפתלי",
+   "file_name": "רמות נפתלי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "65",
+   "app_name": "מגדל",
+   "file_name": "מגדל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "454",
+   "app_name": "סער",
+   "file_name": "סער",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "282",
+   "app_name": "שבי ציון",
+   "file_name": "שבי ציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "578",
+   "app_name": "סאסא",
+   "file_name": "סאסא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "173",
+   "app_name": "גבעת חיים (מאוחד)",
+   "file_name": "גבעת חיים מאוחד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2021",
+   "app_name": "אשל הנשיא",
+   "file_name": "אשל הנשיא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "428",
+   "app_name": "ברור חיל",
+   "file_name": "ברור חיל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "575",
+   "app_name": "יסעור",
+   "file_name": "יסעור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "751",
+   "app_name": "בית מאיר",
+   "file_name": "בית מאיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "139",
+   "app_name": "עין שמר",
+   "file_name": "עין שמר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "31",
+   "app_name": "אופקים",
+   "file_name": "אופקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2047",
+   "app_name": "ניר משה",
+   "file_name": "ניר משה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7800",
+   "app_name": "פרדס חנה-כרכור",
+   "file_name": "פרדס חנהכרכור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6900",
+   "app_name": "כפר סבא",
+   "file_name": "כפר סבא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "240",
+   "app_name": "יקנעם עילית",
+   "file_name": "יקנעם עילית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "705",
+   "app_name": "נחשונים",
+   "file_name": "נחשונים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "614",
+   "app_name": "שומרה",
+   "file_name": "שומרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "286",
+   "app_name": "מעלה החמישה",
+   "file_name": "מעלה החמישה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "405",
+   "app_name": "נווה אילן",
+   "file_name": "נווה אילן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4301",
+   "app_name": "אפיק",
+   "file_name": "אפיק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3609",
+   "app_name": "חמרה",
+   "file_name": "חמרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "365",
+   "app_name": "בית קשת",
+   "file_name": "בית קשת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "297",
+   "app_name": "כפר מסריק",
+   "file_name": "כפר מסריק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "48",
+   "app_name": "מנחמיה",
+   "file_name": "מנחמיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "330",
+   "app_name": "אלומות",
+   "file_name": "אלומות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1252",
+   "app_name": "כורזים",
+   "file_name": "כורזים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "295",
+   "app_name": "כפר רופין",
+   "file_name": "כפר רופין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3648",
+   "app_name": "מתתיהו",
+   "file_name": "מתתיהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "584",
+   "app_name": "זיקים",
+   "file_name": "זיקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "695",
+   "app_name": "מגן",
+   "file_name": "מגן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "358",
+   "app_name": "יד מרדכי",
+   "file_name": "יד מרדכי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "335",
+   "app_name": "רמת השופט",
+   "file_name": "רמת השופט",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "807",
+   "app_name": "חניאל",
+   "file_name": "חניאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2300",
+   "app_name": "קריית טבעון",
+   "file_name": "קרית טבעון",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "599",
+   "app_name": "פרוד",
+   "file_name": "פרוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "380",
+   "app_name": "להבות הבשן",
+   "file_name": "להבות הבשן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1347",
+   "app_name": "קצר א-סר",
+   "file_name": "קצר אסר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "378",
+   "app_name": "משגב עם",
+   "file_name": "משגב עם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "812",
+   "app_name": "שלומי",
+   "file_name": "שלומי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "463",
+   "app_name": "געתון",
+   "file_name": "געתון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1126",
+   "app_name": "אילות",
+   "file_name": "אילות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "844",
+   "app_name": "נחל עוז",
+   "file_name": "נחל עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1034",
+   "app_name": "קריית מלאכי",
+   "file_name": "קרית מלאכי",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "310",
+   "app_name": "כפר גליקסון",
+   "file_name": "כפר גליקסון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "340",
+   "app_name": "גת (קיבוץ)",
+   "file_name": "גת קיבוץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "572",
+   "app_name": "בית העמק",
+   "file_name": "בית העמק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "831",
+   "app_name": "ירוחם",
+   "file_name": "ירוחם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4022",
+   "app_name": "גשור",
+   "file_name": "גשור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "242",
+   "app_name": "בית השיטה",
+   "file_name": "בית השיטה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "66",
+   "app_name": "מרחביה (קיבוץ)",
+   "file_name": "מרחביה קיבוץ",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "539",
+   "app_name": "רומאנה",
+   "file_name": "רומאנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1183",
+   "app_name": "כליל",
+   "file_name": "כליל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "444",
+   "app_name": "רגבים",
+   "file_name": "רגבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "126",
+   "app_name": "שריד",
+   "file_name": "שריד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "49",
+   "app_name": "אילנייה",
+   "file_name": "אילניה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1248",
+   "app_name": "אליפז",
+   "file_name": "אליפז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3713",
+   "app_name": "נעמ\"ה",
+   "file_name": "נעמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1124",
+   "app_name": "נאות הכיכר",
+   "file_name": "נאות הכיכר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "11",
+   "app_name": "ניר ח\"ן",
+   "file_name": "ניר חן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "262",
+   "app_name": "גינוסר",
+   "file_name": "גינוסר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "590",
+   "app_name": "נווה אור",
+   "file_name": "נווה אור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4503",
+   "app_name": "עין זיוון",
+   "file_name": "עין זיוון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "450",
+   "app_name": "בארות יצחק",
+   "file_name": "בארות יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1280",
+   "app_name": "ניצני סיני",
+   "file_name": "ניצני סיני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6300",
+   "app_name": "גבעתיים",
+   "file_name": "גבעתיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "667",
+   "app_name": "ברעם",
+   "file_name": "ברעם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1287",
+   "app_name": "שני",
+   "file_name": "שני",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "423",
+   "app_name": "העוגן",
+   "file_name": "העוגן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1153",
+   "app_name": "כישור",
+   "file_name": "כישור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3561",
+   "app_name": "מגדל עוז",
+   "file_name": "מגדל עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4551",
+   "app_name": "נאות גולן",
+   "file_name": "נאות גולן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1243",
+   "app_name": "קציר",
+   "file_name": "קציר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8400",
+   "app_name": "רחובות",
+   "file_name": "רחובות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "357",
+   "app_name": "כפר בלום",
+   "file_name": "כפר בלום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "648",
+   "app_name": "מצר",
+   "file_name": "מצר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "362",
+   "app_name": "רוחמה",
+   "file_name": "רוחמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "304",
+   "app_name": "שדה אליהו",
+   "file_name": "שדה אליהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2630",
+   "app_name": "קריית גת",
+   "file_name": "קרית גת",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1313",
+   "app_name": "פורייה עילית",
+   "file_name": "פוריה עילית",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "726",
+   "app_name": "הודייה",
+   "file_name": "הודיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "343",
+   "app_name": "חמדיה",
+   "file_name": "חמדיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "675",
+   "app_name": "הבונים",
+   "file_name": "הבונים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "84",
+   "app_name": "תל יוסף",
+   "file_name": "תל יוסף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "224",
+   "app_name": "שושנת העמקים",
+   "file_name": "שושנת העמקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1102",
+   "app_name": "צוקי ים",
+   "file_name": "צוקי ים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1238",
+   "app_name": "סופה",
+   "file_name": "סופה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "92",
+   "app_name": "גיניגר",
+   "file_name": "גיניגר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "178",
+   "app_name": "רמת יוחנן",
+   "file_name": "רמת יוחנן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1148",
+   "app_name": "צור נתן",
+   "file_name": "צור נתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7900",
+   "app_name": "פתח תקווה",
+   "file_name": "פתח תקווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3794",
+   "app_name": "בת עין",
+   "file_name": "בת עין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "409",
+   "app_name": "יחיעם",
+   "file_name": "יחיעם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4015",
+   "app_name": "בני יהודה",
+   "file_name": "בני יהודה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "829",
+   "app_name": "מבטחים",
+   "file_name": "מבטחים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "795",
+   "app_name": "יערה",
+   "file_name": "יערה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4004",
+   "app_name": "כפר חרוב",
+   "file_name": "כפר חרוב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2100",
+   "app_name": "טירת כרמל",
+   "file_name": "טירת כרמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "374",
+   "app_name": "חוקוק",
+   "file_name": "חוקוק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "348",
+   "app_name": "ניר עם",
+   "file_name": "ניר עם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "587",
+   "app_name": "סביון*",
+   "file_name": "סביון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1031",
+   "app_name": "שדרות",
+   "file_name": "שדרות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4024",
+   "app_name": "קלע",
+   "file_name": "קלע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1108",
+   "app_name": "אומן",
+   "file_name": "אומן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "188",
+   "app_name": "אשדות יעקב (מאוחד)",
+   "file_name": "אשדות יעקב מאוחד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1261",
+   "app_name": "הר עמשא",
+   "file_name": "הר עמשא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "382",
+   "app_name": "מכמורת",
+   "file_name": "מכמורת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8700",
+   "app_name": "רעננה",
+   "file_name": "רעננה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "273",
+   "app_name": "עין גב",
+   "file_name": "עין גב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4026",
+   "app_name": "חד-נס",
+   "file_name": "חדנס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "250",
+   "app_name": "הזורע",
+   "file_name": "הזורע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1051",
+   "app_name": "תלמי אליהו",
+   "file_name": "תלמי אליהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3607",
+   "app_name": "ייט\"ב",
+   "file_name": "ייטב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "315",
+   "app_name": "נגבה",
+   "file_name": "נגבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "565",
+   "app_name": "אזור",
+   "file_name": "אזור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1175",
+   "app_name": "עידן",
+   "file_name": "עידן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "504",
+   "app_name": "כאבול",
+   "file_name": "כאבול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1237",
+   "app_name": "תלמי יוסף",
+   "file_name": "תלמי יוסף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "843",
+   "app_name": "מרגליות",
+   "file_name": "מרגליות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3614",
+   "app_name": "מכורה",
+   "file_name": "מכורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1206",
+   "app_name": "גיתה",
+   "file_name": "גיתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4204",
+   "app_name": "מבוא חמה",
+   "file_name": "מבוא חמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "272",
+   "app_name": "מעוז חיים",
+   "file_name": "מעוז חיים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "355",
+   "app_name": "חורשים",
+   "file_name": "חורשים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "176",
+   "app_name": "אפיקים",
+   "file_name": "אפיקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1212",
+   "app_name": "עמוקה",
+   "file_name": "עמוקה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "146",
+   "app_name": "דבורה",
+   "file_name": "דבורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "490",
+   "app_name": "דייר אל-אסד",
+   "file_name": "דייר אלאסד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6800",
+   "app_name": "קריית אתא",
+   "file_name": "קרית אתא",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "143",
+   "app_name": "בית זרע",
+   "file_name": "בית זרע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2610",
+   "app_name": "בית שמש",
+   "file_name": "בית שמש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8300",
+   "app_name": "ראשון לציון",
+   "file_name": "ראשון לציון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "395",
+   "app_name": "משמר הנגב",
+   "file_name": "משמר הנגב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "492",
+   "app_name": "דייר חנא",
+   "file_name": "דייר חנא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "62",
+   "app_name": "דגניה א'",
+   "file_name": "דגניה א",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1311",
+   "app_name": "אבשלום",
+   "file_name": "אבשלום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1176",
+   "app_name": "ספיר",
+   "file_name": "ספיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "866",
+   "app_name": "יטבתה",
+   "file_name": "יטבתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "627",
+   "app_name": "ג'לג'וליה",
+   "file_name": "גלגוליה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "35",
+   "app_name": "גדות",
+   "file_name": "גדות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "74",
+   "app_name": "עין הוד",
+   "file_name": "עין הוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "567",
+   "app_name": "צרעה",
+   "file_name": "צרעה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3556",
+   "app_name": "אלמוג",
+   "file_name": "אלמוג",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "678",
+   "app_name": "מעגן",
+   "file_name": "מעגן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7500",
+   "app_name": "סח'נין",
+   "file_name": "סחנין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1156",
+   "app_name": "סמר",
+   "file_name": "סמר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "885",
+   "app_name": "שדה בוקר",
+   "file_name": "שדה בוקר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1084",
+   "app_name": "בן שמן (כפר נוער)",
+   "file_name": "בן שמן כפר נוער",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2800",
+   "app_name": "קריית שמונה",
+   "file_name": "קרית שמונה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "6400",
+   "app_name": "הרצלייה",
+   "file_name": "הרצליה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "8600",
+   "app_name": "רמת גן",
+   "file_name": "רמת גן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "57",
+   "app_name": "כנרת (קבוצה)",
+   "file_name": "כנרת קבוצה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "703",
+   "app_name": "גבעת עוז",
+   "file_name": "גבעת עוז",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "696",
+   "app_name": "כפר חב\"ד",
+   "file_name": "כפר חבד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3555",
+   "app_name": "נתיב הגדוד",
+   "file_name": "נתיב הגדוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2200",
+   "app_name": "דימונה",
+   "file_name": "דימונה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "694",
+   "app_name": "מעגן מיכאל",
+   "file_name": "מעגן מיכאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7700",
+   "app_name": "עפולה",
+   "file_name": "עפולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "96",
+   "app_name": "יגור",
+   "file_name": "יגור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1241",
+   "app_name": "דקל",
+   "file_name": "דקל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3717",
+   "app_name": "חרמש",
+   "file_name": "חרמש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "347",
+   "app_name": "מנרה",
+   "file_name": "מנרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1219",
+   "app_name": "גורנות הגליל",
+   "file_name": "גורנות הגליל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "280",
+   "app_name": "חניתה",
+   "file_name": "חניתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "43",
+   "app_name": "מטולה",
+   "file_name": "מטולה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1167",
+   "app_name": "קיסריה",
+   "file_name": "קיסריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "852",
+   "app_name": "גונן",
+   "file_name": "גונן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "200",
+   "app_name": "בית ינאי",
+   "file_name": "בית ינאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "296",
+   "app_name": "נווה איתן",
+   "file_name": "נווה איתן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8200",
+   "app_name": "קריית מוצקין",
+   "file_name": "קרית מוצקין",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "874",
+   "app_name": "מגדל העמק",
+   "file_name": "מגדל העמק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2042",
+   "app_name": "עין גדי",
+   "file_name": "עין גדי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1064",
+   "app_name": "אמירים",
+   "file_name": "אמירים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1334",
+   "app_name": "ראס אל-עין",
+   "file_name": "ראס אלעין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "421",
+   "app_name": "משאבי שדה",
+   "file_name": "משאבי שדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1066",
+   "app_name": "בני עי\"ש",
+   "file_name": "בני עיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "427",
+   "app_name": "כפר גלים",
+   "file_name": "כפר גלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "263",
+   "app_name": "מסדה",
+   "file_name": "מסדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "70",
+   "app_name": "אשדוד",
+   "file_name": "אשדוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8000",
+   "app_name": "צפת",
+   "file_name": "צפת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "436",
+   "app_name": "עין דור",
+   "file_name": "עין דור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1020",
+   "app_name": "אור עקיבא",
+   "file_name": "אור עקיבא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1262",
+   "app_name": "צוקים",
+   "file_name": "צוקים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6700",
+   "app_name": "טבריה",
+   "file_name": "טבריה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6500",
+   "app_name": "חדרה",
+   "file_name": "חדרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6600",
+   "app_name": "חולון",
+   "file_name": "חולון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "518",
+   "app_name": "מעיליא",
+   "file_name": "מעיליא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "617",
+   "app_name": "ברקאי",
+   "file_name": "ברקאי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "194",
+   "app_name": "משמר השרון",
+   "file_name": "משמר השרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "465",
+   "app_name": "צובה",
+   "file_name": "צובה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "385",
+   "app_name": "עמיעד",
+   "file_name": "עמיעד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3570",
+   "app_name": "אריאל",
+   "file_name": "אריאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1349",
+   "app_name": "דריג'את",
+   "file_name": "דריגאת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3000",
+   "app_name": "ירושלים",
+   "file_name": "ירושלים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9500",
+   "app_name": "קריית ביאליק",
+   "file_name": "קרית ביאליק",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "634",
+   "app_name": "כפר קאסם",
+   "file_name": "כפר קאסם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1085",
+   "app_name": "כרם שלום",
+   "file_name": "כרם שלום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "516",
+   "app_name": "מג'ד אל-כרום",
+   "file_name": "מגד אלכרום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9000",
+   "app_name": "באר שבע",
+   "file_name": "באר שבע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1158",
+   "app_name": "יהל",
+   "file_name": "יהל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "305",
+   "app_name": "גשר",
+   "file_name": "גשר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2500",
+   "app_name": "נשר",
+   "file_name": "נשר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8500",
+   "app_name": "רמלה",
+   "file_name": "רמלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "99",
+   "app_name": "מצפה רמון",
+   "file_name": "מצפה רמון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "76",
+   "app_name": "כפר גלעדי",
+   "file_name": "כפר גלעדי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1129",
+   "app_name": "גרופית",
+   "file_name": "גרופית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "235",
+   "app_name": "חבצלת השרון",
+   "file_name": "חבצלת השרון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "317",
+   "app_name": "בית אורן",
+   "file_name": "בית אורן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7100",
+   "app_name": "אשקלון",
+   "file_name": "אשקלון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9100",
+   "app_name": "נהרייה",
+   "file_name": "נהריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "353",
+   "app_name": "בית זיד",
+   "file_name": "בית זיד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3606",
+   "app_name": "גלגל",
+   "file_name": "גלגל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "530",
+   "app_name": "עיילבון",
+   "file_name": "עיילבון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "267",
+   "app_name": "כפר שמריהו",
+   "file_name": "כפר שמריהו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1058",
+   "app_name": "שדה ניצן",
+   "file_name": "שדה ניצן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1197",
+   "app_name": "נאות סמדר",
+   "file_name": "נאות סמדר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1172",
+   "app_name": "תובל",
+   "file_name": "תובל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "78",
+   "app_name": "קריית ענבים",
+   "file_name": "קרית ענבים",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "354",
+   "app_name": "רביבים",
+   "file_name": "רביבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1063",
+   "app_name": "מעלות-תרשיחא",
+   "file_name": "מעלותתרשיחא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "452",
+   "app_name": "יזרעאל",
+   "file_name": "יזרעאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1266",
+   "app_name": "שחרות",
+   "file_name": "שחרות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "633",
+   "app_name": "כפר ברא",
+   "file_name": "כפר ברא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "510",
+   "app_name": "כפר מנדא",
+   "file_name": "כפר מנדא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "298",
+   "app_name": "מסילות",
+   "file_name": "מסילות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "538",
+   "app_name": "שעב",
+   "file_name": "שעב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "596",
+   "app_name": "מלכייה",
+   "file_name": "מלכיה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "3566",
+   "app_name": "יפית",
+   "file_name": "יפית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "517",
+   "app_name": "מזרעה",
+   "file_name": "מזרעה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "507",
+   "app_name": "כפר יאסיף",
+   "file_name": "כפר יאסיף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "483",
+   "app_name": "בענה",
+   "file_name": "בענה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "536",
+   "app_name": "פקיעין (בוקייעה)",
+   "file_name": "פקיעין בוקייעה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "5000",
+   "app_name": "תל אביב -יפו",
+   "file_name": "תל אביב יפו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7000",
+   "app_name": "לוד",
+   "file_name": "לוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8900",
+   "app_name": "טמרה",
+   "file_name": "טמרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1141",
+   "app_name": "מבוא מודיעים",
+   "file_name": "מבוא מודיעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4100",
+   "app_name": "קצרין",
+   "file_name": "קצרין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "623",
+   "app_name": "יראון",
+   "file_name": "יראון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1255",
+   "app_name": "לוטן",
+   "file_name": "לוטן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1367",
+   "app_name": "כחלה",
+   "file_name": "כחלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "654",
+   "app_name": "כפר קרע",
+   "file_name": "כפר קרע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "505",
+   "app_name": "כאוכב אבו אל-היג'א",
+   "file_name": "כאוכב אבו אלהיגא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "676",
+   "app_name": "עין השלושה",
+   "file_name": "עין השלושה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "352",
+   "app_name": "גבולות",
+   "file_name": "גבולות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7600",
+   "app_name": "עכו",
+   "file_name": "עכו",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2720",
+   "app_name": "טירה",
+   "file_name": "טירה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1139",
+   "app_name": "כרמיאל",
+   "file_name": "כרמיאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "212",
+   "app_name": "בית צבי",
+   "file_name": "בית צבי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "3608",
+   "app_name": "מעלה אפרים",
+   "file_name": "מעלה אפרים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2560",
+   "app_name": "ערד",
+   "file_name": "ערד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "270",
+   "app_name": "עין השופט",
+   "file_name": "עין השופט",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "998",
+   "app_name": "ביר אל-מכסור",
+   "file_name": "ביר אלמכסור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7400",
+   "app_name": "נתניה",
+   "file_name": "נתניה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1161",
+   "app_name": "רהט",
+   "file_name": "רהט",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1324",
+   "app_name": "ארסוף",
+   "file_name": "ארסוף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1052",
+   "app_name": "קטורה",
+   "file_name": "קטורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "443",
+   "app_name": "כפר הנשיא",
+   "file_name": "כפר הנשיא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4303",
+   "app_name": "נווה אטי\"ב",
+   "file_name": "נווה אטיב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4000",
+   "app_name": "חיפה",
+   "file_name": "חיפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "464",
+   "app_name": "הראל",
+   "file_name": "הראל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "702",
+   "app_name": "האון",
+   "file_name": "האון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "529",
+   "app_name": "אעבלין",
+   "file_name": "אעבלין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1335",
+   "app_name": "ערב אל נעים",
+   "file_name": "ערב אל נעים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "403",
+   "app_name": "אורים",
+   "file_name": "אורים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "840",
+   "app_name": "כיסופים",
+   "file_name": "כיסופים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "522",
+   "app_name": "נחף",
+   "file_name": "נחף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "9600",
+   "app_name": "קריית ים",
+   "file_name": "קרית ים",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "531",
+   "app_name": "עראבה",
+   "file_name": "עראבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "521",
+   "app_name": "עין נקובא",
+   "file_name": "עין נקובא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2730",
+   "app_name": "טייבה",
+   "file_name": "טייבה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "480",
+   "app_name": "בית ג'ן",
+   "file_name": "בית גן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1068",
+   "app_name": "אדמית",
+   "file_name": "אדמית",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "482",
+   "app_name": "בועיינה-נוג'ידאת",
+   "file_name": "בועיינהנוגידאת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2024",
+   "app_name": "אום אל-קוטוף",
+   "file_name": "אום אלקוטוף",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "496",
+   "app_name": "חורפיש",
+   "file_name": "חורפיש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1375",
+   "app_name": "אבו תלול",
+   "file_name": "אבו תלול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "489",
+   "app_name": "דבורייה",
+   "file_name": "דבוריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1348",
+   "app_name": "ביר הדאג'",
+   "file_name": "ביר הדאג",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "978",
+   "app_name": "כעביה-טבאש-חג'אג'רה",
+   "file_name": "כעביהטבאשחגאגרה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "485",
+   "app_name": "ג'ולס",
+   "file_name": "גולס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "525",
+   "app_name": "סאג'ור",
+   "file_name": "סאגור",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "494",
+   "app_name": "דאלית אל-כרמל",
+   "file_name": "דאלית אלכרמל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1290",
+   "app_name": "זמר",
+   "file_name": "זמר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1192",
+   "app_name": "ערערה-בנגב",
+   "file_name": "ערערהבנגב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "543",
+   "app_name": "ראמה",
+   "file_name": "ראמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1338",
+   "app_name": "כדיתה",
+   "file_name": "כדיתה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1245",
+   "app_name": "סלמה",
+   "file_name": "סלמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1061",
+   "app_name": "נוף הגליל",
+   "file_name": "נוף הגליל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1059",
+   "app_name": "כסיפה",
+   "file_name": "כסיפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "370",
+   "app_name": "גזר",
+   "file_name": "גזר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "658",
+   "app_name": "שייח' דנון",
+   "file_name": "שייח דנון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "472",
+   "app_name": "אבו גוש",
+   "file_name": "אבו גוש",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1332",
+   "app_name": "חוסנייה",
+   "file_name": "חוסנייה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "473",
+   "app_name": "אבו סנאן",
+   "file_name": "אבו סנאן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "638",
+   "app_name": "קלנסווה",
+   "file_name": "קלנסווה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "526",
+   "app_name": "סולם",
+   "file_name": "סולם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "512",
+   "app_name": "כפר מצר",
+   "file_name": "כפר מצר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1292",
+   "app_name": "ג'דיידה-מכר",
+   "file_name": "גדיידהמכר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "102",
+   "app_name": "מאיר שפיה",
+   "file_name": "מאיר שפיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "502",
+   "app_name": "ירכא",
+   "file_name": "ירכא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6200",
+   "app_name": "בת ים",
+   "file_name": "בת ים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1054",
+   "app_name": "תל שבע",
+   "file_name": "תל שבע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "990",
+   "app_name": "ראס עלי",
+   "file_name": "ראס עלי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1358",
+   "app_name": "אום בטין",
+   "file_name": "אום בטין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "540",
+   "app_name": "ריחאנייה",
+   "file_name": "ריחאניה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "534",
+   "app_name": "עספיא",
+   "file_name": "עספיא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1286",
+   "app_name": "שגב-שלום",
+   "file_name": "שגבשלום",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "524",
+   "app_name": "נאעורה",
+   "file_name": "נאעורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "994",
+   "app_name": "מנשית זבדה",
+   "file_name": "מנשית זבדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1359",
+   "app_name": "אל סייד",
+   "file_name": "אל סייד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "542",
+   "app_name": "ריינה",
+   "file_name": "ריינה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1317",
+   "app_name": "דמיידה",
+   "file_name": "דמיידה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "509",
+   "app_name": "כפר כנא",
+   "file_name": "כפר כנא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "546",
+   "app_name": "עין אל-אסד",
+   "file_name": "עין אלאסד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "637",
+   "app_name": "ערערה",
+   "file_name": "ערערה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "8800",
+   "app_name": "שפרעם",
+   "file_name": "שפרעם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "514",
+   "app_name": "עין ראפה",
+   "file_name": "עין ראפה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "487",
+   "app_name": "ג'ש (גוש חלב)",
+   "file_name": "גש גוש חלב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "532",
+   "app_name": "עין מאהל",
+   "file_name": "עין מאהל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1303",
+   "app_name": "חורה",
+   "file_name": "חורה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "913",
+   "app_name": "שבלי - אום אל-גנם",
+   "file_name": "שבלי אום אלגנם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "2600",
+   "app_name": "אילת",
+   "file_name": "אילת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1320",
+   "app_name": "עין חוד",
+   "file_name": "עין חוד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "523",
+   "app_name": "ניין",
+   "file_name": "ניין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "478",
+   "app_name": "אכסאל",
+   "file_name": "אכסאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "498",
+   "app_name": "טורעאן",
+   "file_name": "טורעאן",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "499",
+   "app_name": "יפיע",
+   "file_name": "יפיע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1360",
+   "app_name": "סעוה",
+   "file_name": "סעוה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "993",
+   "app_name": "חמאם",
+   "file_name": "חמאם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1331",
+   "app_name": "כמאנה",
+   "file_name": "כמאנה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1342",
+   "app_name": "אבו קורינאת (יישוב)",
+   "file_name": "אבו קרינאת יישוב",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1057",
+   "app_name": "נווה זוהר",
+   "file_name": "נווה זוהר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "528",
+   "app_name": "עוזייר",
+   "file_name": "עוזייר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "7300",
+   "app_name": "נצרת",
+   "file_name": "נצרת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "520",
+   "app_name": "משהד",
+   "file_name": "משהד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1343",
+   "app_name": "מכחול",
+   "file_name": "מכחול",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "186",
+   "app_name": "נעורים",
+   "file_name": "נעורים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "6000",
+   "app_name": "באקה אל-גרביה",
+   "file_name": "באקה אלגרביה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1246",
+   "app_name": "עראמשה*",
+   "file_name": "עראמשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "535",
+   "app_name": "פסוטה",
+   "file_name": "פסוטה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "481",
+   "app_name": "מגאר",
+   "file_name": "מגאר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1321",
+   "app_name": "ח'ואלד",
+   "file_name": "חואלד",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1060",
+   "app_name": "לקיה",
+   "file_name": "לקיה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "997",
+   "app_name": "רומת הייב",
+   "file_name": "רומת הייב",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "497",
+   "app_name": "טייבה (בעמק)",
+   "file_name": "טייבה בעמק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "547",
+   "app_name": "טמרה (יזרעאל)",
+   "file_name": "טמרה יזרעאל",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1326",
+   "app_name": "בסמ\"ה",
+   "file_name": "בסמה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "975",
+   "app_name": "זרזיר",
+   "file_name": "זרזיר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "511",
+   "app_name": "עילוט",
+   "file_name": "עילוט",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "107",
+   "app_name": "כפר סילבר",
+   "file_name": "כפר סילבר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "652",
+   "app_name": "אבטין",
+   "file_name": "אבטין",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "541",
+   "app_name": "ג'סר א-זרקא",
+   "file_name": "גסר אזרקא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "962",
+   "app_name": "טובא-זנגרייה",
+   "file_name": "טובאזנגריה",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "1295",
+   "app_name": "יאנוח-ג'ת",
+   "file_name": "יאנוחגת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "944",
+   "app_name": "בסמת טבעון",
+   "file_name": "בסמת טבעון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1327",
+   "app_name": "מעלה עירון",
+   "file_name": "מעלה עירון",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "649",
+   "app_name": "מייסר",
+   "file_name": "מייסר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "635",
+   "app_name": "מוקייבלה",
+   "file_name": "מוקייבלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "628",
+   "app_name": "ג'ת",
+   "file_name": "גת",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1346",
+   "app_name": "תרבין א-צאנע (יישוב)*",
+   "file_name": "תראבין אצאנעישוב",
+   "rule": "spelling variant: eligible+voters+valid equal, unique"
+  },
+  {
+   "semel": "2710",
+   "app_name": "אום אל-פחם",
+   "file_name": "אום אלפחם",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "537",
+   "app_name": "פוריידיס",
+   "file_name": "פוריידיס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "475",
+   "app_name": "דחי",
+   "file_name": "דחי",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "338",
+   "app_name": "איבים",
+   "file_name": "איבים",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "636",
+   "app_name": "צנדלה",
+   "file_name": "צנדלה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "156",
+   "app_name": "עיינות",
+   "file_name": "עיינות",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "508",
+   "app_name": "כפר כמא",
+   "file_name": "כפר כמא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1296",
+   "app_name": "כסרא-סמיע",
+   "file_name": "כסראסמיע",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "942",
+   "app_name": "סואעד (חמרייה)*",
+   "file_name": "סואעד חמרייה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "1195",
+   "app_name": "ניצנה (קהילת חינוך)",
+   "file_name": "ניצנה קהילת חינוך",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4501",
+   "app_name": "ע'ג'ר",
+   "file_name": "עגר",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "868",
+   "app_name": "אלוני יצחק",
+   "file_name": "אלוני יצחק",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4001",
+   "app_name": "בוקעאתא",
+   "file_name": "בוקעאתא",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4201",
+   "app_name": "מג'דל שמס",
+   "file_name": "מגדל שמס",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "921",
+   "app_name": "שער מנשה",
+   "file_name": "שער מנשה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4203",
+   "app_name": "מסעדה",
+   "file_name": "מסעדה",
+   "rule": "name+eligible"
+  },
+  {
+   "semel": "4502",
+   "app_name": "עין קנייא",
+   "file_name": "עין קנייא",
+   "rule": "name+eligible"
+  }
+ ],
+ "not_on_map": [
+  {
+   "file_name": "מחנה הילה",
+   "eligible": 133,
+   "voters": 106,
+   "envelopes": 20
+  },
+  {
+   "file_name": "מחנה יפה",
+   "eligible": 217,
+   "voters": 120,
+   "envelopes": 84
+  },
+  {
+   "file_name": "מחנה מרים",
+   "eligible": 83,
+   "voters": 48,
+   "envelopes": 30
+  },
+  {
+   "file_name": "מחנה תל נוף",
+   "eligible": 158,
+   "voters": 111,
+   "envelopes": 36
+  },
+  {
+   "file_name": "מחנה יהודית",
+   "eligible": 136,
+   "voters": 97,
+   "envelopes": 29
+  },
+  {
+   "file_name": "מחנה טלי",
+   "eligible": 154,
+   "voters": 81,
+   "envelopes": 59
+  },
+  {
+   "file_name": "חברון",
+   "eligible": 338,
+   "voters": 215,
+   "envelopes": 86
+  },
+  {
+   "file_name": "מחנה יוכבד",
+   "eligible": 108,
+   "voters": 57,
+   "envelopes": 39
+  },
+  {
+   "file_name": "שער שומרון",
+   "eligible": 5566,
+   "voters": 4173,
+   "envelopes": 547
+  },
+  {
+   "file_name": "הוואשלה שבט",
+   "eligible": 1202,
+   "voters": 632,
+   "envelopes": 69
+  },
+  {
+   "file_name": "עוקבי בנו עוקבה",
+   "eligible": 353,
+   "voters": 175,
+   "envelopes": 18
+  },
+  {
+   "file_name": "מסעודין אלעזאזמה",
+   "eligible": 8444,
+   "voters": 3958,
+   "envelopes": 385
+  },
+  {
+   "file_name": "נצאצרה שבט",
+   "eligible": 345,
+   "voters": 140,
+   "envelopes": 33
+  },
+  {
+   "file_name": "גנאביב שבט",
+   "eligible": 564,
+   "voters": 230,
+   "envelopes": 46
+  },
+  {
+   "file_name": "קבועה שבט",
+   "eligible": 822,
+   "voters": 341,
+   "envelopes": 11
+  },
+  {
+   "file_name": "אבו רוקייק שבט",
+   "eligible": 5336,
+   "voters": 2105,
+   "envelopes": 159
+  },
+  {
+   "file_name": "אעצם שבט",
+   "eligible": 5320,
+   "voters": 2116,
+   "envelopes": 116
+  },
+  {
+   "file_name": "אבו קורינאת שבט",
+   "eligible": 3386,
+   "voters": 1215,
+   "envelopes": 49
+  },
+  {
+   "file_name": "הוזייל שבט",
+   "eligible": 1156,
+   "voters": 403,
+   "envelopes": 18
+  },
+  {
+   "file_name": "אטרש שבט",
+   "eligible": 1803,
+   "voters": 604,
+   "envelopes": 39
+  },
+  {
+   "file_name": "אבו רובייעה שבט",
+   "eligible": 4484,
+   "voters": 1496,
+   "envelopes": 58
+  },
+  {
+   "file_name": "סייד שבט",
+   "eligible": 970,
+   "voters": 324,
+   "envelopes": 12
+  },
+  {
+   "file_name": "קודייראת אצאנעשבט",
+   "eligible": 1512,
+   "voters": 345,
+   "envelopes": 162
+  },
+  {
+   "file_name": "עטאוונה שבט",
+   "eligible": 116,
+   "voters": 34,
+   "envelopes": 3
+  },
+  {
+   "file_name": "אבו עבדון שבט",
+   "eligible": 154,
+   "voters": 41,
+   "envelopes": 5
+  },
+  {
+   "file_name": "קוואעין שבט",
+   "eligible": 554,
+   "voters": 139,
+   "envelopes": 7
+  },
+  {
+   "file_name": "אסד שבט",
+   "eligible": 539,
+   "voters": 133,
+   "envelopes": 9
+  },
+  {
+   "file_name": "אבו גווייעד שבט",
+   "eligible": 2279,
+   "voters": 549,
+   "envelopes": 42
+  },
+  {
+   "file_name": "תראבין אצאנע שבט",
+   "eligible": 582,
+   "voters": 74,
+   "envelopes": 23
+  }
+ ]
+}
