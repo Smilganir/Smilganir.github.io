@@ -26,6 +26,34 @@
   <label><input type="radio" name="metric" value="coalition" checked> % קולות לקואליציה</label>
   <label><input type="radio" name="metric" value="party"> מפלגה מובילה</label>
   <label><input type="radio" name="metric" value="turnout"> אחוזי הצבעה</label>
+  <details id="flt">
+    <summary>סינון <span id="flt-n"></span></summary>
+    <div class="flt-body">
+      <fieldset><legend>דת ישוב</legend>
+        <label><input type="radio" name="rel" value="all" checked> כל הדתות</label>
+        <label><input type="radio" name="rel" value="jewish"> ישובים יהודיים</label>
+        <label><input type="radio" name="rel" value="non_jewish"> ישובים לא יהודיים</label>
+      </fieldset>
+      <fieldset><legend>אשכול חברתי-כלכלי</legend>
+        <div class="rng"><span>מינימום אשכול</span><b id="so-min-v">1</b><input id="so-min" type="range" min="1" max="10" step="1" value="1" aria-label="מינימום אשכול"></div>
+        <div class="rng"><span>מקסימום אשכול</span><b id="so-max-v">10</b><input id="so-max" type="range" min="1" max="10" step="1" value="10" aria-label="מקסימום אשכול"></div>
+        <label><input type="checkbox" id="so-nd"> אין מידע</label>
+      </fieldset>
+      <fieldset><legend>% קולות לקואליציה</legend>
+        <div class="rng"><span>מינימום</span><b id="co-min-v">0%</b><input id="co-min" type="range" min="0" max="100" step="1" value="0" aria-label="מינימום קואליציה"></div>
+        <div class="rng"><span>מקסימום</span><b id="co-max-v">100%</b><input id="co-max" type="range" min="0" max="100" step="1" value="100" aria-label="מקסימום קואליציה"></div>
+      </fieldset>
+      <fieldset><legend id="tu-legend">אחוזי הצבעה</legend>
+        <div class="rng"><span>מינימום</span><b id="tu-min-v">30%</b><input id="tu-min" type="range" min="30" max="100" step="1" value="30" aria-label="מינימום הצבעה"></div>
+        <div class="rng"><span>מקסימום</span><b id="tu-max-v">100%</b><input id="tu-max" type="range" min="30" max="100" step="1" value="100" aria-label="מקסימום הצבעה"></div>
+      </fieldset>
+      <fieldset><legend>מפלגה מובילה</legend>
+        <select id="lp" aria-label="מפלגה מובילה"><option value="">כל המפלגות</option></select>
+      </fieldset>
+      <p class="flt-note" id="flt-note" hidden>קואליציה ומפלגה מובילה מחושבות מקולות הקלפיות בלבד. למעטפות החיצוניות אין חלוקה למפלגות.</p>
+      <div class="flt-foot"><span id="flt-count"></span><button id="flt-clear" type="button">ניקוי</button></div>
+    </div>
+  </details>
 </section>
 
 <section id="legend" aria-label="מקרא"></section>
@@ -37,6 +65,7 @@
   <div class="drawer-head">
     <strong>אחוזי הצבעה לפני ואחרי מעטפות כפולות</strong>
     <input id="q" type="search" placeholder="חיפוש יישוב" aria-label="חיפוש יישוב">
+    <button id="drawer-x" type="button" aria-label="סגירת הטבלה">×</button>
   </div>
   <div class="tbl-wrap">
     <table>

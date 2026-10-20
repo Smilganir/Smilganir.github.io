@@ -9,6 +9,7 @@
   var fmt = function (n) { return Number(n).toLocaleString('en-US') }
   var f1 = function (n) { return (Math.round(n * 10) / 10).toFixed(1) }
 
+  var passing = {}, F = { rel: 'all', so: [1, 10], nd: false, co: [0, 100], tu: [30, 100], lp: '' }
   var DATA = null, GEO = null, mode = 'without', metric = 'coalition', sortKey = 'd', sortDir = 'desc', selected = null, query = ''
   var $ = function (s) { return document.querySelector(s) }
 
@@ -58,7 +59,7 @@
       var xs = [], ys = []; var ring = f.geometry.type === 'Polygon' ? f.geometry.coordinates[0] : f.geometry.coordinates[0][0]
       ring.forEach(function (c) { xs.push(c[0]); ys.push(c[1]) })
       var d = DATA[f.properties.s]
-      return { type: 'Feature', properties: { n: d.n, e: d.e }, geometry: { type: 'Point', coordinates: [(Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2, (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2] } }
+      return { type: 'Feature', properties: { n: d.n, e: d.e, s: f.properties.s }, geometry: { type: 'Point', coordinates: [(Math.min.apply(null, xs) + Math.max.apply(null, xs)) / 2, (Math.min.apply(null, ys) + Math.max.apply(null, ys)) / 2] } }
     }) }
     map.addSource('lab', { type: 'geojson', data: pts })
     map.addLayer({ id: 'loc-fill', type: 'fill', source: 'loc', paint: { 'fill-color': fillExpr(), 'fill-opacity': 1 } })
@@ -71,7 +72,7 @@
     map.on('click', 'loc-fill', function (e) { select(e.features[0].properties.s, false) })
     map.on('mouseenter', 'loc-fill', function () { map.getCanvas().style.cursor = 'pointer' })
     map.on('mouseleave', 'loc-fill', function () { map.getCanvas().style.cursor = '' })
-    wire(); render()
+    wire(); wireFilters(); applyFilters(); render()
   }
 
   function setMode(m) {
@@ -84,7 +85,7 @@
   }
   function render() {
     if (m_ready()) map.setPaintProperty('loc-fill', 'fill-color', fillExpr())
-    legend(); drawerVis(); if (selected) card(selected); if (mode === 'with') table()
+    legend(); drawerVis(); if (selected) card(selected); if (Object.keys(passing).length) applyFilters()
   }
   function m_ready() { return !!map.getLayer('loc-fill') }
 
@@ -131,8 +132,14 @@
     selected = s
     map.setFilter('loc-sel', ['==', ['get', 's'], s]); card(s)
     if (fly) { var f = GEO.features.filter(function (x) { return x.properties.s === s })[0]; var ring = f.geometry.type === 'Polygon' ? f.geometry.coordinates[0] : f.geometry.coordinates[0][0]
-      var b = new maplibregl.LngLatBounds(ring[0], ring[0]); ring.forEach(function (c) { b.extend(c) }); map.fitBounds(b, { padding: 80, maxZoom: 11, duration: 600 }) }
-    document.querySelectorAll('#drawer tbody tr').forEach(function (r) { r.classList.toggle('sel', r.dataset.s === s) })
+      var b = new maplibregl.LngLatBounds(ring[0], ring[0]); ring.forEach(function (c) { b.extend(c) })
+      var mob = window.matchMedia('(max-width:700px)').matches, open = mode === 'with' && !$('#drawer').hidden
+      map.fitBounds(b, { padding: mob && open ? { top: 120, left: 40, right: 40, bottom: Math.round(window.innerHeight * 0.62) + 20 } : 80, maxZoom: 11, duration: 600 }) }
+    if (mode === 'with') {
+      if (!fly && query && DATA[s].n.indexOf(query.trim()) < 0) { query = ''; $('#q').value = ''; table() }
+      var tr = null; document.querySelectorAll('#drawer tbody tr').forEach(function (r) { var on = r.dataset.s === s; r.classList.toggle('sel', on); if (on) tr = r })
+      if (tr && !$('#drawer').hidden && !fly) tr.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    }
   }
   function clearSel() { selected = null; $('#card').hidden = true; map.setFilter('loc-sel', ['==', ['get', 's'], '']); document.querySelectorAll('#drawer tbody tr.sel').forEach(function (r) { r.classList.remove('sel') }) }
 
@@ -144,20 +151,72 @@
   }
   function table() {
     var keys = Object.keys(DATA), q = query.trim()
-    var rows = keys.filter(function (k) { return !q || DATA[k].n.indexOf(q) >= 0 })
+    var rows = keys.filter(function (k) { return passing[k] && (!q || DATA[k].n.indexOf(q) >= 0) })
     rows.sort(function (a, b) {
       var kk = sortKey === 'd' ? 'dx' : sortKey, x = DATA[a][kk], y = DATA[b][kk]
       if (sortKey === 'n') return sortDir === 'asc' ? x.localeCompare(y, 'he') : y.localeCompare(x, 'he')
       return sortDir === 'asc' ? x - y : y - x
     })
     $('#drawer tbody').innerHTML = rows.map(function (k) { var d = DATA[k]
-      return '<tr data-s="' + k + '"' + (k === selected ? ' class="sel"' : '') + '><td class="name">' + d.n + '</td><td class="num">' + f1(d.p) + '%</td><td class="num">' + f1(d.q) + '%</td><td class="num">' + (d.d >= 0 ? '+' : '') + f1(d.d) + '</td><td class="num">+' + fmt(d.x) + '</td></tr>' }).join('')
+      return '<tr data-s="' + k + '"' + (k === selected ? ' class="sel"' : '') + '><td class="name">' + d.n + '</td><td class="num"><i class="dot" style="background:' + bucketColor(d.p, TURNOUT_BUCKETS) + '"></i>' + f1(d.p) + '%</td><td class="num"><i class="dot" style="background:' + bucketColor(d.q, TURNOUT_BUCKETS) + '"></i>' + f1(d.q) + '%</td><td class="num">' + (d.d >= 0 ? '+' : '') + f1(d.d) + '</td><td class="num">+' + fmt(d.x) + '</td></tr>' }).join('')
     document.querySelectorAll('#drawer th').forEach(function (th) { if (th.classList.contains('sortable')) th.dataset.dir = th.dataset.key === sortKey ? sortDir : '' })
   }
   function sortBy(k) {
     if (sortKey === k) sortDir = sortDir === 'desc' ? 'asc' : 'desc'
     else { sortKey = k; sortDir = 'desc' }
     table()
+  }
+
+  /* ---- filters: same inventory and pass rules as the main map's settlement filters ---- */
+  function turnoutOf(d) { return mode === 'with' ? d.q : d.p }
+  function isFull(r, lo, hi) { return r[0] <= lo && r[1] >= hi }
+  function passes(d) {
+    if (F.rel === 'jewish' && d.r !== 'j') return false
+    if (F.rel === 'non_jewish' && d.r !== 'n') return false
+    if (!isFull(F.so, 1, 10)) { if (d.si == null) { if (!F.nd) return false } else if (d.si < F.so[0] || d.si > F.so[1]) return false }
+    if (!isFull(F.co, 0, 100)) { var c = Math.round(d.c); if (c < F.co[0] || c > F.co[1]) return false }
+    if (!isFull(F.tu, 30, 100)) { var t = turnoutOf(d); if (t == null) return false; t = Math.round(t); if (t < F.tu[0] || t > F.tu[1]) return false }
+    if (F.lp && d.w !== F.lp) return false
+    return true
+  }
+  function filtersActive() { return F.rel !== 'all' || !isFull(F.so, 1, 10) || !isFull(F.co, 0, 100) || !isFull(F.tu, 30, 100) || !!F.lp }
+  function applyFilters() {
+    var ids = [], n = 0, tot = 0
+    Object.keys(DATA).forEach(function (k) { tot++; var ok = passes(DATA[k]); passing[k] = ok; if (ok) { ids.push(k); n++ } })
+    var act = filtersActive(), fx = act ? ['in', ['get', 's'], ['literal', ids]] : null
+    if (m_ready()) { map.setFilter('loc-fill', fx); map.setFilter('loc-line', fx); map.setFilter('labels', fx) }
+    $('#flt-count').textContent = act ? 'מוצגים ' + fmt(n) + ' מתוך ' + fmt(tot) + ' יישובים' : 'כל ' + fmt(tot) + ' היישובים מוצגים'
+    $('#flt-n').textContent = act ? '(' + fmt(n) + ')' : ''
+    $('#flt-clear').disabled = !act
+    $('#tu-legend').textContent = mode === 'with' ? 'אחוזי הצבעה (עם מעטפות כפולות)' : 'אחוזי הצבעה (ללא מעטפות כפולות)'
+    $('#flt-note').hidden = mode !== 'with'
+    if (selected && !passing[selected]) clearSel()
+    if (mode === 'with') table()
+  }
+  function wireFilters() {
+    var cnt = {}; Object.keys(DATA).forEach(function (k) { cnt[DATA[k].w] = (cnt[DATA[k].w] || 0) + 1 })
+    $('#lp').innerHTML = '<option value="">כל המפלגות</option>' + Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a] }).map(function (p) { return '<option value="' + p + '">' + p + '</option>' }).join('')
+    function pair(id, key, suffix, lo, hi) {
+      var a = $('#' + id + '-min'), b = $('#' + id + '-max')
+      function upd(which) {
+        var x = Number(a.value), y = Number(b.value)
+        if (x > y) { if (which === 'min') { y = x; b.value = y } else { x = y; a.value = x } }
+        F[key] = [x, y]; $('#' + id + '-min-v').textContent = x + suffix; $('#' + id + '-max-v').textContent = y + suffix; applyFilters()
+      }
+      a.oninput = function () { upd('min') }; b.oninput = function () { upd('max') }
+    }
+    pair('so', 'so', '', 1, 10); pair('co', 'co', '%', 0, 100); pair('tu', 'tu', '%', 30, 100)
+    document.querySelectorAll('input[name=rel]').forEach(function (i) { i.onchange = function () { F.rel = i.value; applyFilters() } })
+    $('#so-nd').onchange = function () { F.nd = this.checked; applyFilters() }
+    $('#lp').onchange = function () { F.lp = this.value; applyFilters() }
+    $('#flt-clear').onclick = function () {
+      F = { rel: 'all', so: [1, 10], nd: false, co: [0, 100], tu: [30, 100], lp: '' }
+      document.querySelector('input[name=rel][value=all]').checked = true
+      ;[['so', 1, 10, ''], ['co', 0, 100, '%'], ['tu', 30, 100, '%']].forEach(function (z) { $('#' + z[0] + '-min').value = z[1]; $('#' + z[0] + '-max').value = z[2]; $('#' + z[0] + '-min-v').textContent = z[1] + z[3]; $('#' + z[0] + '-max-v').textContent = z[2] + z[3] })
+      $('#so-nd').checked = false; $('#lp').value = ''; applyFilters()
+    }
+    var mob = function () { return window.matchMedia('(max-width:700px)').matches }
+    $('#flt').addEventListener('toggle', function () { if (this.open && mob()) { $('#drawer-toggle').setAttribute('aria-expanded', 'false'); $('#drawer').hidden = true } })
   }
   function wire() {
     document.querySelectorAll('#mode button').forEach(function (b) { b.onclick = function () { setMode(b.dataset.mode) } })
@@ -168,7 +227,8 @@
     })
     $('#q').oninput = function () { query = this.value; table() }
     $('#drawer tbody').onclick = function (e) { var tr = e.target.closest('tr'); if (tr) select(tr.dataset.s, true) }
-    $('#drawer-toggle').onclick = function () { var open = this.getAttribute('aria-expanded') !== 'false'; this.setAttribute('aria-expanded', String(!open)); $('#drawer').hidden = open }
+    $('#drawer-toggle').onclick = function () { var open = this.getAttribute('aria-expanded') !== 'false'; this.setAttribute('aria-expanded', String(!open)); $('#drawer').hidden = open; if (!open && window.matchMedia('(max-width:700px)').matches) $('#flt').open = false }
+    $('#drawer-x').onclick = function () { $('#drawer-toggle').setAttribute('aria-expanded', 'false'); $('#drawer').hidden = true; $('#drawer-toggle').focus() }
     sortKey = 'd'; sortDir = 'desc'
     if (window.matchMedia('(max-width:700px)').matches) $('#drawer-toggle').setAttribute('aria-expanded', 'false')
   }
