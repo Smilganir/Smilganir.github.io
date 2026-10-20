@@ -136,9 +136,9 @@
       var mob = window.matchMedia('(max-width:700px)').matches, open = mode === 'with' && !$('#drawer').hidden
       map.fitBounds(b, { padding: mob && open ? { top: 120, left: 40, right: 40, bottom: Math.round(window.innerHeight * 0.62) + 20 } : 80, maxZoom: 11, duration: 600 }) }
     if (mode === 'with') {
-      if (!fly && query && DATA[s].n.indexOf(query.trim()) < 0) { query = ''; $('#q').value = ''; table() }
+      if (query && DATA[s].n.indexOf(query.trim()) < 0) { query = ''; $('#q').value = ''; table() }
       var tr = null; document.querySelectorAll('#drawer tbody tr').forEach(function (r) { var on = r.dataset.s === s; r.classList.toggle('sel', on); if (on) tr = r })
-      if (tr && !$('#drawer').hidden && !fly) tr.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      if (tr && !$('#drawer').hidden) tr.scrollIntoView({ block: 'center', behavior: 'auto' })
     }
   }
   function clearSel() { selected = null; $('#card').hidden = true; map.setFilter('loc-sel', ['==', ['get', 's'], '']); document.querySelectorAll('#drawer tbody tr.sel').forEach(function (r) { r.classList.remove('sel') }) }

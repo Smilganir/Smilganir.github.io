@@ -84,3 +84,4 @@ tbody tr.sel{background:#d6e8fa;box-shadow:inset -3px 0 0 #1f4e79}
  #metrics{max-height:calc(100vh - 110px);top:92px}
  #metrics:has(#flt[open]){left:6px;max-height:58vh}
 }
+@media (max-width:700px){body:has(#flt[open]) #card{display:none}}
