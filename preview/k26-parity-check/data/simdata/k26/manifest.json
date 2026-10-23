@@ -9,6 +9,9 @@
    "ballots_unmapped_counted_settlement_national_only": 259,
    "voters_reporting": 1818197,
    "voted_reported": 277542,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 15.3,
+   "turnout_pct_of_registry_bzb": 3.8,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification | day-turnout CSV shape HYPOTHETICAL"
   },
   {
@@ -19,6 +22,9 @@
    "ballots_unmapped_counted_settlement_national_only": 570,
    "voters_reporting": 3656729,
    "voted_reported": 1005864,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 27.5,
+   "turnout_pct_of_registry_bzb": 13.7,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification | day-turnout CSV shape HYPOTHETICAL"
   },
   {
@@ -29,6 +35,9 @@
    "ballots_unmapped_counted_settlement_national_only": 834,
    "voters_reporting": 5486766,
    "voted_reported": 2183162,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 39.8,
+   "turnout_pct_of_registry_bzb": 29.8,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification | day-turnout CSV shape HYPOTHETICAL"
   },
   {
@@ -39,6 +48,9 @@
    "ballots_unmapped_counted_settlement_national_only": 1093,
    "voters_reporting": 7331981,
    "voted_reported": 3824448,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 52.2,
+   "turnout_pct_of_registry_bzb": 52.2,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification | day-turnout CSV shape HYPOTHETICAL"
   },
   {
@@ -49,6 +61,9 @@
    "ballots_unmapped_counted_settlement_national_only": 361,
    "voters_reporting": 2434007,
    "voted_reported": 1493403,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 61.4,
+   "turnout_pct_of_registry_bzb": 20.4,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification"
   },
   {
@@ -59,6 +74,9 @@
    "ballots_unmapped_counted_settlement_national_only": 736,
    "voters_reporting": 4872642,
    "voted_reported": 2990079,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 61.4,
+   "turnout_pct_of_registry_bzb": 40.8,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification"
   },
   {
@@ -69,6 +87,9 @@
    "ballots_unmapped_counted_settlement_national_only": 1093,
    "voters_reporting": 7331981,
    "voted_reported": 4506071,
+   "registry_bzb_total": 7331981,
+   "turnout_pct_of_reporting_bzb": 61.5,
+   "turnout_pct_of_registry_bzb": 61.5,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification"
   }
  ]
