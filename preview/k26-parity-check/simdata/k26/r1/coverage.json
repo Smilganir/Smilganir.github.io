@@ -1,0 +1,10 @@
+{
+ "stage": "r1",
+ "kind": "results",
+ "ballots_reporting": 4000,
+ "ballots_mapped_stat": 3639,
+ "ballots_unmapped_counted_settlement_national_only": 361,
+ "voters_reporting": 2434007,
+ "voted_reported": 1493403,
+ "note": "SIMULATED DATA - rehearsal only"
+}

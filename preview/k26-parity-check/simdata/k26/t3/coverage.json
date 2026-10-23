@@ -1,0 +1,10 @@
+{
+ "stage": "t3",
+ "kind": "turnout",
+ "ballots_reporting": 9000,
+ "ballots_mapped_stat": 8166,
+ "ballots_unmapped_counted_settlement_national_only": 834,
+ "voters_reporting": 5486766,
+ "voted_reported": 2183162,
+ "note": "SIMULATED DATA - rehearsal only | day-turnout CSV shape HYPOTHETICAL"
+}
