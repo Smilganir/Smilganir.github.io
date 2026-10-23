@@ -91,6 +91,18 @@
    "turnout_pct_of_reporting_bzb": 61.5,
    "turnout_pct_of_registry_bzb": 61.5,
    "note": "SIMULATED DATA - rehearsal only | bloc split is a synthetic fixture, not a political classification"
+  },
+  {
+   "stage": "r4_bad",
+   "kind": "results",
+   "test": true,
+   "note": "TEST FIXTURE - deliberately broken integrity (party sums != kosher); must be rejected, never painted"
+  },
+  {
+   "stage": "t3_incomplete",
+   "kind": "turnout",
+   "test": true,
+   "note": "TEST FIXTURE - deliberately incomplete (kalpis_lookup missing); must be rejected, never painted"
   }
  ]
 }
