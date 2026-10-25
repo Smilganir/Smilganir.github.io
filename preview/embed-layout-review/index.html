@@ -1,1 +1,64 @@
-<!doctype html><html lang="he" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>בדיקת חלון ההטמעה</title><style>body{margin:0;background:#edf1f5;font:14px Arial;color:#253443;text-align:center}header{padding:12px}p{margin:5px}iframe{display:block;width:min(720px,100%);height:740px;border:0;margin:0 auto;background:white}a{color:#1774b8}button{background:white;border:2px solid #4baee8;border-radius:6px;padding:6px;color:#16496b;cursor:pointer}</style><header><b>פריוויו בלבד - החי לא השתנה</b><p>חלון בגודל ההטמעה שנמדד: 720×740. כל העדכונים הקודמים נשמרו. בדיקת חלון הבית הצר: ריחוף מציג מדדים, הרחבה פותחת כרטיס סטטי עם X.</p><p><a href="/preview/embed-layout/">פתיחה ישירה לבדיקת גדלים נוספים</a></p></header><p><button onclick="document.querySelector('iframe').style.width='350px';document.querySelector('iframe').style.height='595px';document.querySelector('iframe').src='/preview/embed-layout/?utm_source=ynet&amp;searchtop=1'">חלון הבית 350×595</button> <button onclick="document.querySelector('iframe').style.width='min(720px,100%)';document.querySelector('iframe').style.height='740px';document.querySelector('iframe').src='/preview/embed-layout/?utm_source=ynet'">חלון הכתבה 720×740</button></p><iframe style="width:350px;height:595px" src="/preview/embed-layout/?utm_source=ynet&amp;searchtop=1" title="פריוויו המפה"></iframe></html>
+<!doctype html>
+<html lang="he">
+  <head>
+    <!-- Keep embeds usable when WebView DOM storage is disabled. Preferences then last only for this page. -->
+    <script>
+      (function () {
+        ['localStorage', 'sessionStorage'].forEach(function (name) {
+          try {
+            var nativeStore = window[name];
+            var testKey = '__storage_probe_' + Math.random();
+            nativeStore.setItem(testKey, testKey);
+            nativeStore.removeItem(testKey);
+            return;
+          } catch (_) { window.__NATIVE_STORAGE_UNAVAILABLE__ = true; }
+          var data = Object.create(null);
+          var memoryStore = {
+            getItem: function (key) { key = String(key); return Object.prototype.hasOwnProperty.call(data, key) ? data[key] : null; },
+            setItem: function (key, value) { data[String(key)] = String(value); },
+            removeItem: function (key) { delete data[String(key)]; },
+            clear: function () { data = Object.create(null); },
+            key: function (index) { return Object.keys(data)[Number(index) >>> 0] ?? null; },
+            get length() { return Object.keys(data).length; }
+          };
+          try { Object.defineProperty(window, name, { configurable: true, get: function () { return memoryStore; } }); } catch (_) {}
+        });
+      })();
+    </script>
+    <meta charset="UTF-8" />
+<style>html.coop-touch-seen .maplibregl-cooperative-gesture-screen{display:none!important}</style>
+<script>
+(function(){try{if(new URLSearchParams(location.search).get('utm_source')!=='ynet')return}catch(e){return}var K='__coop_touch_hint_seen',mem=false;
+function seen(){try{return sessionStorage.getItem(K)==='1'}catch(e){return mem}}
+function mark(){try{sessionStorage.setItem(K,'1')}catch(e){}mem=true}
+if(seen())document.documentElement.classList.add('coop-touch-seen');
+document.addEventListener('touchmove',function(e){
+ if(e.touches.length!==1||!e.target.closest||!e.target.closest('.maplibregl-cooperative-gestures'))return;
+ if(seen())return;
+ setTimeout(function(){mark();document.documentElement.classList.add('coop-touch-seen')},2500);
+},true);})();
+</script>
+
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/preview/embed-layout/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/preview/embed-layout/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/preview/embed-layout/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/preview/embed-layout/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <title>הבחירות לכנסת ה־25</title>
+    <link rel="canonical" href="https://smilganir.github.io/isr-socio-elections/" />
+    <script type="module" crossorigin src="/preview/embed-layout/assets/index-CKWtATTR.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
