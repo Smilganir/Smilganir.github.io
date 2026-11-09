@@ -10,7 +10,7 @@
 <style>
   :root{
     --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
-    --blue:#3b62c4; --red:#e04b4b; --grey:#9aa0a6;
+    --blue:#2171B5; --red:#CB181D; --grey:#B5B8BD;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Heebo,system-ui,sans-serif;color:var(--ink);background:#fff;padding:14px 18px 26px}
@@ -22,8 +22,9 @@
   .controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0 8px}
   .seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
   .seg button{border:0;background:#fff;color:var(--ink);font-family:inherit;font-size:13px;font-weight:500;
-              padding:5px 16px;cursor:pointer}
+              padding:5px 14px;cursor:pointer}
   .seg button.on{background:#111827;color:#fff}
+  .seglabel{font-size:12.5px;color:var(--muted)}
   .sliderbox{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
   .sliderbox input[type=range]{direction:ltr}
   .sliderbox input{accent-color:#111827;width:150px}
@@ -32,21 +33,27 @@
   .backbtn.show{display:inline-block}
   .filternote{display:none;font-size:12px;color:var(--muted)}
   .filternote.show{display:inline}
-  .legend{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12.5px;color:var(--muted);margin:0 0 8px}
+  .legend{display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-size:12.5px;color:var(--muted);margin:0 0 8px}
   .legend .it{display:flex;align-items:center;gap:6px}
   .dotk{width:10px;height:10px;border-radius:50%;display:inline-block;border:1px solid #fff;box-shadow:0 0 0 1px #d1d5db}
   .szl{display:inline-block;border-radius:50%;background:#9ca3af;opacity:.55;vertical-align:middle}
   .dashline{display:inline-block;width:26px;border-top:2px dashed #6b7280;vertical-align:middle}
   .solline{display:inline-block;width:26px;border-top:3px solid #111827;vertical-align:middle;border-radius:2px}
+  .ramp{display:inline-block;width:120px;height:10px;border-radius:3px;direction:ltr}
 
   .strip{display:flex;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
   .rail{position:sticky;left:0;order:1;z-index:5;background:#fff;flex:0 0 42px;border-right:1px solid var(--line)}
+  html[dir=ltr] .rail{order:0}
   .rail .ylab{position:absolute;right:5px;font-size:10.5px;color:var(--muted);transform:translateY(-50%);background:#fff;padding:0 2px}
   .rail .ytitle{position:absolute;top:4px;inset-inline:0;text-align:center;font-size:10.5px;color:var(--muted)}
   .panels{display:flex;flex:1}
   .panel{flex:1 0 96px;min-width:96px;border-inline-end:1px solid var(--line);display:flex;flex-direction:column}
   .panel:last-child{border-inline-end:none}
-  .panel.focus{flex-basis:100%}
+  .panel.focus{flex:1 0 44%;min-width:340px}
+  .panel.dim{flex:0 0 64px;min-width:64px}
+  .panel.dim .pstats{display:none}
+  .panel.dim .pname{font-size:10.5px}
+  .panel.dim .plet{min-width:26px;font-size:12px;padding:1px 5px}
   .phead{padding:8px 6px 6px;text-align:center;border-bottom:1px solid var(--line);cursor:pointer}
   .plet{display:inline-block;min-width:34px;padding:2px 8px;border-radius:8px;color:#fff;font-weight:700;font-size:15px}
   .pname{font-size:12px;font-weight:500;margin-top:3px;line-height:1.15;min-height:28px;display:flex;align-items:center;justify-content:center}
@@ -67,15 +74,20 @@
     body{padding:10px 8px 20px}
     h1{font-size:17px}
     .panel{flex-basis:92px;min-width:92px}
+    .panel.dim{flex-basis:56px;min-width:56px}
+    .panel.focus{min-width:280px}
   }
 </style>
 </head>
 <body>
 <header>
   <div>
-    <h1>אשכול חברתי-כלכלי מול אחוז קולות — כנסת 26, ברמת קלפי</h1>
-    <div class="sub" id="subtitle">כל נקודה היא קלפי. ממוין לפי האשכול המשוקלל, מהגבוה לנמוך. לחיצה על מפלגה ממקדת אותה.</div>
+    <h1 id="title">אשכול חברתי-כלכלי מול אחוז קולות — כנסת 26, ברמת קלפי</h1>
+    <div class="sub" id="subtitle"></div>
   </div>
+  <span class="seg" id="langseg">
+    <button data-lang="he" class="on">עב</button><button data-lang="en">EN</button>
+  </span>
   <button class="ibtn" id="ibtn" title="שיטה והסתייגויות">i</button>
 </header>
 
@@ -83,33 +95,33 @@
   <span class="seg" id="modeseg">
     <button data-mode="parties" class="on">מפלגות</button><button data-mode="blocs">גושים</button>
   </span>
+  <span class="seglabel" id="arablabel">מפלגות ערביות:</span>
+  <span class="seg" id="arabseg">
+    <button data-arab="sep" class="on">בנפרד</button><button data-arab="in">משולבות</button>
+  </span>
   <button class="backbtn" id="backbtn">◂ הצג את כולן</button>
-  <span class="sliderbox">סף כשרים בקלפי:
+  <span class="sliderbox"><span id="sliderlabel">סף כשרים בקלפי:</span>
     <input type="range" id="kosh" min="0" max="2000" step="50" value="0">
     <b id="koshv">0</b>
   </span>
-  <span class="filternote" id="filternote">הממוצעים משקפים רק את הקלפיות המוצגות</span>
+  <span class="filternote" id="filternote"></span>
 </div>
 
 <div class="legend" id="legend"></div>
 
 <div class="strip" id="strip">
-  <div class="rail" id="rail"><div class="ytitle">אשכול</div></div>
+  <div class="rail" id="rail"><div class="ytitle" id="ytitle">אשכול</div></div>
   <div class="panels" id="panels"></div>
 </div>
 
-<footer>
-  מקור: תוצאות סופיות של ועדת הבחירות המרכזית לכנסת ה-26; המדד החברתי-כלכלי של הלשכה המרכזית לסטטיסטיקה (2021). עיבוד: ניר סמילגה.
-</footer>
+<footer id="foot"></footer>
 
 <div id="tip"></div>
 
 <div id="imodal">
   <div class="card">
     <button class="x" id="iclose">סגור ✕</button>
-    <b>איך מחושב:</b> לכל מפלגה נלקח הממוצע המשוקלל של האשכול החברתי-כלכלי של אזור הקלפי (המשקל הוא מספר הקולות של המפלגה בקלפי). כל נקודה היא קלפי: ציר ה-X הוא אחוז הקולות למפלגה באותה קלפי, ציר ה-Y הוא האשכול בסולם המורחב 0–10 (דירוג רציף בתוך האשכול הרשמי של הלמ"ס), וגודל הנקודה הוא מספר הכשרים בקלפי. הקו המלא בכל פאנל הוא הממוצע המשוקלל; הקו המקווקו הוא ממוצע כל המצביעים (5.09). בתצוגת גושים אותו חישוב לפי חלוקת הגושים של המפה: גוש נתניהו, גוש איזנקוט (יתר המפלגות ללא הערביות), גוש ערביות.<br>
-    <b>חשוב:</b> האשכול מתייחס לאזור שבו נמצאת הקלפי, כלומר לאזור המגורים של המצביעים — לא למצביעים עצמם. זהו קשר אקולוגי בלבד. מתוך 12,018 קלפיות: 10,895 ממופות לאזור סטטיסטי, 1,020 קלפיות ללא מיפוי אזורי קיבלו אשכול ברמת היישוב, ו-103 קלפיות ללא כל מדד אינן מוצגות. מסך הקולות בקלפיות (5,241,352) נכנסו לממוצע 5,198,349 קולות בעלי מדד; 43,003 קולות ללא מדד אינם נספרים. כ-450 אלף קולות במעטפות כפולות ובחו"ל אינם במיפוי הקלפיות ואינם מופיעים כאן; סך הקולות הכשרים הארצי 5.69 מיליון.<br>
-    <b>מקורות:</b> תוצאות סופיות של ועדת הבחירות המרכזית (כנסת 26); המדד החברתי-כלכלי של הלמ"ס (2021), בסולם המורחב של האתר.
+    <div id="modalbody"></div>
   </div>
 </div>
 
@@ -119,28 +131,110 @@
   const D = window.STRIP_DATA, names = D.names, NAT = D.nationalAvg;
   const PLOT_H = window.innerWidth <= 640 ? 470 : 560;
   const PAD_T = 8, PAD_B = 8, YMIN = 0, YMAX = 10;
-  const COL = {net:'#3b62c4', rest:'#e04b4b', arab:'#9aa0a6'};
   const panelsEl = document.getElementById('panels');
   const rail = document.getElementById('rail');
   const tip = document.getElementById('tip');
-  const fmt = n => n.toLocaleString('he-IL');
-  const state = {mode:'parties', focus:null, minK:0};
+  const state = {mode:'parties', arab:'sep', focus:null, minK:0, lang:'he'};
+  const fmt = n => n.toLocaleString(state.lang === 'en' ? 'en-US' : 'he-IL');
 
-  // bloc dots: [share, index, kosher, winner(0net/1rest/2arab), nameIdx, kalpi, blocVotes]
-  const BLOCS = [
-    {key:'rest', name:'גוש איזנקוט', color:COL.rest, dots:[], vx:0, vi:0},
-    {key:'net',  name:'גוש נתניהו', color:COL.net,  dots:[], vx:0, vi:0},
-    {key:'arab', name:'גוש ערביות', color:COL.arab, dots:[], vx:0, vi:0},
-  ];
-  for (const b of D.ballots){
-    const [ni, kl, ko, netP, arP, idx, netV, arV, restV] = b;
-    const restP = Math.max(0, Math.round((100 - netP - arP)*10)/10);
-    const win = (netV >= restV && netV >= arV) ? 0 : (restV >= arV ? 1 : 2);
-    if (restV > 0){ BLOCS[0].dots.push([restP, idx, ko, win, ni, kl, restV]); BLOCS[0].vx += restV*idx; BLOCS[0].vi += restV; }
-    if (netV > 0){ BLOCS[1].dots.push([netP, idx, ko, win, ni, kl, netV]); BLOCS[1].vx += netV*idx; BLOCS[1].vi += netV; }
-    if (arV > 0){ BLOCS[2].dots.push([arP, idx, ko, win, ni, kl, arV]); BLOCS[2].vx += arV*idx; BLOCS[2].vi += arV; }
+  // ---- Map coalition color scale (ported from the site's metrics.ts) ----
+  function lerpColor(c0, c1, t){
+    t = Math.min(1, Math.max(0, t));
+    const p = h => [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)];
+    const [r0,g0,b0] = p(c0), [r1,g1,b1] = p(c1);
+    const hx = n => Math.round(n).toString(16).padStart(2,'0');
+    return `#${hx(r0+(r1-r0)*t)}${hx(g0+(g1-g0)*t)}${hx(b0+(b1-b0)*t)}`;
   }
-  BLOCS.forEach(b => { b.avg = Math.round(b.vx/b.vi*100)/100; b.votes = b.vi; b.dots.sort((a,c)=>c[2]-a[2]); });
+  const NEUTRAL = lerpColor(lerpColor('#FC9272','#9ECAE1',0.5), '#E8DCF0', 0.4);
+  const BUCKETS = [[0,'#CB181D'],[15,'#EF3B2C'],[30,'#FC9272'],[45,NEUTRAL],[55,'#9ECAE1'],[70,'#4292C6'],[85,'#2171B5']];
+  const ARAB_GREY = '#B5B8BD';
+  const DIM_GREY = '#ccd0d6';
+  function bucketColor(p){ let c = BUCKETS[0][1]; for (const b of BUCKETS) if (p >= b[0]) c = b[1]; return c; }
+
+  // Per-ballot color, same rule as the map: Netanyahu-bloc share mapped to the
+  // 7-stop ramp; grey when Arab parties take over 80% of the ballot's valid
+  // votes (separate mode only). Separate: share of the non-Arab vote, as the
+  // map computes it. Merged: share of all valid votes, Arab parties included
+  // in the Eisenkot side, no grey.
+  let colorMap = new Map();
+  function rebuildColors(){
+    colorMap = new Map();
+    for (const b of D.ballots){
+      const [ni, kl, ko, netP, arP, idx, netV, arV] = b;
+      let c;
+      if (state.arab === 'sep'){
+        c = (ko - arV <= 0 || arV / ko > 0.8) ? ARAB_GREY : bucketColor(100 * netV / (ko - arV));
+      } else {
+        c = bucketColor(ko ? 100 * netV / ko : 0);
+      }
+      colorMap.set(ni + '|' + kl, c);
+    }
+  }
+
+  // ---- Bloc panels, rebuilt per Arab toggle (map semantics) ----
+  function buildBlocs(){
+    const defs = state.arab === 'sep'
+      ? [{key:'rest', he:'גוש איזנקוט', en:'Eisenkot bloc', color:'#CB181D', share:b=>100-b[3]-b[4], votes:b=>b[8]},
+         {key:'net',  he:'גוש נתניהו', en:'Netanyahu bloc', color:'#2171B5', share:b=>b[3],        votes:b=>b[6]},
+         {key:'arab', he:'גוש ערביות', en:'Arab bloc',      color:ARAB_GREY,  share:b=>b[4],        votes:b=>b[7]}]
+      : [{key:'rest', he:'גוש איזנקוט', en:'Eisenkot bloc (incl. Arab parties)', color:'#CB181D', share:b=>100-b[3], votes:b=>b[8]+b[7]},
+         {key:'net',  he:'גוש נתניהו', en:'Netanyahu bloc', color:'#2171B5', share:b=>b[3],        votes:b=>b[6]}];
+    const out = defs.map(d => ({key:d.key, he:d.he, en:d.en, color:d.color, dots:[], vx:0, vi:0}));
+    for (const b of D.ballots){
+      const [ni, kl, ko, netP, arP, idx] = b;
+      defs.forEach((d, j) => {
+        const v = d.votes(b);
+        if (v <= 0) return;
+        const share = Math.max(0, Math.round(d.share(b)*10)/10);
+        out[j].dots.push([share, idx, ko, 0, ni, kl, v]);
+        out[j].vx += v*idx; out[j].vi += v;
+      });
+    }
+    out.forEach(b => { b.avg = Math.round(b.vx/b.vi*100)/100; b.votes = b.vi; b.dots.sort((a,c)=>c[2]-a[2]); });
+    return out;
+  }
+
+  // ---- Strings ----
+  const PARTY_EN = {'אמת':'The Democrats','רק':'Together','דרך':'Yashar!','די':'The Reservists','ך':'Amekh Yisrael','ל':'Yisrael Beiteinu','מחל':'Likud','ט':'Religious Zionism','ב':'Otzma Yehudit','שס':'Shas','ום':'Joint List','עם':"Ra'am",'ג':'UTJ'};
+  const STR = {
+    he: {
+      title:'אשכול חברתי-כלכלי מול אחוז קולות — כנסת 26, ברמת קלפי',
+      subParties:'כל נקודה היא קלפי. ממוין לפי האשכול המשוקלל, מהגבוה לנמוך. לחיצה על מפלגה ממקדת אותה ומשאירה את האחרות באפור.',
+      subBlocsSep:'כל נקודה היא קלפי. שלושת הגושים לפי החלוקה של המפה. לחיצה על גוש ממקדת אותו.',
+      subBlocsIn:'כל נקודה היא קלפי. המפלגות הערביות משולבות בגוש איזנקוט, כמו במפה. לחיצה על גוש ממקדת אותו.',
+      parties:'מפלגות', blocs:'גושים', arabLabel:'מפלגות ערביות:', sep:'בנפרד', merged:'משולבות',
+      back:'◂ הצג את כולן', slider:'סף כשרים בקלפי:', filter:'הממוצעים משקפים רק את הקלפיות המוצגות',
+      ytitle:'אשכול', votes:'קולות', avg:'ממוצע', ballots:'קלפיות', noidx:'קולות ללא מדד',
+      rampCap:'% קולות לגוש נתניהו בקלפי: 0 = גוש איזנקוט, 100 = גוש נתניהו',
+      arabGrey:'מעל 80% למפלגות ערביות',
+      wavg:'ממוצע משוקלל', navg:'ממוצע כל המצביעים 5.09', sizecap:'גודל = כשרים בקלפי:',
+      close:'סגור ✕', ibtn:'שיטה והסתייגויות',
+      foot:'מקור: תוצאות סופיות של ועדת הבחירות המרכזית לכנסת ה-26; המדד החברתי-כלכלי של הלשכה המרכזית לסטטיסטיקה (2021). עיבוד: ניר סמילגה.',
+      tipFor:'ל', tipVotes:'קולות', tipIndex:'אשכול', tipValid:'כשרים', tipBallot:'קלפי',
+      modal:`<b>איך מחושב:</b> לכל מפלגה נלקח הממוצע המשוקלל של האשכול החברתי-כלכלי של אזור הקלפי (המשקל הוא מספר הקולות של המפלגה בקלפי). כל נקודה היא קלפי: ציר ה-X הוא אחוז הקולות למפלגה באותה קלפי, ציר ה-Y הוא האשכול בסולם המורחב 0–10 (דירוג רציף בתוך האשכול הרשמי של הלמ"ס), וגודל הנקודה הוא מספר הכשרים בקלפי. הקו המלא בכל פאנל הוא הממוצע המשוקלל; הקו המקווקו הוא ממוצע כל המצביעים (5.09). צבע הנקודה הוא צבע הקלפי במפה: אחוז הקולות לגוש נתניהו על הסולם האדום-כחול, ואפור לקלפי שבה מעל 80% מהקולות למפלגות הערביות (במצב "בנפרד"; כשהן משולבות אין אפור והמכנה הוא כל הכשרים). בתצוגת גושים אותה חלוקה כמו במפה.<br>
+      <b>חשוב:</b> האשכול מתייחס לאזור שבו נמצאת הקלפי, כלומר לאזור המגורים של המצביעים — לא למצביעים עצמם. זהו קשר אקולוגי בלבד. מתוך 12,018 קלפיות: 10,895 ממופות לאזור סטטיסטי, 1,020 קלפיות ללא מיפוי אזורי קיבלו אשכול ברמת היישוב, ו-103 קלפיות ללא כל מדד אינן מוצגות. מסך הקולות בקלפיות (5,241,352) נכנסו לממוצע 5,198,349 קולות בעלי מדד; 43,003 קולות ללא מדד אינם נספרים. כ-450 אלף קולות במעטפות כפולות ובחו"ל אינם במיפוי הקלפיות ואינם מופיעים כאן; סך הקולות הכשרים הארצי 5.69 מיליון.<br>
+      <b>מקורות:</b> תוצאות סופיות של ועדת הבחירות המרכזית (כנסת 26); המדד החברתי-כלכלי של הלמ"ס (2021), בסולם המורחב של האתר.`
+    },
+    en: {
+      title:'Socio-economic index vs vote share — 26th Knesset, by ballot',
+      subParties:'Each dot is a ballot. Sorted by weighted index, high to low. Click a party to focus it; the rest stay faded grey.',
+      subBlocsSep:"Each dot is a ballot. Three blocs per the map's split. Click a bloc to focus it.",
+      subBlocsIn:'Each dot is a ballot. Arab parties are merged into the Eisenkot bloc, as on the map. Click a bloc to focus it.',
+      parties:'Parties', blocs:'Blocs', arabLabel:'Arab parties:', sep:'Separate', merged:'Merged',
+      back:'◂ Show all', slider:'Min valid votes in ballot:', filter:'Averages reflect only the ballots shown',
+      ytitle:'Index', votes:'votes', avg:'Avg', ballots:'ballots', noidx:'votes w/o index',
+      rampCap:'% of ballot votes for the Netanyahu bloc: 0 = Eisenkot bloc, 100 = Netanyahu bloc',
+      arabGrey:'Over 80% for Arab parties',
+      wavg:'Weighted average', navg:'All-voter average 5.09', sizecap:'Size = valid votes in ballot:',
+      close:'Close ✕', ibtn:'Method and caveats',
+      foot:'Source: final results of the Central Elections Committee (26th Knesset); CBS socio-economic index (2021), the site’s extended scale. Analysis: Nir Smilga.',
+      tipFor:'for', tipVotes:'votes', tipIndex:'Index', tipValid:'valid', tipBallot:'Ballot',
+      modal:`<b>How it is computed:</b> for each party, the weighted average of the socio-economic index of the ballot's area (the weight is the party's votes in that ballot). Each dot is a ballot: the X axis is the party's vote share in that ballot, the Y axis is the index on the extended 0–10 scale (a continuous ranking within the official CBS cluster), and dot size is the number of valid votes in the ballot. The solid line in each panel is the weighted average; the dashed line is the all-voter average (5.09). Dot color is the ballot's map color: the Netanyahu bloc's vote share on the red-to-blue scale, grey for a ballot where Arab parties take over 80% of valid votes ("Separate" mode; when merged there is no grey and the denominator is all valid votes). The blocs view uses the map's split.<br>
+      <b>Important:</b> the index describes the area where the ballot is located, i.e. the voters' area of residence — not the voters themselves. This is an ecological correlation only. Of 12,018 ballots: 10,895 are mapped to a statistical area, 1,020 without an area mapping got their locality's index, and 103 ballots with no index are not shown. Of all votes cast in ballots (5,241,352), 5,198,349 indexed votes entered the average; 43,003 votes without an index are not counted. About 450k votes in double envelopes and abroad are not in the ballot mapping and do not appear here; the national valid-vote total is 5.69 million.<br>
+      <b>Sources:</b> final results of the Central Elections Committee (26th Knesset); CBS socio-economic index (2021), the site’s extended scale.`
+    }
+  };
+  const t = k => STR[state.lang][k];
 
   document.getElementById('ibtn').onclick = () => document.getElementById('imodal').classList.add('open');
   document.getElementById('iclose').onclick = () => document.getElementById('imodal').classList.remove('open');
@@ -172,47 +266,41 @@
 
   function legend(){
     const L = document.getElementById('legend');
-    if (state.mode === 'parties'){
-      L.innerHTML = `<span class="it"><span class="dotk" style="background:var(--blue)"></span>רוב לגוש נתניהו בקלפי</span>
-        <span class="it"><span class="dotk" style="background:var(--red)"></span>רוב ליתר המפלגות בקלפי</span>
-        <span class="it"><span class="solline"></span>ממוצע משוקלל</span>
-        <span class="it"><span class="dashline"></span>ממוצע כל המצביעים 5.09</span>
-        <span class="it">גודל = כשרים בקלפי: <span class="szl" style="width:8px;height:8px"></span> 500 <span class="szl" style="width:12px;height:12px"></span> 2,000 <span class="szl" style="width:16px;height:16px"></span> 4,000</span>`;
-    } else {
-      L.innerHTML = `<span class="it"><span class="dotk" style="background:var(--blue)"></span>רוב לגוש נתניהו בקלפי</span>
-        <span class="it"><span class="dotk" style="background:var(--red)"></span>רוב לגוש איזנקוט בקלפי</span>
-        <span class="it"><span class="dotk" style="background:var(--grey)"></span>רוב לגוש ערביות בקלפי</span>
-        <span class="it"><span class="solline"></span>ממוצע משוקלל</span>
-        <span class="it"><span class="dashline"></span>ממוצע כל המצביעים 5.09</span>
-        <span class="it">גודל = כשרים בקלפי: <span class="szl" style="width:8px;height:8px"></span> 500 <span class="szl" style="width:12px;height:12px"></span> 2,000 <span class="szl" style="width:16px;height:16px"></span> 4,000</span>`;
-    }
+    const ramp = `<span class="ramp" style="background:linear-gradient(90deg,#CB181D 0%,#EF3B2C 18%,#FC9272 36%,${NEUTRAL} 50%,#9ECAE1 64%,#4292C6 82%,#2171B5 100%)"></span>`;
+    L.innerHTML = `<span class="it">${ramp}${t('rampCap')}</span>` +
+      (state.arab === 'sep' ? `<span class="it"><span class="dotk" style="background:${ARAB_GREY}"></span>${t('arabGrey')}</span>` : '') +
+      `<span class="it"><span class="solline"></span>${t('wavg')}</span>
+      <span class="it"><span class="dashline"></span>${t('navg')}</span>
+      <span class="it">${t('sizecap')} <span class="szl" style="width:8px;height:8px"></span> 500 <span class="szl" style="width:12px;height:12px"></span> 2,000 <span class="szl" style="width:16px;height:16px"></span> 4,000</span>`;
   }
 
   function items(){
     if (state.mode === 'parties'){
       return D.parties.map((p,i) => ({p, i, chip:`<span class="plet" style="background:${p.color}">${p.letter}</span>`,
-        stats:`${fmt(p.votes)} קולות<br>ממוצע <b>${p.avg.toFixed(2)}</b> · ${fmt(p.ballots)} קלפיות${p.noIdxVotes>5000?`<br>⚠ ${fmt(p.noIdxVotes)} קולות ללא מדד`:''}`,
-        dotColor: d => d[3] ? COL.net : COL.rest, votesOf: d => d[6], shareOf: d => d[0]}));
+        name: state.lang === 'en' ? (PARTY_EN[p.letter] || p.name) : p.name,
+        stats:`${fmt(p.votes)} ${t('votes')}<br>${t('avg')} <b>${p.avg.toFixed(2)}</b> · ${fmt(p.ballots)} ${t('ballots')}${p.noIdxVotes>5000?`<br>⚠ ${fmt(p.noIdxVotes)} ${t('noidx')}`:''}`,
+        lineColor: p.color}));
     }
-    return BLOCS.map((p,i) => ({p, i, chip:`<span class="plet" style="background:${p.color}">&#9679;</span>`,
-      stats:`${fmt(p.votes)} קולות<br>ממוצע <b>${p.avg.toFixed(2)}</b>`,
-      dotColor: d => [COL.net, COL.rest, COL.arab][d[3]], votesOf: d => d[6], shareOf: d => d[0]}));
+    return buildBlocs().map((p,i) => ({p, i, chip:`<span class="plet" style="background:${p.color}">&#9679;</span>`,
+      name: state.lang === 'en' ? p.en : p.he,
+      stats:`${fmt(p.votes)} ${t('votes')}<br>${t('avg')} <b>${p.avg.toFixed(2)}</b>`,
+      lineColor: p.color}));
   }
 
   let panels = [];
   function build(){
     legend();
     panelsEl.innerHTML = ''; panels = [];
-    const its = state.focus === null ? items() : [items()[state.focus]];
+    const its = items();
     document.getElementById('backbtn').classList.toggle('show', state.focus !== null);
     document.getElementById('subtitle').textContent = state.mode === 'parties'
-      ? 'כל נקודה היא קלפי. ממוין לפי האשכול המשוקלל, מהגבוה לנמוך. לחיצה על מפלגה ממקדת אותה.'
-      : 'כל נקודה היא קלפי. שלושת הגושים לפי החלוקה של המפה. לחיצה על גוש ממקדת אותו.';
-    its.forEach(({p, i, chip, stats, dotColor, votesOf, shareOf}) => {
-      const el = document.createElement('div'); el.className = 'panel' + (state.focus !== null ? ' focus' : '');
+      ? t('subParties') : (state.arab === 'sep' ? t('subBlocsSep') : t('subBlocsIn'));
+    its.forEach(({p, i, chip, name, stats, lineColor}) => {
+      const isFocus = state.focus === i, isDim = state.focus !== null && !isFocus;
+      const el = document.createElement('div'); el.className = 'panel' + (isFocus ? ' focus' : '') + (isDim ? ' dim' : '');
       el.innerHTML = `
         <div class="phead">${chip}
-          <div class="pname">${p.name}</div>
+          <div class="pname">${name}</div>
           <div class="pstats">${stats}</div>
         </div>
         <div class="plotwrap"><canvas class="plot"></canvas></div>
@@ -221,7 +309,7 @@
         state.focus = (state.focus === i) ? null : i; build();
       };
       panelsEl.appendChild(el);
-      panels.push({p, el, cv: el.querySelector('canvas'), pts: [], dotColor, votesOf, shareOf});
+      panels.push({p, el, cv: el.querySelector('canvas'), pts: [], lineColor, dim: isDim});
     });
     drawAll();
   }
@@ -247,10 +335,10 @@
       for (const d of o.p.dots){
         if (d[2] < state.minK) continue;
         shown++;
-        fx += d[1] * o.votesOf(d); fv += o.votesOf(d);
-        const x = X(o.shareOf(d)), y = Y(d[1]), r = radius(d[2]);
-        ctx.globalAlpha = 0.45;
-        ctx.fillStyle = o.dotColor(d);
+        fx += d[1] * d[6]; fv += d[6];
+        const x = X(d[0]), y = Y(d[1]), r = radius(d[2]);
+        ctx.globalAlpha = o.dim ? 0.5 : 0.45;
+        ctx.fillStyle = o.dim ? DIM_GREY : (colorMap.get(d[4] + '|' + d[5]) || '#9ca3af');
         ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
         ctx.globalAlpha = 0.9;
         ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 0.6;
@@ -258,26 +346,48 @@
         o.pts.push({x, y, r, d});
       }
       ctx.globalAlpha = 1;
-      ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
-      ctx.beginPath(); ctx.moveTo(0, Y(NAT)); ctx.lineTo(w, Y(NAT)); ctx.stroke();
-      ctx.setLineDash([]);
-      const avg = state.minK > 0 && fv > 0 ? fx/fv : o.p.avg;
-      if (fv > 0){
-        ctx.strokeStyle = o.p.color; ctx.lineWidth = 2.5;
-        ctx.beginPath(); ctx.moveTo(0, Y(avg)); ctx.lineTo(w, Y(avg)); ctx.stroke();
-        const gap = avg - NAT;
-        const gapS = (gap >= 0 ? '+' : '\u2212') + Math.abs(gap).toFixed(2);
-        ctx.textAlign = 'right';
-        ctx.font = 'bold 13px Heebo, sans-serif'; ctx.fillStyle = '#111827';
-        ctx.fillText(avg.toFixed(2), w - 6, Y(avg) - 5);
-        ctx.font = '10.5px Heebo, sans-serif'; ctx.fillStyle = '#6b7280';
-        ctx.fillText(gapS, w - 6, Y(avg) + 12);
+      if (!o.dim){
+        ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
+        ctx.beginPath(); ctx.moveTo(0, Y(NAT)); ctx.lineTo(w, Y(NAT)); ctx.stroke();
+        ctx.setLineDash([]);
+        const avg = state.minK > 0 && fv > 0 ? fx/fv : o.p.avg;
+        if (fv > 0){
+          ctx.strokeStyle = o.lineColor; ctx.lineWidth = 2.5;
+          ctx.beginPath(); ctx.moveTo(0, Y(avg)); ctx.lineTo(w, Y(avg)); ctx.stroke();
+          const gap = avg - NAT;
+          const gapS = (gap >= 0 ? '+' : '\u2212') + Math.abs(gap).toFixed(2);
+          ctx.textAlign = 'right';
+          ctx.font = 'bold 13px Heebo, sans-serif'; ctx.fillStyle = '#111827';
+          ctx.fillText(avg.toFixed(2), w - 6, Y(avg) - 5);
+          ctx.font = '10.5px Heebo, sans-serif'; ctx.fillStyle = '#6b7280';
+          ctx.fillText(gapS, w - 6, Y(avg) + 12);
+        }
       }
-      // shown count under x-axis
       o.el.querySelector('.xaxis').dataset.shown = shown;
     });
     document.getElementById('filternote').classList.toggle('show', state.minK > 0);
     layoutRail();
+  }
+
+  function applyStaticTexts(){
+    document.documentElement.lang = state.lang;
+    document.documentElement.dir = state.lang === 'en' ? 'ltr' : 'rtl';
+    document.getElementById('title').textContent = t('title');
+    document.title = t('title');
+    document.querySelector('#modeseg [data-mode=parties]').textContent = t('parties');
+    document.querySelector('#modeseg [data-mode=blocs]').textContent = t('blocs');
+    document.getElementById('arablabel').textContent = t('arabLabel');
+    document.querySelector('#arabseg [data-arab=sep]').textContent = t('sep');
+    document.querySelector('#arabseg [data-arab=in]').textContent = t('merged');
+    document.getElementById('backbtn').textContent = t('back');
+    document.getElementById('sliderlabel').textContent = t('slider');
+    document.getElementById('filternote').textContent = t('filter');
+    document.getElementById('ytitle').textContent = t('ytitle');
+    document.getElementById('foot').textContent = t('foot');
+    document.getElementById('iclose').textContent = t('close');
+    document.getElementById('ibtn').title = t('ibtn');
+    document.getElementById('modalbody').innerHTML = t('modal');
+    document.getElementById('koshv').textContent = fmt(state.minK);
   }
 
   document.getElementById('kosh').addEventListener('input', e => {
@@ -292,7 +402,23 @@
     document.querySelectorAll('#modeseg button').forEach(x => x.classList.toggle('on', x === b));
     build();
   });
+  document.querySelectorAll('#arabseg button').forEach(b => b.onclick = () => {
+    if (b.dataset.arab === state.arab) return;
+    state.arab = b.dataset.arab; state.focus = null;
+    document.querySelectorAll('#arabseg button').forEach(x => x.classList.toggle('on', x === b));
+    rebuildColors();
+    build();
+  });
+  document.querySelectorAll('#langseg button').forEach(b => b.onclick = () => {
+    if (b.dataset.lang === state.lang) return;
+    state.lang = b.dataset.lang;
+    document.querySelectorAll('#langseg button').forEach(x => x.classList.toggle('on', x === b));
+    applyStaticTexts();
+    build();
+  });
 
+  rebuildColors();
+  applyStaticTexts();
   build();
   let rto; window.addEventListener('resize', () => { clearTimeout(rto); rto = setTimeout(drawAll, 150); });
 
@@ -306,9 +432,11 @@
     }
     if (!best || bd > Math.pow(Math.max(9, best.r + 4), 2)){ tip.style.display = 'none'; return; }
     const d = best.d;
-    tip.innerHTML = `<b>${names[d[4]]} · קלפי ${d[5]}</b><br>` +
-      `${d[0]}% ל${o.p.name} (${fmt(o.votesOf(d))} קולות)<br>` +
-      `אשכול ${d[1]} · ${fmt(d[2])} כשרים`;
+    const pname = o.p.name ? (state.lang === 'en' ? (PARTY_EN[o.p.letter] || o.p.name) : o.p.name)
+                           : (state.lang === 'en' ? o.p.en : o.p.he);
+    tip.innerHTML = `<b>${names[d[4]]} · ${t('tipBallot')} ${d[5]}</b><br>` +
+      `${d[0]}% ${t('tipFor')} ${pname} (${fmt(d[6])} ${t('tipVotes')})<br>` +
+      `${t('tipIndex')} ${d[1]} · ${fmt(d[2])} ${t('tipValid')}`;
     tip.style.display = 'block';
     const tw = tip.offsetWidth, th = tip.offsetHeight;
     let lx = cx + 14, ly = cy - th - 10;
