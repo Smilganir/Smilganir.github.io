@@ -25,6 +25,7 @@
               padding:5px 16px;cursor:pointer}
   .seg button.on{background:#111827;color:#fff}
   .sliderbox{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+  .sliderbox input[type=range]{direction:ltr}
   .sliderbox input{accent-color:#111827;width:150px}
   .backbtn{display:none;border:1px solid var(--line);border-radius:9px;background:#fff;font-family:inherit;
            font-size:13px;font-weight:500;padding:5px 14px;cursor:pointer;color:var(--ink)}
@@ -39,9 +40,9 @@
   .solline{display:inline-block;width:26px;border-top:3px solid #111827;vertical-align:middle;border-radius:2px}
 
   .strip{display:flex;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
-  .rail{position:sticky;inset-inline-start:0;z-index:5;background:#fff;flex:0 0 42px;border-inline-end:1px solid var(--line)}
-  .rail .ylab{position:absolute;inset-inline-end:5px;font-size:10.5px;color:var(--muted);transform:translateY(-50%);background:#fff;padding:0 2px}
-  .rail .ytitle{position:absolute;bottom:4px;inset-inline:0;text-align:center;font-size:10.5px;color:var(--muted)}
+  .rail{position:sticky;left:0;order:1;z-index:5;background:#fff;flex:0 0 42px;border-right:1px solid var(--line)}
+  .rail .ylab{position:absolute;right:5px;font-size:10.5px;color:var(--muted);transform:translateY(-50%);background:#fff;padding:0 2px}
+  .rail .ytitle{position:absolute;top:4px;inset-inline:0;text-align:center;font-size:10.5px;color:var(--muted)}
   .panels{display:flex;flex:1}
   .panel{flex:1 0 96px;min-width:96px;border-inline-end:1px solid var(--line);display:flex;flex-direction:column}
   .panel:last-child{border-inline-end:none}
