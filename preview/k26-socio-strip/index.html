@@ -146,13 +146,28 @@
   document.getElementById('imodal').addEventListener('click', e => { if (e.target.id === 'imodal') e.target.classList.remove('open'); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('imodal').classList.remove('open'); });
 
-  rail.style.height = PLOT_H + 'px';
-  for (let v = 1; v <= 10; v++){
+  const ylabs = [];
+  for (let v = 0; v <= 10; v++){
     const s = document.createElement('span');
     s.className = 'ylab'; s.textContent = v;
-    s.style.top = `calc(${PAD_T}px + (100% - ${PAD_T + PAD_B}px) * ${(1 - (v - YMIN)/(YMAX - YMIN)).toFixed(4)})`;
-    rail.appendChild(s);
+    rail.appendChild(s); ylabs.push([v, s]);
   }
+  // Align the shared y-rail with the actual plot area: equalize header heights
+  // so every panel's plot starts at the same offset, then place each tick at the
+  // same y the canvases use (scale 0-10, 0 at the plot bottom).
+  function layoutRail(){
+    const heads = [...document.querySelectorAll('.phead')];
+    if (!heads.length) return;
+    const mh = Math.max(...heads.map(h => h.offsetHeight));
+    heads.forEach(h => h.style.minHeight = mh + 'px');
+    const stripTop = document.getElementById('strip').getBoundingClientRect().top;
+    const plotTop = document.querySelector('.plotwrap').getBoundingClientRect().top - stripTop;
+    rail.style.height = (plotTop + PLOT_H) + 'px';
+    for (const [v, s] of ylabs){
+      s.style.top = (plotTop + PAD_T + (1 - (v - YMIN)/(YMAX - YMIN)) * (PLOT_H - PAD_T - PAD_B)) + 'px';
+    }
+  }
+  document.fonts && document.fonts.ready.then(() => layoutRail());
 
   function legend(){
     const L = document.getElementById('legend');
@@ -223,7 +238,7 @@
       const X = pct => (pct/100) * (w - 10) + 5;
       const Y = v  => PAD_T + (1 - (v - YMIN)/(YMAX - YMIN)) * (PLOT_H - PAD_T - PAD_B);
       ctx.strokeStyle = '#f1f3f5'; ctx.lineWidth = 1;
-      for (let v = 1; v <= 10; v++){ ctx.beginPath(); ctx.moveTo(0, Y(v)); ctx.lineTo(w, Y(v)); ctx.stroke(); }
+      for (let v = 0; v <= 10; v++){ ctx.beginPath(); ctx.moveTo(0, Y(v)); ctx.lineTo(w, Y(v)); ctx.stroke(); }
       ctx.strokeStyle = '#e5e7eb';
       ctx.beginPath(); ctx.moveTo(X(50), 0); ctx.lineTo(X(50), PLOT_H); ctx.stroke();
       o.pts = [];
@@ -261,6 +276,7 @@
       o.el.querySelector('.xaxis').dataset.shown = shown;
     });
     document.getElementById('filternote').classList.toggle('show', state.minK > 0);
+    layoutRail();
   }
 
   document.getElementById('kosh').addEventListener('input', e => {
