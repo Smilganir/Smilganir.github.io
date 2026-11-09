@@ -249,8 +249,13 @@
       if (fv > 0){
         ctx.strokeStyle = o.p.color; ctx.lineWidth = 2.5;
         ctx.beginPath(); ctx.moveTo(0, Y(avg)); ctx.lineTo(w, Y(avg)); ctx.stroke();
-        ctx.fillStyle = '#374151'; ctx.font = '10.5px Heebo, sans-serif'; ctx.textAlign = 'left';
-        ctx.fillText(avg.toFixed(2), 3, Y(avg) - 4);
+        const gap = avg - NAT;
+        const gapS = (gap >= 0 ? '+' : '\u2212') + Math.abs(gap).toFixed(2);
+        ctx.textAlign = 'right';
+        ctx.font = 'bold 13px Heebo, sans-serif'; ctx.fillStyle = '#111827';
+        ctx.fillText(avg.toFixed(2), w - 6, Y(avg) - 5);
+        ctx.font = '10.5px Heebo, sans-serif'; ctx.fillStyle = '#6b7280';
+        ctx.fillText(gapS, w - 6, Y(avg) + 12);
       }
       // shown count under x-axis
       o.el.querySelector('.xaxis').dataset.shown = shown;
