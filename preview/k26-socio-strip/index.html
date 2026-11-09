@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>אשכול חברתי-כלכלי מול אחוז קולות — כנסת 26, ברמת קלפי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --blue:#3b62c4; --red:#e04b4b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Heebo,system-ui,sans-serif;color:var(--ink);background:#fff;padding:14px 18px 26px}
+  header{display:flex;align-items:flex-start;gap:10px;max-width:100%}
+  h1{font-size:20px;font-weight:700;line-height:1.3}
+  .sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .ibtn{flex:0 0 auto;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;
+        background:#fff;color:var(--muted);font-weight:700;cursor:pointer;font-size:14px;line-height:1}
+  #icard{display:none;border:1px solid var(--line);border-radius:10px;background:#f9fafb;
+         padding:12px 14px;margin:10px 0 4px;font-size:13px;line-height:1.65;max-width:980px}
+  #icard.open{display:block}
+  #icard b{font-weight:700}
+  .legend{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12.5px;color:var(--muted);margin:12px 0 8px}
+  .legend .it{display:flex;align-items:center;gap:6px}
+  .dotk{width:10px;height:10px;border-radius:50%;display:inline-block;opacity:.75}
+  .szl{display:inline-block;border-radius:50%;background:#9ca3af;opacity:.55;vertical-align:middle}
+  .dashline{display:inline-block;width:26px;border-top:2px dashed #6b7280;vertical-align:middle}
+  .solline{display:inline-block;width:26px;border-top:3px solid #111827;vertical-align:middle;border-radius:2px}
+
+  .strip{display:flex;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .rail{position:sticky;inset-inline-start:0;z-index:5;background:#fff;flex:0 0 42px;
+        border-inline-end:1px solid var(--line);position:sticky}
+  .rail .ylab{position:absolute;inset-inline-end:5px;font-size:10.5px;color:var(--muted);transform:translateY(-50%);background:#fff;padding:0 2px}
+  .rail .ytitle{position:absolute;bottom:4px;inset-inline:0;text-align:center;font-size:10.5px;color:var(--muted)}
+  .panels{display:flex;flex:1}
+  .panel{flex:1 0 96px;min-width:96px;border-inline-end:1px solid var(--line);display:flex;flex-direction:column}
+  .panel:last-child{border-inline-end:none}
+  .phead{padding:8px 6px 6px;text-align:center;border-bottom:1px solid var(--line)}
+  .plet{display:inline-block;min-width:34px;padding:2px 8px;border-radius:8px;color:#fff;font-weight:700;font-size:15px}
+  .pname{font-size:12px;font-weight:500;margin-top:3px;line-height:1.15;min-height:28px;display:flex;align-items:center;justify-content:center}
+  .pstats{font-size:10.5px;color:var(--muted);margin-top:2px;line-height:1.35}
+  .plotwrap{position:relative;padding:0 4px}
+  canvas.plot{display:block;width:100%;cursor:crosshair}
+  .xaxis{direction:ltr;display:flex;justify-content:space-between;font-size:10px;color:var(--muted);padding:2px 6px 6px}
+  footer{margin-top:14px;font-size:12px;color:var(--muted);line-height:1.7;border-top:1px solid var(--line);padding-top:10px}
+  #tip{position:fixed;display:none;z-index:50;pointer-events:none;background:#111827;color:#f9fafb;
+       font-size:12px;line-height:1.5;padding:7px 10px;border-radius:8px;max-width:230px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  @media (max-width:640px){
+    body{padding:10px 8px 20px}
+    h1{font-size:17px}
+    .panel{flex-basis:92px;min-width:92px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>אשכול חברתי-כלכלי מול אחוז קולות — כנסת 26, ברמת קלפי</h1>
+    <div class="sub">כל נקודה היא קלפי. המפלגות ממוינות לפי האשכול המשוקלל של קולותיהן, מהגבוה לנמוך.</div>
+  </div>
+  <button class="ibtn" id="ibtn" title="שיטה והסתייגויות">i</button>
+</header>
+
+<div id="icard">
+  <b>איך מחושב:</b> לכל מפלגה נלקח הממוצע המשוקלל של האשכול החברתי-כלכלי של אזור הקלפי (המשקל הוא מספר הקולות של המפלגה בקלפי). כל נקודה היא קלפי: ציר ה-X הוא אחוז הקולות למפלגה באותה קלפי, ציר ה-Y הוא האשכול בסולם המורחב 0–10 (דירוג רציף בתוך האשכול הרשמי של הלמ"ס), וגודל הנקודה הוא מספר הכשרים בקלפי. הקו המלא בכל פאנל הוא הממוצע המשוקלל של המפלגה; הקו המקווקו הוא ממוצע כל המצביעים (5.09).<br>
+  <b>חשוב:</b> האשכול מתייחס לאזור שבו נמצאת הקלפי, כלומר לאזור המגורים של המצביעים — לא למצביעים עצמם. זהו קשר אקולוגי בלבד. 1,093 קלפיות ללא מיפוי לאזור סטטיסטי קיבלו אשכול ברמת היישוב. כ-43 אלף קולות ללא כל מדד אינם נספרים בחישוב. כ-450 אלף קולות במעטפות כפולות ובחו"ל אינם במיפוי הקלפיות ואינם מופיעים כאן. סך הכל נכנסו לחישוב כ-5.24 מיליון קולות מתוך 5.69 מיליון קולות כשרים ארצי.<br>
+  <b>מקורות:</b> תוצאות סופיות של ועדת הבחירות המרכזית (כנסת 26); המדד החברתי-כלכלי של הלמ"ס (2021), בסולם המורחב של האתר.
+</div>
+
+<div class="legend">
+  <span class="it"><span class="dotk" style="background:var(--blue)"></span>רוב לגוש נתניהו בקלפי</span>
+  <span class="it"><span class="dotk" style="background:var(--red)"></span>רוב ליתר המפלגות בקלפי</span>
+  <span class="it"><span class="solline"></span>ממוצע המפלגה</span>
+  <span class="it"><span class="dashline"></span>ממוצע כל המצביעים 5.09</span>
+  <span class="it">גודל = כשרים בקלפי:
+    <span class="szl" style="width:8px;height:8px"></span> 500
+    <span class="szl" style="width:12px;height:12px"></span> 2,000
+    <span class="szl" style="width:16px;height:16px"></span> 4,000
+  </span>
+</div>
+
+<div class="strip" id="strip">
+  <div class="rail" id="rail"><div class="ytitle">אשכול</div></div>
+  <div class="panels" id="panels"></div>
+</div>
+
+<footer>
+  מקור: תוצאות סופיות של ועדת הבחירות המרכזית לכנסת ה-26; המדד החברתי-כלכלי של הלשכה המרכזית לסטטיסטיקה (2021). עיבוד: ניר סמילגה. פריוויו לצפייה פנימית — אין לפרסם לפני אישור.
+</footer>
+
+<div id="tip"></div>
+<script src="data.js"></script>
+<script>
+(function(){
+  const D = window.STRIP_DATA, names = D.names, NAT = D.nationalAvg;
+  const PLOT_H = window.innerWidth <= 640 ? 470 : 560;
+  const PAD_T = 8, PAD_B = 8;
+  const YMIN = 0, YMAX = 10;
+  const panelsEl = document.getElementById('panels');
+  const rail = document.getElementById('rail');
+  const tip = document.getElementById('tip');
+  const fmt = n => n.toLocaleString('he-IL');
+
+  document.getElementById('ibtn').onclick = () =>
+    document.getElementById('icard').classList.toggle('open');
+
+  rail.style.height = PLOT_H + 'px';
+  rail.style.marginTop = '0px';
+  for (let v = 1; v <= 10; v++){
+    const s = document.createElement('span');
+    s.className = 'ylab'; s.textContent = v;
+    s.style.top = `calc(${PAD_T}px + (100% - ${PAD_T + PAD_B}px) * ${(1 - (v - YMIN)/(YMAX - YMIN)).toFixed(4)})`;
+    rail.appendChild(s);
+  }
+
+  const panels = [];
+  D.parties.forEach(p => {
+    const el = document.createElement('div'); el.className = 'panel';
+    const short = p.noIdxVotes > 5000 ? `<br>⚠ ${fmt(p.noIdxVotes)} קולות ללא מדד` : '';
+    el.innerHTML = `
+      <div class="phead">
+        <span class="plet" style="background:${p.color}">${p.letter}</span>
+        <div class="pname">${p.name}</div>
+        <div class="pstats">${fmt(p.votes)} קולות<br>ממוצע <b>${p.avg.toFixed(2)}</b> · ${fmt(p.ballots)} קלפיות${short}</div>
+      </div>
+      <div class="plotwrap"><canvas class="plot"></canvas></div>
+      <div class="xaxis"><span>0%</span><span>50%</span><span>100%</span></div>`;
+    panelsEl.appendChild(el);
+    panels.push({p, el, cv: el.querySelector('canvas'), pts: []});
+  });
+
+  function radius(k){ return Math.max(1.2, Math.min(11, 1.5 + 7*Math.sqrt(k/4000))); }
+
+  function render(){
+    const dpr = window.devicePixelRatio || 1;
+    panels.forEach(o => {
+      const w = o.cv.parentElement.clientWidth - 8;
+      o.cv.style.height = PLOT_H + 'px';
+      o.cv.width = w * dpr; o.cv.height = PLOT_H * dpr;
+      const ctx = o.cv.getContext('2d');
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const X = pct => (pct/100) * (w - 10) + 5;
+      const Y = v  => PAD_T + (1 - (v - YMIN)/(YMAX - YMIN)) * (PLOT_H - PAD_T - PAD_B);
+      // gridlines
+      ctx.strokeStyle = '#f1f3f5'; ctx.lineWidth = 1;
+      for (let v = 1; v <= 10; v++){
+        ctx.beginPath(); ctx.moveTo(0, Y(v)); ctx.lineTo(w, Y(v)); ctx.stroke();
+      }
+      ctx.strokeStyle = '#e5e7eb';
+      ctx.beginPath(); ctx.moveTo(X(50), 0); ctx.lineTo(X(50), PLOT_H); ctx.stroke();
+      // dots
+      o.pts = [];
+      for (const d of o.p.dots){
+        const x = X(d[0]), y = Y(d[1]), r = radius(d[2]);
+        ctx.globalAlpha = 0.42;
+        ctx.fillStyle = d[3] ? '#3b62c4' : '#e04b4b';
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
+        o.pts.push({x, y, r, d});
+      }
+      ctx.globalAlpha = 1;
+      // national dashed line
+      ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
+      ctx.beginPath(); ctx.moveTo(0, Y(NAT)); ctx.lineTo(w, Y(NAT)); ctx.stroke();
+      ctx.setLineDash([]);
+      // party avg line
+      ctx.strokeStyle = o.p.color; ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.moveTo(0, Y(o.p.avg)); ctx.lineTo(w, Y(o.p.avg)); ctx.stroke();
+      ctx.fillStyle = '#374151'; ctx.font = '10.5px Heebo, sans-serif'; ctx.textAlign = 'left';
+      ctx.fillText(o.p.avg.toFixed(2), 3, Y(o.p.avg) - 4);
+    });
+  }
+
+  render();
+  let rto; window.addEventListener('resize', () => { clearTimeout(rto); rto = setTimeout(render, 150); });
+
+  function showTip(o, cx, cy){
+    const rect = o.cv.getBoundingClientRect();
+    const mx = cx - rect.left, my = cy - rect.top;
+    let best = null, bd = 1e9;
+    for (const q of o.pts){
+      const dx = q.x - mx, dy = q.y - my, dd = dx*dx + dy*dy;
+      if (dd < bd){ bd = dd; best = q; }
+    }
+    if (!best || bd > Math.pow(Math.max(9, best.r + 4), 2)){ tip.style.display = 'none'; return; }
+    const d = best.d;
+    tip.innerHTML = `<b>${names[d[4]]} · קלפי ${d[5]}</b><br>` +
+      `${d[0]}% מהקולות הכשרים ל${o.p.name}<br>` +
+      `אשכול ${d[1]} · ${fmt(d[2])} כשרים<br>` +
+      `<span style="color:#9ca3af">רוב בקלפי: ${d[3] ? 'גוש נתניהו' : 'יתר המפלגות'}</span>`;
+    tip.style.display = 'block';
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let lx = cx + 14, ly = cy - th - 10;
+    if (lx + tw > window.innerWidth - 6) lx = cx - tw - 14;
+    if (ly < 6) ly = cy + 14;
+    tip.style.left = lx + 'px'; tip.style.top = ly + 'px';
+  }
+
+  panels.forEach(o => {
+    o.cv.addEventListener('mousemove', e => {
+      if (o._raf) return;
+      o._raf = requestAnimationFrame(() => { o._raf = null; showTip(o, e.clientX, e.clientY); });
+    });
+    o.cv.addEventListener('mouseleave', () => tip.style.display = 'none');
+    o.cv.addEventListener('touchstart', e => {
+      const t = e.changedTouches[0];
+      showTip(o, t.clientX, t.clientY);
+    }, {passive: true});
+  });
+  document.addEventListener('touchstart', e => {
+    if (!e.target.closest('canvas')) tip.style.display = 'none';
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>
