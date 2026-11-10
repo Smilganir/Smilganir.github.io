@@ -50,10 +50,14 @@
   .panel{flex:1 0 96px;min-width:96px;border-inline-end:1px solid var(--line);display:flex;flex-direction:column}
   .panel:last-child{border-inline-end:none}
   .panel.focus{flex:1 0 44%;min-width:340px}
-  .panel.dim{flex:0 0 64px;min-width:64px}
+  .panel.dim{flex:0 0 52px;min-width:52px}
   .panel.dim .pstats{display:none}
-  .panel.dim .pname{font-size:10.5px}
-  .panel.dim .plet{min-width:26px;font-size:12px;padding:1px 5px}
+  .panel.dim .plotwrap{display:none}
+  .panel.dim .xaxis{display:none}
+  .panel.dim .phead{border-bottom:none;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;padding-top:10px}
+  .panel.dim .phead:hover{background:#f8f9fb}
+  .panel.dim .pname{font-size:10px;color:var(--muted);writing-mode:vertical-rl;text-orientation:mixed;min-height:0}
+  .panel.dim .plet{min-width:26px;font-size:12px;padding:1px 5px;filter:grayscale(1);opacity:.55}
   .phead{padding:8px 6px 6px;text-align:center;border-bottom:1px solid var(--line);cursor:pointer}
   .plet{display:inline-block;min-width:34px;padding:2px 8px;border-radius:8px;color:#fff;font-weight:700;font-size:15px}
   .pname{font-size:12px;font-weight:500;margin-top:3px;line-height:1.15;min-height:28px;display:flex;align-items:center;justify-content:center}
@@ -74,7 +78,7 @@
     body{padding:10px 8px 20px}
     h1{font-size:17px}
     .panel{flex-basis:92px;min-width:92px}
-    .panel.dim{flex-basis:56px;min-width:56px}
+    .panel.dim{flex-basis:44px;min-width:44px}
     .panel.focus{min-width:280px}
   }
 </style>
@@ -251,12 +255,15 @@
   // so every panel's plot starts at the same offset, then place each tick at the
   // same y the canvases use (scale 0-10, 0 at the plot bottom).
   function layoutRail(){
-    const heads = [...document.querySelectorAll('.phead')];
-    if (!heads.length) return;
+    const allHeads = [...document.querySelectorAll('.phead')];
+    if (!allHeads.length) return;
+    allHeads.forEach(h => h.style.minHeight = '');
+    const heads = allHeads.filter(h => !h.closest('.panel').classList.contains('dim'));
     const mh = Math.max(...heads.map(h => h.offsetHeight));
     heads.forEach(h => h.style.minHeight = mh + 'px');
     const stripTop = document.getElementById('strip').getBoundingClientRect().top;
-    const plotTop = document.querySelector('.plotwrap').getBoundingClientRect().top - stripTop;
+    const pw = document.querySelector('.panel.focus .plotwrap') || document.querySelector('.panel:not(.dim) .plotwrap');
+    const plotTop = pw.getBoundingClientRect().top - stripTop;
     rail.style.height = (plotTop + PLOT_H) + 'px';
     for (const [v, s] of ylabs){
       s.style.top = (plotTop + PAD_T + (1 - (v - YMIN)/(YMAX - YMIN)) * (PLOT_H - PAD_T - PAD_B)) + 'px';
@@ -321,6 +328,7 @@
     panels.forEach(o => {
       const w = o.cv.parentElement.clientWidth - 8;
       o.cv.style.height = PLOT_H + 'px';
+      if (o.dim){ o.pts = []; return; }
       o.cv.width = w * dpr; o.cv.height = PLOT_H * dpr;
       const ctx = o.cv.getContext('2d');
       ctx.setTransform(dpr,0,0,dpr,0,0);
@@ -337,8 +345,8 @@
         shown++;
         fx += d[1] * d[6]; fv += d[6];
         const x = X(d[0]), y = Y(d[1]), r = radius(d[2]);
-        ctx.globalAlpha = o.dim ? 0.5 : 0.45;
-        ctx.fillStyle = o.dim ? DIM_GREY : (colorMap.get(d[4] + '|' + d[5]) || '#9ca3af');
+        ctx.globalAlpha = 0.45;
+        ctx.fillStyle = colorMap.get(d[4] + '|' + d[5]) || '#9ca3af';
         ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
         ctx.globalAlpha = 0.9;
         ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 0.6;
@@ -346,8 +354,7 @@
         o.pts.push({x, y, r, d});
       }
       ctx.globalAlpha = 1;
-      if (!o.dim){
-        ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
+      ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
         ctx.beginPath(); ctx.moveTo(0, Y(NAT)); ctx.lineTo(w, Y(NAT)); ctx.stroke();
         ctx.setLineDash([]);
         const avg = state.minK > 0 && fv > 0 ? fx/fv : o.p.avg;
@@ -362,7 +369,6 @@
           ctx.font = '10.5px Heebo, sans-serif'; ctx.fillStyle = '#6b7280';
           ctx.fillText(gapS, w - 6, Y(avg) + 12);
         }
-      }
       o.el.querySelector('.xaxis').dataset.shown = shown;
     });
     document.getElementById('filternote').classList.toggle('show', state.minK > 0);
