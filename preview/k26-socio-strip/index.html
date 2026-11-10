@@ -426,13 +426,17 @@
         if (d[2] < state.minK) continue;
         shown++;
         fx += d[1] * d[6]; fv += d[6];
-        const x = X(d[0]), y = Y(d[1]), r = radius(d[2]);
-        ctx.globalAlpha = 0.45;
+        const x = X(d[0]), y = Y(d[1]);
+        const comb = state.view === 'combined';
+        const r = radius(d[2]) * (comb ? 0.7 : 1);
+        ctx.globalAlpha = comb ? 0.3 : 0.45;
         ctx.fillStyle = colorMap.get(d[4] + '|' + d[5]) || '#9ca3af';
         ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
-        ctx.globalAlpha = 0.9;
-        ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 0.6;
-        ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke();
+        if (!comb){
+          ctx.globalAlpha = 0.9;
+          ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 0.6;
+          ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke();
+        }
         o.pts.push({x, y, r, d});
       }
       ctx.globalAlpha = 1;
