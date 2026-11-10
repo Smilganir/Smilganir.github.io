@@ -42,7 +42,6 @@
   .ramp{display:inline-block;width:120px;height:10px;border-radius:3px;direction:ltr}
 
   .switcher{display:none;gap:6px;overflow-x:auto;padding:2px 2px 8px}
-  .switcher.on{display:flex}
   .switcher button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:8px;padding:3px 7px;display:flex;align-items:center;gap:5px;cursor:pointer;color:var(--muted);font-size:11px;font-family:inherit}
   .switcher button .plet{filter:grayscale(1);opacity:.55;font-size:11px;min-width:22px;padding:1px 5px}
   .strip{display:flex;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
@@ -84,6 +83,7 @@
     .panel{flex-basis:92px;min-width:92px}
     .panel.focus{min-width:0;flex:1 1 auto}
     .panel.dim{display:none}
+    .switcher.on{display:flex}
   }
 </style>
 </head>
