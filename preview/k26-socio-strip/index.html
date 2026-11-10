@@ -110,7 +110,7 @@
   </span>
   <span class="seglabel" id="viewlabel">תצוגה:</span>
   <span class="seg" id="viewseg">
-    <button data-view="dots">נקודות</button><button data-view="density" class="on">צפיפות</button>
+    <button data-view="dots">נקודות</button><button data-view="density" class="on">צפיפות</button><button data-view="combined">משולב</button>
   </span>
   <button class="backbtn" id="backbtn">◂ הצג את כולן</button>
   <span class="sliderbox"><span id="sliderlabel">סף כשרים בקלפי:</span>
@@ -230,14 +230,17 @@
       rampCap:'% קולות לגוש נתניהו בקלפי: 0 = גוש איזנקוט, 100 = גוש נתניהו',
       arabGrey:'מעל 80% למפלגות ערביות',
       wavg:'ממוצע משוקלל', navg:'ממוצע כל המצביעים 5.09', sizecap:'גודל = כשרים בקלפי:',
-      viewLabel:'תצוגה:', dots:'נקודות', density:'צפיפות', densKey:'כהה = יותר קולות (נרמל בתוך כל פאנל)',
+      viewLabel:'תצוגה:', dots:'נקודות', density:'צפיפות', combined:'משולב', densKey:'כהה = יותר קולות (נרמל בתוך כל פאנל)',
+      subPartiesComb:'צפיפות ונקודות יחד — כהה = יותר קולות במשבצת, כל נקודה = קלפי. ממוין לפי האשכול המשוקלל, מהגבוה לנמוך. לחיצה על מפלגה ממקדת אותה ומשאירה את האחרות באפור.',
+      subBlocsSepComb:'צפיפות ונקודות יחד — כהה = יותר קולות במשבצת, כל נקודה = קלפי. שלושת הגושים לפי החלוקה של המפה. לחיצה על גוש ממקדת אותו.',
+      subBlocsInComb:'צפיפות ונקודות יחד — כהה = יותר קולות במשבצת, כל נקודה = קלפי. המפלגות הערביות משולבות בגוש איזנקוט, כמו במפה. לחיצה על גוש ממקדת אותו.',
       subPartiesDen:'כל משבצת מסכמת את הקלפיות בתחומה — כהה = יותר קולות. ממוין לפי האשכול המשוקלל, מהגבוה לנמוך. לחיצה על מפלגה ממקדת אותה ומשאירה את האחרות באפור.',
       subBlocsSepDen:'כל משבצת מסכמת את הקלפיות בתחומה — כהה = יותר קולות. שלושת הגושים לפי החלוקה של המפה. לחיצה על גוש ממקדת אותו.',
       subBlocsInDen:'כל משבצת מסכמת את הקלפיות בתחומה — כהה = יותר קולות. המפלגות הערביות משולבות בגוש איזנקוט, כמו במפה. לחיצה על גוש ממקדת אותו.',
       close:'סגור ✕', ibtn:'שיטה והסתייגויות',
       foot:'מקור: תוצאות סופיות של ועדת הבחירות המרכזית לכנסת ה-26; המדד החברתי-כלכלי של הלשכה המרכזית לסטטיסטיקה (2021). עיבוד: ניר סמילגה.',
       tipFor:'ל', tipVotes:'קולות', tipIndex:'אשכול', tipValid:'כשרים', tipBallot:'קלפי',
-      modal:`<b>איך מחושב:</b> לכל מפלגה נלקח הממוצע המשוקלל של האשכול החברתי-כלכלי של אזור הקלפי (המשקל הוא מספר הקולות של המפלגה בקלפי). כל נקודה היא קלפי: ציר ה-X הוא אחוז הקולות למפלגה באותה קלפי, ציר ה-Y הוא האשכול בסולם המורחב 0–10 (דירוג רציף בתוך האשכול הרשמי של הלמ"ס), וגודל הנקודה הוא מספר הכשרים בקלפי. הקו המלא בכל פאנל הוא הממוצע המשוקלל; הקו המקווקו הוא ממוצע כל המצביעים (5.09). צבע הנקודה הוא צבע הקלפי במפה: אחוז הקולות לגוש נתניהו על הסולם האדום-כחול, ואפור לקלפי שבה מעל 80% מהקולות למפלגות הערביות (במצב "בנפרד"; כשהן משולבות אין אפור והמכנה הוא כל הכשרים). בתצוגת גושים אותה חלוקה כמו במפה. בתצוגת "צפיפות" כל משבצת מסכמת את הקלפיות בתחום שלה: כהות המשבצת היא מספר הקולות הכשרים בה (נרמל בתוך כל פאנל בנפרד, לכן אי אפשר להשוות כהות בין פאנלים), וצבעה הוא אחוז הקולות לגוש נתניהו המשוקלל של הקלפיות במשבצת, על אותו סולם.<br>
+      modal:`<b>איך מחושב:</b> לכל מפלגה נלקח הממוצע המשוקלל של האשכול החברתי-כלכלי של אזור הקלפי (המשקל הוא מספר הקולות של המפלגה בקלפי). כל נקודה היא קלפי: ציר ה-X הוא אחוז הקולות למפלגה באותה קלפי, ציר ה-Y הוא האשכול בסולם המורחב 0–10 (דירוג רציף בתוך האשכול הרשמי של הלמ"ס), וגודל הנקודה הוא מספר הכשרים בקלפי. הקו המלא בכל פאנל הוא הממוצע המשוקלל; הקו המקווקו הוא ממוצע כל המצביעים (5.09). צבע הנקודה הוא צבע הקלפי במפה: אחוז הקולות לגוש נתניהו על הסולם האדום-כחול, ואפור לקלפי שבה מעל 80% מהקולות למפלגות הערביות (במצב "בנפרד"; כשהן משולבות אין אפור והמכנה הוא כל הכשרים). בתצוגת גושים אותה חלוקה כמו במפה. בתצוגת "צפיפות" כל משבצת מסכמת את הקלפיות בתחום שלה: כהות המשבצת היא מספר הקולות הכשרים בה (נרמל בתוך כל פאנל בנפרד, לכן אי אפשר להשוות כהות בין פאנלים), וצבעה הוא אחוז הקולות לגוש נתניהו המשוקלל של הקלפיות במשבצת, על אותו סולם. תצוגת "משולב" מציירת את הנקודות מעל משבצות הצפיפות.<br>
       <b>חשוב:</b> האשכול מתייחס לאזור שבו נמצאת הקלפי, כלומר לאזור המגורים של המצביעים — לא למצביעים עצמם. זהו קשר אקולוגי בלבד. מתוך 12,018 קלפיות: 10,895 ממופות לאזור סטטיסטי, 1,020 קלפיות ללא מיפוי אזורי קיבלו אשכול ברמת היישוב, ו-103 קלפיות ללא כל מדד אינן מוצגות. מסך הקולות בקלפיות (5,241,352) נכנסו לממוצע 5,198,349 קולות בעלי מדד; 43,003 קולות ללא מדד אינם נספרים. כ-450 אלף קולות במעטפות כפולות ובחו"ל אינם במיפוי הקלפיות ואינם מופיעים כאן; סך הקולות הכשרים הארצי 5.69 מיליון.<br>
       <b>מקורות:</b> תוצאות סופיות של ועדת הבחירות המרכזית (כנסת 26); המדד החברתי-כלכלי של הלמ"ס (2021), בסולם המורחב של האתר.`
     },
@@ -252,14 +255,17 @@
       rampCap:'% of ballot votes for the Netanyahu bloc: 0 = Eisenkot bloc, 100 = Netanyahu bloc',
       arabGrey:'Over 80% for Arab parties',
       wavg:'Weighted average', navg:'All-voter average 5.09', sizecap:'Size = valid votes in ballot:',
-      viewLabel:'View:', dots:'Dots', density:'Density', densKey:'darker = more votes (normalized within each panel)',
+      viewLabel:'View:', dots:'Dots', density:'Density', combined:'Combined', densKey:'darker = more votes (normalized within each panel)',
+      subPartiesComb:'Density and dots together - darker = more votes in the cell, each dot = one ballot. Sorted by weighted index, high to low. Click a party to focus it; the rest stay faded grey.',
+      subBlocsSepComb:"Density and dots together - darker = more votes in the cell, each dot = one ballot. Three blocs per the map's split. Click a bloc to focus it.",
+      subBlocsInComb:'Density and dots together - darker = more votes in the cell, each dot = one ballot. Arab parties are merged into the Eisenkot bloc, as on the map. Click a bloc to focus it.',
       subPartiesDen:'Each cell summarizes the ballots in its range - darker = more votes. Sorted by weighted index, high to low. Click a party to focus it; the rest stay faded grey.',
       subBlocsSepDen:"Each cell summarizes the ballots in its range - darker = more votes. Three blocs per the map's split. Click a bloc to focus it.",
       subBlocsInDen:'Each cell summarizes the ballots in its range - darker = more votes. Arab parties are merged into the Eisenkot bloc, as on the map. Click a bloc to focus it.',
       close:'Close ✕', ibtn:'Method and caveats',
       foot:'Source: final results of the Central Elections Committee (26th Knesset); CBS socio-economic index (2021), the site’s extended scale. Analysis: Nir Smilga.',
       tipFor:'for', tipVotes:'votes', tipIndex:'Index', tipValid:'valid', tipBallot:'Ballot',
-      modal:`<b>How it is computed:</b> for each party, the weighted average of the socio-economic index of the ballot's area (the weight is the party's votes in that ballot). Each dot is a ballot: the X axis is the party's vote share in that ballot, the Y axis is the index on the extended 0–10 scale (a continuous ranking within the official CBS cluster), and dot size is the number of valid votes in the ballot. The solid line in each panel is the weighted average; the dashed line is the all-voter average (5.09). Dot color is the ballot's map color: the Netanyahu bloc's vote share on the red-to-blue scale, grey for a ballot where Arab parties take over 80% of valid votes ("Separate" mode; when merged there is no grey and the denominator is all valid votes). The blocs view uses the map's split. In "Density" view each cell summarizes the ballots in its range: darkness is the number of valid votes in the cell (normalized within each panel, so darkness is not comparable across panels), and color is the weighted Netanyahu-bloc share of the cell's ballots on the same scale.<br>
+      modal:`<b>How it is computed:</b> for each party, the weighted average of the socio-economic index of the ballot's area (the weight is the party's votes in that ballot). Each dot is a ballot: the X axis is the party's vote share in that ballot, the Y axis is the index on the extended 0–10 scale (a continuous ranking within the official CBS cluster), and dot size is the number of valid votes in the ballot. The solid line in each panel is the weighted average; the dashed line is the all-voter average (5.09). Dot color is the ballot's map color: the Netanyahu bloc's vote share on the red-to-blue scale, grey for a ballot where Arab parties take over 80% of valid votes ("Separate" mode; when merged there is no grey and the denominator is all valid votes). The blocs view uses the map's split. In "Density" view each cell summarizes the ballots in its range: darkness is the number of valid votes in the cell (normalized within each panel, so darkness is not comparable across panels), and color is the weighted Netanyahu-bloc share of the cell's ballots on the same scale. "Combined" view draws the dots on top of the density cells.<br>
       <b>Important:</b> the index describes the area where the ballot is located, i.e. the voters' area of residence — not the voters themselves. This is an ecological correlation only. Of 12,018 ballots: 10,895 are mapped to a statistical area, 1,020 without an area mapping got their locality's index, and 103 ballots with no index are not shown. Of all votes cast in ballots (5,241,352), 5,198,349 indexed votes entered the average; 43,003 votes without an index are not counted. About 450k votes in double envelopes and abroad are not in the ballot mapping and do not appear here; the national valid-vote total is 5.69 million.<br>
       <b>Sources:</b> final results of the Central Elections Committee (26th Knesset); CBS socio-economic index (2021), the site’s extended scale.`
     }
@@ -304,9 +310,8 @@
       (state.arab === 'sep' ? `<span class="it"><span class="dotk" style="background:${ARAB_GREY}"></span>${t('arabGrey')}</span>` : '') +
       `<span class="it"><span class="solline"></span>${t('wavg')}</span>
       <span class="it"><span class="dashline"></span>${t('navg')}</span>
-      ${state.view === 'density'
-        ? `<span class="it"><span class="densg"></span>${t('densKey')}</span>`
-        : `<span class="it">${t('sizecap')} <span class="szl" style="width:8px;height:8px"></span> 500 <span class="szl" style="width:12px;height:12px"></span> 2,000 <span class="szl" style="width:16px;height:16px"></span> 4,000</span>`}`;
+      ${state.view === 'dots' ? '' : `<span class="it"><span class="densg"></span>${t('densKey')}</span>`}
+      ${state.view === 'density' ? '' : `<span class="it">${t('sizecap')} <span class="szl" style="width:8px;height:8px"></span> 500 <span class="szl" style="width:12px;height:12px"></span> 2,000 <span class="szl" style="width:16px;height:16px"></span> 4,000</span>`}`;
   }
 
   function items(){
@@ -328,9 +333,8 @@
     panelsEl.innerHTML = ''; panels = [];
     const its = items();
     document.getElementById('backbtn').classList.toggle('show', state.focus !== null);
-    const subKey = state.view === 'density'
-      ? (state.mode === 'parties' ? 'subPartiesDen' : (state.arab === 'sep' ? 'subBlocsSepDen' : 'subBlocsInDen'))
-      : (state.mode === 'parties' ? 'subParties' : (state.arab === 'sep' ? 'subBlocsSep' : 'subBlocsIn'));
+    const sfx = state.view === 'density' ? 'Den' : (state.view === 'combined' ? 'Comb' : '');
+    const subKey = state.mode === 'parties' ? 'subParties' + sfx : (state.arab === 'sep' ? 'subBlocsSep' + sfx : 'subBlocsIn' + sfx);
     document.getElementById('subtitle').textContent = t(subKey);
     its.forEach(({p, i, chip, name, stats, lineColor}) => {      const isFocus = state.focus === i, isDim = state.focus !== null && !isFocus;
       const el = document.createElement('div'); el.className = 'panel' + (isFocus ? ' focus' : '') + (isDim ? ' dim' : '');
@@ -381,7 +385,7 @@
       ctx.beginPath(); ctx.moveTo(X(50), 0); ctx.lineTo(X(50), PLOT_H); ctx.stroke();
       o.pts = []; o.cellInfo = null; o.w = w;
       let fx = 0, fv = 0, shown = 0;
-      if (state.view === 'density'){
+      if (state.view !== 'dots'){
         const BX = Math.max(16, Math.min(50, Math.round(w / 9)));
         const BY = Math.max(20, Math.min(48, Math.round(PLOT_H / 11)));
         const cells = new Map();
@@ -417,7 +421,7 @@
         }
         o.cellInfo = {BX, BY, cells};
       }
-      if (state.view === 'dots')
+      if (state.view !== 'density')
       for (const d of o.p.dots){
         if (d[2] < state.minK) continue;
         shown++;
@@ -474,6 +478,7 @@
     document.getElementById('viewlabel').textContent = t('viewLabel');
     document.querySelector('#viewseg [data-view=dots]').textContent = t('dots');
     document.querySelector('#viewseg [data-view=density]').textContent = t('density');
+    document.querySelector('#viewseg [data-view=combined]').textContent = t('combined');
     document.getElementById('koshv').textContent = fmt(state.minK);
   }
 
@@ -518,7 +523,7 @@
   function showTip(o, cx, cy){
     const rect = o.cv.getBoundingClientRect();
     const mx = cx - rect.left, my = cy - rect.top;
-    if (state.view === 'density'){
+    const showCell = () => {
       if (!o.cellInfo){ tip.style.display = 'none'; return; }
       const ci = o.cellInfo;
       const share = (mx - 5) / (o.w - 10) * 100;
@@ -540,14 +545,14 @@
       if (lx + tw > window.innerWidth - 6) lx = cx - tw - 14;
       if (ly < 6) ly = cy + 14;
       tip.style.left = lx + 'px'; tip.style.top = ly + 'px';
-      return;
-    }
+    };
+    if (state.view === 'density'){ showCell(); return; }
     let best = null, bd = 1e9;
     for (const q of o.pts){
       const dx = q.x - mx, dy = q.y - my, dd = dx*dx + dy*dy;
       if (dd < bd){ bd = dd; best = q; }
     }
-    if (!best || bd > Math.pow(Math.max(9, best.r + 4), 2)){ tip.style.display = 'none'; return; }
+    if (!best || bd > Math.pow(Math.max(9, best.r + 4), 2)){ if (state.view === 'combined') showCell(); else tip.style.display = 'none'; return; }
     const d = best.d;
     const pname = o.p.name ? (state.lang === 'en' ? (PARTY_EN[o.p.letter] || o.p.name) : o.p.name)
                            : (state.lang === 'en' ? o.p.en : o.p.he);
