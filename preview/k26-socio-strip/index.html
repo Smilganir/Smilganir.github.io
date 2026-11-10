@@ -41,6 +41,10 @@
   .solline{display:inline-block;width:26px;border-top:3px solid #111827;vertical-align:middle;border-radius:2px}
   .ramp{display:inline-block;width:120px;height:10px;border-radius:3px;direction:ltr}
 
+  .switcher{display:none;gap:6px;overflow-x:auto;padding:2px 2px 8px}
+  .switcher.on{display:flex}
+  .switcher button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:8px;padding:3px 7px;display:flex;align-items:center;gap:5px;cursor:pointer;color:var(--muted);font-size:11px;font-family:inherit}
+  .switcher button .plet{filter:grayscale(1);opacity:.55;font-size:11px;min-width:22px;padding:1px 5px}
   .strip{display:flex;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
   .rail{position:sticky;left:0;order:1;z-index:5;background:#fff;flex:0 0 42px;border-right:1px solid var(--line)}
   html[dir=ltr] .rail{order:0}
@@ -78,8 +82,8 @@
     body{padding:10px 8px 20px}
     h1{font-size:17px}
     .panel{flex-basis:92px;min-width:92px}
-    .panel.dim{flex-basis:44px;min-width:44px}
-    .panel.focus{min-width:280px}
+    .panel.focus{min-width:0;flex:1 1 auto}
+    .panel.dim{display:none}
   }
 </style>
 </head>
@@ -113,6 +117,7 @@
 
 <div class="legend" id="legend"></div>
 
+<div class="switcher" id="switcher"></div>
 <div class="strip" id="strip">
   <div class="rail" id="rail"><div class="ytitle" id="ytitle">אשכול</div></div>
   <div class="panels" id="panels"></div>
@@ -302,8 +307,7 @@
     document.getElementById('backbtn').classList.toggle('show', state.focus !== null);
     document.getElementById('subtitle').textContent = state.mode === 'parties'
       ? t('subParties') : (state.arab === 'sep' ? t('subBlocsSep') : t('subBlocsIn'));
-    its.forEach(({p, i, chip, name, stats, lineColor}) => {
-      const isFocus = state.focus === i, isDim = state.focus !== null && !isFocus;
+    its.forEach(({p, i, chip, name, stats, lineColor}) => {      const isFocus = state.focus === i, isDim = state.focus !== null && !isFocus;
       const el = document.createElement('div'); el.className = 'panel' + (isFocus ? ' focus' : '') + (isDim ? ' dim' : '');
       el.innerHTML = `
         <div class="phead">${chip}
@@ -318,6 +322,18 @@
       panelsEl.appendChild(el);
       panels.push({p, el, cv: el.querySelector('canvas'), pts: [], lineColor, dim: isDim});
     });
+    const sw = document.getElementById('switcher');
+    sw.innerHTML = '';
+    sw.classList.toggle('on', state.focus !== null);
+    if (state.focus !== null){
+      its.forEach(({i, chip, name}) => {
+        if (i === state.focus) return;
+        const b = document.createElement('button');
+        b.innerHTML = chip + '<span>' + name + '</span>';
+        b.onclick = () => { state.focus = i; build(); };
+        sw.appendChild(b);
+      });
+    }
     drawAll();
   }
 
