@@ -110,7 +110,7 @@
   </span>
   <span class="seglabel" id="viewlabel">תצוגה:</span>
   <span class="seg" id="viewseg">
-    <button data-view="dots" class="on">נקודות</button><button data-view="density">צפיפות</button>
+    <button data-view="dots">נקודות</button><button data-view="density" class="on">צפיפות</button>
   </span>
   <button class="backbtn" id="backbtn">◂ הצג את כולן</button>
   <span class="sliderbox"><span id="sliderlabel">סף כשרים בקלפי:</span>
@@ -148,7 +148,7 @@
   const panelsEl = document.getElementById('panels');
   const rail = document.getElementById('rail');
   const tip = document.getElementById('tip');
-  const state = {mode:'parties', arab:'sep', focus:null, minK:0, lang:'he', view:'dots'};
+  const state = {mode:'parties', arab:'sep', focus:null, minK:0, lang:'he', view:'density'};
   const fmt = n => n.toLocaleString(state.lang === 'en' ? 'en-US' : 'he-IL');
 
   // ---- Map coalition color scale (ported from the site's metrics.ts) ----
