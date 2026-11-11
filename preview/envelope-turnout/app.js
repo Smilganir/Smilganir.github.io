@@ -13,15 +13,15 @@
   var DATA = null, GEO = null, mode = 'without', metric = 'coalition', sortKey = 'd', sortDir = 'desc', selected = null, query = ''
   var $ = function (s) { return document.querySelector(s) }
 
-  maplibregl.setRTLTextPlugin('/preview/_shared/libraries/44568f433348-mapbox-gl-rtl-text.js', true)
+  maplibregl.setRTLTextPlugin('/preview/shared-assets/libraries/44568f433348-mapbox-gl-rtl-text.js', true)
   var map = new maplibregl.Map({
     container: 'map',
     style: {
       version: 8, glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
       sources: {
         omt: { type: 'vector', url: 'https://tiles.openfreemap.org/planet', attribution: '© OpenFreeMap © OpenMapTiles © OpenStreetMap contributors' },
-        mask: { type: 'geojson', data: '/preview/_shared/basemap-e9091638c96f/israel_land_mask.geojson' },
-        border: { type: 'geojson', data: '/preview/_shared/basemap-e9091638c96f/territory_border.geojson' }
+        mask: { type: 'geojson', data: '/preview/shared-assets/basemap-e9091638c96f/israel_land_mask.geojson' },
+        border: { type: 'geojson', data: '/preview/shared-assets/basemap-e9091638c96f/territory_border.geojson' }
       },
       layers: [
         { id: 'land', type: 'background', paint: { 'background-color': '#d9d9d9' } },
