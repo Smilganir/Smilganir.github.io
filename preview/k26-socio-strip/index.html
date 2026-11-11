@@ -99,6 +99,8 @@
 .chart .phead{display:flex;flex-direction:column;align-items:stretch}
 .chart .phead>.plet{align-self:center}
 .chart .histwrap{margin-top:auto;padding-top:6px}
+
+.chart .coverage-note{min-height:12px}
 </style></head><body><div class="chart" dir="rtl">
 <header>
   <div>
@@ -370,7 +372,7 @@ function init(host, onLanguage) {
         i,
         chip: `<span class="plet" style="background:${p.color}">${p.letter}</span>`,
         name: state.lang === "en" ? PARTY_EN[p.letter] || p.name : p.name,
-        stats: `${fmt(p.votes)} ${t("votes")}<br>${t("avg")} <b>${p.avg.toFixed(2)}</b> \xB7 ${fmt(p.ballots)} ${t("ballots")}${p.noIdxVotes > 5e3 ? `<span class="coverage-note">\u26A0 ${fmt(p.noIdxVotes)} ${t("noidx")}</span>` : ""}`,
+        stats: `${fmt(p.votes)} ${t("votes")}<br>${t("avg")} <b>${p.avg.toFixed(2)}</b> \xB7 ${fmt(p.ballots)} ${t("ballots")}`,
         lineColor: p.color
       }));
     }
@@ -402,6 +404,7 @@ function init(host, onLanguage) {
           <div class="pname">${name}</div>
           <div class="pstats">${stats}</div>
           <div class="histwrap"><div class="hist" dir="ltr"></div><div class="histl" dir="ltr"><span>1</span><span>10</span></div></div>
+          <div class="coverage-note">${p.noIdxVotes > 5e3 ? `\u26A0 ${fmt(p.noIdxVotes)} ${t("noidx")}` : ""}</div>
         </div>
         <div class="plotwrap"><canvas class="plot"></canvas></div>
         <div class="xaxis" dir="ltr"></div>`;
