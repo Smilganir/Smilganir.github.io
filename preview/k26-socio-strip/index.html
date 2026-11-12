@@ -455,7 +455,7 @@ function init(host, onLanguage) {
       const Y = (v) => PAD_T + (1 - (v - YMIN) / (YMAX - YMIN)) * (PLOT_H - PAD_T - PAD_B);
       {
         ctx.fillStyle = o.lineColor;
-        ctx.globalAlpha = 0.055;
+        ctx.globalAlpha = 0.16;
         ctx.fillRect(0, Y(o.p.avg), w, Y(0) - Y(o.p.avg));
         ctx.globalAlpha = 1;
       }
