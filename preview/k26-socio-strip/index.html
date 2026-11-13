@@ -402,7 +402,7 @@ function init(host, onLanguage) {
         stats: `${fmt(p.votes)} ${t("votes")}<br>${t("avg")} <b>${p.avg.toFixed(2)}</b> \xB7 ${fmt(p.ballots)} ${t("ballots")}`,
         lineColor: "#4b5563",
         histColor: "#9ca3af",
-        fillColor: "#808080"
+        fillColor: "#9ca3af"
       }));
     }
     return buildBlocs().map((p, i) => ({
@@ -413,7 +413,7 @@ function init(host, onLanguage) {
       stats: `${fmt(p.votes)} ${t("votes")}<br>${t("avg")} <b>${p.avg.toFixed(2)}</b>`,
       lineColor: "#4b5563",
       histColor: "#9ca3af",
-      fillColor: "#808080"
+      fillColor: "#9ca3af"
     }));
   }
   let panels = [];
@@ -450,7 +450,7 @@ function init(host, onLanguage) {
         build();
       };
       panelsEl.appendChild(el);
-      panels.push({ p, el, cv: el.querySelector("canvas"), pts: [], lineColor, histColor: histColor || lineColor, fillColor: fillColor || "#808080", dim: isDim });
+      panels.push({ p, el, cv: el.querySelector("canvas"), pts: [], lineColor, histColor: histColor || lineColor, fillColor: fillColor || "#9ca3af", dim: isDim });
     });
     const sw = document2.getElementById("switcher");
     sw.innerHTML = "";
