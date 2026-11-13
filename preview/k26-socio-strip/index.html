@@ -186,7 +186,7 @@ function init(host, onLanguage) {
   }
   const NEUTRAL = lerpColor(lerpColor("#FC9272", "#9ECAE1", 0.5), "#E8DCF0", 0.4);
   const BUCKETS = [[0, "#CB181D"], [15, "#EF3B2C"], [30, "#FC9272"], [45, NEUTRAL], [55, "#9ECAE1"], [70, "#4292C6"], [85, "#2171B5"]];
-  const ARAB_GREY = "#2f855a";
+  const ARAB_GREY = "#72a88c";
   const DIM_GREY = "#ccd0d6";
   function bucketColor(p) {
     let c = BUCKETS[0][1];
@@ -209,7 +209,7 @@ function init(host, onLanguage) {
       colorMap.set(ni + "|" + kl, c);
     }
   }
-  const ARAB_BLOC_COLOR = "#2f855a";
+  const ARAB_BLOC_COLOR = "#72a88c";
   const HAREDI_BLOC_COLOR = "#6c7894";
   const harediVotes = /* @__PURE__ */ new Map();
   for (const p of D.parties.filter((p2) => p2.letter === "\u05E9\u05E1" || p2.letter === "\u05D2")) {
