@@ -175,7 +175,7 @@ function init(host, onLanguage) {
   const panelsEl = document2.getElementById("panels");
   const rail = document2.getElementById("rail");
   const tip = document2.getElementById("tip");
-  let zoom = 1, centerX = 50, centerY = 5;
+  let zoom = 1, centerX = 50, centerY = 5, selectedBallot = null, lastTouchAt = 0;
   const ranges = () => ({ x0: centerX - 50 / zoom, x1: centerX + 50 / zoom, y0: centerY - 5 / zoom, y1: centerY + 5 / zoom });
   const clampCenter = () => {
     centerX = Math.max(50 / zoom, Math.min(100 - 50 / zoom, centerX));
@@ -304,7 +304,7 @@ function init(host, onLanguage) {
       tipIndex: "\u05D0\u05E9\u05DB\u05D5\u05DC",
       tipValid: "\u05DB\u05E9\u05E8\u05D9\u05DD",
       tipBallot: "\u05E7\u05DC\u05E4\u05D9",
-      modal: `<b>\u05EA\u05D5\u05D5\u05D9\u05D5\u05EA \u05D5\u05D6\u05D5\u05DD:</b> \u05E2\u05D9\u05E8 \u05D1\u05E9\u05D5\u05E8\u05D4 \u05D4\u05E8\u05D0\u05E9\u05D5\u05E0\u05D4 \u05D5\u05DE\u05E7\u05D5\u05DD \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05E9\u05E0\u05D9\u05D9\u05D4. \u05D1\u05D7\u05D9\u05E8\u05D4 \u05D0\u05D5\u05D8\u05D5\u05DE\u05D8\u05D9\u05EA \u05E0\u05D5\u05EA\u05E0\u05EA \u05E2\u05D3\u05D9\u05E4\u05D5\u05EA \u05DC\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05DE\u05D1\u05D5\u05D3\u05D3\u05D5\u05EA, \u05D1\u05DC\u05D9 \u05D7\u05E4\u05D9\u05E4\u05D5\u05EA \u05D5\u05D1\u05DC\u05D9 \u05D7\u05D6\u05E8\u05D4 \u05E2\u05DC \u05D0\u05D5\u05EA\u05D5 \u05DE\u05E7\u05D5\u05DD \u05D1\u05D0\u05D5\u05EA\u05D5 \u05E4\u05D0\u05E0\u05DC. \u05E9\u05DE\u05D5\u05EA \u05D0\u05E8\u05D5\u05DB\u05D9\u05DD \u05DE\u05E7\u05D5\u05E6\u05E8\u05D9\u05DD \u05E8\u05E7 \u05D1\u05D2\u05E8\u05E3; \u05E9\u05DD \u05DE\u05DC\u05D0 \u05D1\u05E8\u05D9\u05D7\u05D5\u05E3 \u05D0\u05D5 \u05D1\u05E0\u05D2\u05D9\u05E2\u05D4. \u05DB\u05E4\u05EA\u05D5\u05E8\u05D9 \u05D4\u05D6\u05D5\u05DD \u05D5\u05DC\u05D7\u05D9\u05E6\u05D4 \u05DB\u05E4\u05D5\u05DC\u05D4 \u05DE\u05D2\u05D3\u05D9\u05DC\u05D9\u05DD \u05D0\u05EA \u05E9\u05E0\u05D9 \u05D4\u05E6\u05D9\u05E8\u05D9\u05DD \u05D9\u05D7\u05D3; \u05D1\u05D6\u05D5\u05DD \u05D0\u05E4\u05E9\u05E8 \u05DC\u05D2\u05E8\u05D5\u05E8. \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D5\u05D4\u05DE\u05DE\u05D5\u05E6\u05E2\u05D9\u05DD \u05DE\u05EA\u05D9\u05D9\u05D7\u05E1\u05D9\u05DD \u05DC\u05DB\u05DC \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E2\u05DD \u05DE\u05D3\u05D3, \u05D5\u05DC\u05D0 \u05E8\u05E7 \u05DC\u05D7\u05DC\u05D5\u05DF \u05D4\u05D6\u05D5\u05DD.<br><b>\u05D0\u05D9\u05DA \u05DE\u05D7\u05D5\u05E9\u05D1:</b> \u05DC\u05DB\u05DC \u05DE\u05E4\u05DC\u05D2\u05D4 \u05E0\u05DC\u05E7\u05D7 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05DE\u05E9\u05D5\u05E7\u05DC\u05DC \u05E9\u05DC \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D4\u05D7\u05D1\u05E8\u05EA\u05D9-\u05DB\u05DC\u05DB\u05DC\u05D9 \u05E9\u05DC \u05D0\u05D6\u05D5\u05E8 \u05D4\u05E7\u05DC\u05E4\u05D9 (\u05D4\u05DE\u05E9\u05E7\u05DC \u05D4\u05D5\u05D0 \u05DE\u05E1\u05E4\u05E8 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E9\u05DC \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05E7\u05DC\u05E4\u05D9). \u05DB\u05DC \u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D9\u05D0 \u05E7\u05DC\u05E4\u05D9: \u05E6\u05D9\u05E8 \u05D4-X \u05D4\u05D5\u05D0 \u05D0\u05D7\u05D5\u05D6 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05DC\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05D0\u05D5\u05EA\u05D4 \u05E7\u05DC\u05E4\u05D9, \u05E6\u05D9\u05E8 \u05D4-Y \u05D4\u05D5\u05D0 \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D1\u05E1\u05D5\u05DC\u05DD \u05D4\u05DE\u05D5\u05E8\u05D7\u05D1 0\u201310 (\u05D3\u05D9\u05E8\u05D5\u05D2 \u05E8\u05E6\u05D9\u05E3 \u05D1\u05EA\u05D5\u05DA \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D4\u05E8\u05E9\u05DE\u05D9 \u05E9\u05DC \u05D4\u05DC\u05DE"\u05E1), \u05D5\u05D2\u05D5\u05D3\u05DC \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D5\u05D0 \u05DE\u05E1\u05E4\u05E8 \u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05D1\u05E7\u05DC\u05E4\u05D9. \u05D7\u05D5\u05D6\u05E7 \u05E6\u05D1\u05E2 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05E2\u05D5\u05DC\u05D4 \u05E2\u05DD \u05E6\u05E4\u05D9\u05E4\u05D5\u05EA \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E1\u05D1\u05D9\u05D1\u05D4 (\u05E0\u05E8\u05DE\u05DC \u05D1\u05EA\u05D5\u05DA \u05DB\u05DC \u05E4\u05D0\u05E0\u05DC \u05D1\u05E0\u05E4\u05E8\u05D3). \u05D4\u05E7\u05D5 \u05D4\u05DE\u05DC\u05D0 \u05D1\u05DB\u05DC \u05E4\u05D0\u05E0\u05DC \u05D4\u05D5\u05D0 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05DE\u05E9\u05D5\u05E7\u05DC\u05DC; \u05D4\u05E7\u05D5 \u05D4\u05DE\u05E7\u05D5\u05D5\u05E7\u05D5 \u05D4\u05D5\u05D0 \u05DE\u05DE\u05D5\u05E6\u05E2 \u05DB\u05DC \u05D4\u05DE\u05E6\u05D1\u05D9\u05E2\u05D9\u05DD (5.09). \u05E6\u05D1\u05E2 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D5\u05D0 \u05E6\u05D1\u05E2 \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05DE\u05E4\u05D4: \u05D0\u05D7\u05D5\u05D6 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05DC\u05D2\u05D5\u05E9 \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5 \u05D1\u05D7\u05DE\u05E9 \u05DE\u05D3\u05E8\u05D2\u05D5\u05EA \u05D0\u05D3\u05D5\u05DD-\u05E1\u05D2\u05D5\u05DC-\u05DB\u05D7\u05D5\u05DC (\u05D2\u05D1\u05D5\u05DC\u05D5\u05EA: 0, 30, 45, 55, 85, 100 \u05D0\u05D7\u05D5\u05D6\u05D9\u05DD), \u05D5\u05D9\u05E8\u05D5\u05E7 \u05DC\u05E7\u05DC\u05E4\u05D9 \u05E9\u05D1\u05D4 \u05DE\u05E2\u05DC 80% \u05DE\u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05DC\u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA, \u05D0\u05D5 \u05D0\u05E4\u05D5\u05E8-\u05DB\u05D7\u05DC\u05D7\u05DC \u05DC\u05E7\u05DC\u05E4\u05D9 \u05E9\u05D1\u05D4 \u05DE\u05E2\u05DC 80% \u05DE\u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05DC\u05E9\u05F4\u05E1 \u05D5\u05D9\u05D4\u05D3\u05D5\u05EA \u05D4\u05EA\u05D5\u05E8\u05D4. \u05E9\u05E0\u05D9 \u05D4\u05D7\u05E8\u05D9\u05D2\u05D9\u05DD \u05D7\u05DC\u05D9\u05DD \u05DB\u05D0\u05E9\u05E8 \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05D1\u05DE\u05E6\u05D1 "\u05D1\u05E0\u05E4\u05E8\u05D3", \u05D2\u05DD \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05DE\u05E4\u05DC\u05D2\u05D5\u05EA; \u05DB\u05E9\u05D4\u05DF \u05DE\u05E9\u05D5\u05DC\u05D1\u05D5\u05EA \u05D4\u05D7\u05E8\u05D9\u05D2\u05D9\u05DD \u05D0\u05D9\u05E0\u05DD \u05D7\u05DC\u05D9\u05DD \u05D5\u05D4\u05DE\u05DB\u05E0\u05D4 \u05D4\u05D5\u05D0 \u05DB\u05DC \u05D4\u05DB\u05E9\u05E8\u05D9\u05DD. \u05D4\u05E1\u05E3 \u05D4\u05D5\u05D0 \u05DE\u05E2\u05DC 80% \u05D1\u05D3\u05D9\u05D5\u05E7, \u05DC\u05D0 80% \u05D5\u05DE\u05E2\u05DC\u05D4. \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05D2\u05D5\u05E9\u05D9\u05DD \u05E0\u05D9\u05EA\u05DF \u05DC\u05D4\u05E4\u05E8\u05D9\u05D3 \u05D0\u05EA \u05E9\u05F4\u05E1 \u05D5\u05D9\u05D4\u05D3\u05D5\u05EA \u05D4\u05EA\u05D5\u05E8\u05D4 \u05DC\u05D2\u05D5\u05E9 \u05D7\u05E8\u05D3\u05D9 \u05D0\u05D5 \u05DC\u05E9\u05DC\u05D1 \u05D0\u05D5\u05EA\u05DF \u05D1\u05D2\u05D5\u05E9 \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5. \u05D0\u05EA \u05D4\u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05E0\u05D9\u05EA\u05DF \u05DC\u05D4\u05E4\u05E8\u05D9\u05D3 \u05D0\u05D5 \u05DC\u05E9\u05DC\u05D1 \u05D1\u05D2\u05D5\u05E9 \u05D0\u05D9\u05D6\u05E0\u05E7\u05D5\u05D8. \u05D4\u05D2\u05D5\u05E9\u05D9\u05DD \u05D0\u05D9\u05E0\u05DD \u05D7\u05D5\u05E4\u05E4\u05D9\u05DD, \u05D5\u05DB\u05DC \u05E7\u05D5\u05DC \u05D1\u05E2\u05DC \u05DE\u05D3\u05D3 \u05E0\u05E1\u05E4\u05E8 \u05E4\u05E2\u05DD \u05D0\u05D7\u05EA. \u05D4\u05D0\u05D7\u05D5\u05D6 \u05D1\u05DB\u05DC \u05E7\u05DC\u05E4\u05D9 \u05D5\u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05DE\u05D7\u05D5\u05E9\u05D1\u05D9\u05DD \u05DE\u05E1\u05DB\u05D5\u05DE\u05D9 \u05E7\u05D5\u05DC\u05D5\u05EA \u05DE\u05D3\u05D5\u05D9\u05E7\u05D9\u05DD. \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D5\u05D4\u05DE\u05D9\u05DC\u05D5\u05D9 \u05D4\u05E9\u05E7\u05D5\u05E3 \u05D0\u05E4\u05D5\u05E8\u05D9\u05DD, \u05D5\u05E7\u05D5 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D0\u05E4\u05D5\u05E8 \u05DB\u05D4\u05D4. \u05E7\u05D5 \u05DE\u05EA\u05D7\u05EA \u05DC\u05E1\u05DE\u05DC \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05DE\u05E6\u05D9\u05D9\u05DF \u05D0\u05EA \u05D4\u05D2\u05D5\u05E9: \u05D0\u05D9\u05D6\u05E0\u05E7\u05D5\u05D8 \u05D0\u05D3\u05D5\u05DD, \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5 \u05DB\u05D7\u05D5\u05DC, \u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05D9\u05E8\u05D5\u05E7 \u05D5\u05D7\u05E8\u05D3\u05D9\u05DD \u05D0\u05E4\u05D5\u05E8-\u05DB\u05D7\u05DC\u05D7\u05DC. \u05D2\u05DD \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05D2\u05D5\u05E9\u05D9\u05DD \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D0\u05E4\u05D5\u05E8\u05D5\u05EA \u05D5\u05E7\u05D5\u05D5\u05D9 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D0\u05E4\u05D5\u05E8\u05D9\u05DD \u05DB\u05D4\u05D9\u05DD; \u05D4\u05E1\u05DE\u05DC \u05D1\u05DB\u05D5\u05EA\u05E8\u05EA \u05DE\u05E6\u05D9\u05D9\u05DF \u05D0\u05EA \u05E6\u05D1\u05E2 \u05D4\u05D2\u05D5\u05E9. \u05D4\u05DE\u05D9\u05DC\u05D5\u05D9 \u05D4\u05E9\u05E7\u05D5\u05E3 \u05DE\u05EA\u05D7\u05EA \u05DC\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05D5\u05D0 \u05D0\u05E4\u05D5\u05E8 \u05E0\u05D9\u05D8\u05E8\u05DC\u05D9 \u05D1\u05E9\u05EA\u05D9 \u05D4\u05EA\u05E6\u05D5\u05D2\u05D5\u05EA. \u05E6\u05D1\u05E2\u05D9 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05DE\u05DE\u05E9\u05D9\u05DB\u05D9\u05DD \u05DC\u05EA\u05D0\u05E8 \u05D0\u05EA \u05E9\u05D9\u05D5\u05DA \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05DE\u05E4\u05D4 \u05D5\u05DC\u05D0 \u05D0\u05EA \u05E6\u05D1\u05E2 \u05D4\u05D2\u05D5\u05E9.<br>
+      modal: `<b>\u05EA\u05D5\u05D5\u05D9\u05D5\u05EA \u05D5\u05D6\u05D5\u05DD:</b> \u05E2\u05D9\u05E8 \u05D1\u05E9\u05D5\u05E8\u05D4 \u05D4\u05E8\u05D0\u05E9\u05D5\u05E0\u05D4 \u05D5\u05DE\u05E7\u05D5\u05DD \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05E9\u05E0\u05D9\u05D9\u05D4. \u05D1\u05D7\u05D9\u05E8\u05D4 \u05D0\u05D5\u05D8\u05D5\u05DE\u05D8\u05D9\u05EA \u05E0\u05D5\u05EA\u05E0\u05EA \u05E2\u05D3\u05D9\u05E4\u05D5\u05EA \u05DC\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05DE\u05D1\u05D5\u05D3\u05D3\u05D5\u05EA, \u05D1\u05DC\u05D9 \u05D7\u05E4\u05D9\u05E4\u05D5\u05EA \u05D5\u05D1\u05DC\u05D9 \u05D7\u05D6\u05E8\u05D4 \u05E2\u05DC \u05D0\u05D5\u05EA\u05D5 \u05DE\u05E7\u05D5\u05DD \u05D1\u05D0\u05D5\u05EA\u05D5 \u05E4\u05D0\u05E0\u05DC. \u05E9\u05DE\u05D5\u05EA \u05D0\u05E8\u05D5\u05DB\u05D9\u05DD \u05DE\u05E7\u05D5\u05E6\u05E8\u05D9\u05DD \u05E8\u05E7 \u05D1\u05D2\u05E8\u05E3; \u05E9\u05DD \u05DE\u05DC\u05D0 \u05D1\u05E8\u05D9\u05D7\u05D5\u05E3 \u05D0\u05D5 \u05D1\u05E0\u05D2\u05D9\u05E2\u05D4. \u05E0\u05D2\u05D9\u05E2\u05D4 \u05D0\u05D5 \u05DC\u05D7\u05D9\u05E6\u05D4 \u05D1\u05E7\u05DC\u05E4\u05D9 \u05DE\u05DE\u05E7\u05D3\u05EA \u05D0\u05EA \u05D4\u05E4\u05D0\u05E0\u05DC \u05D5\u05DE\u05EA\u05E7\u05E8\u05D1\u05EA \u05D0\u05DC\u05D9\u05D4. \u05D2\u05DC\u05D2\u05DC\u05EA \u05DE\u05E2\u05DC \u05D4\u05D2\u05E8\u05E3 \u05D0\u05D5 \u05E6\u05D1\u05D9\u05D8\u05D4 \u05D1\u05E9\u05EA\u05D9 \u05D0\u05E6\u05D1\u05E2\u05D5\u05EA \u05DE\u05EA\u05E7\u05E8\u05D1\u05D5\u05EA \u05E1\u05D1\u05D9\u05D1 \u05D0\u05D5\u05EA\u05D4 \u05E0\u05E7\u05D5\u05D3\u05D4. \u05D1\u05D6\u05D5\u05DD \u05D0\u05E4\u05E9\u05E8 \u05DC\u05D2\u05E8\u05D5\u05E8; \u05D0\u05D9\u05E4\u05D5\u05E1 \u05DE\u05D7\u05D6\u05D9\u05E8 \u05DC\u05D8\u05D5\u05D5\u05D7 \u05D4\u05DE\u05DC\u05D0. \u05E9\u05E0\u05D9 \u05D4\u05E6\u05D9\u05E8\u05D9\u05DD \u05D2\u05D3\u05DC\u05D9\u05DD \u05D9\u05D7\u05D3. \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D5\u05D4\u05DE\u05DE\u05D5\u05E6\u05E2\u05D9\u05DD \u05DE\u05EA\u05D9\u05D9\u05D7\u05E1\u05D9\u05DD \u05DC\u05DB\u05DC \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E2\u05DD \u05DE\u05D3\u05D3, \u05D5\u05DC\u05D0 \u05E8\u05E7 \u05DC\u05D7\u05DC\u05D5\u05DF \u05D4\u05D6\u05D5\u05DD.<br><b>\u05D0\u05D9\u05DA \u05DE\u05D7\u05D5\u05E9\u05D1:</b> \u05DC\u05DB\u05DC \u05DE\u05E4\u05DC\u05D2\u05D4 \u05E0\u05DC\u05E7\u05D7 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05DE\u05E9\u05D5\u05E7\u05DC\u05DC \u05E9\u05DC \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D4\u05D7\u05D1\u05E8\u05EA\u05D9-\u05DB\u05DC\u05DB\u05DC\u05D9 \u05E9\u05DC \u05D0\u05D6\u05D5\u05E8 \u05D4\u05E7\u05DC\u05E4\u05D9 (\u05D4\u05DE\u05E9\u05E7\u05DC \u05D4\u05D5\u05D0 \u05DE\u05E1\u05E4\u05E8 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E9\u05DC \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05E7\u05DC\u05E4\u05D9). \u05DB\u05DC \u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D9\u05D0 \u05E7\u05DC\u05E4\u05D9: \u05E6\u05D9\u05E8 \u05D4-X \u05D4\u05D5\u05D0 \u05D0\u05D7\u05D5\u05D6 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05DC\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05D0\u05D5\u05EA\u05D4 \u05E7\u05DC\u05E4\u05D9, \u05E6\u05D9\u05E8 \u05D4-Y \u05D4\u05D5\u05D0 \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D1\u05E1\u05D5\u05DC\u05DD \u05D4\u05DE\u05D5\u05E8\u05D7\u05D1 0\u201310 (\u05D3\u05D9\u05E8\u05D5\u05D2 \u05E8\u05E6\u05D9\u05E3 \u05D1\u05EA\u05D5\u05DA \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05D4\u05E8\u05E9\u05DE\u05D9 \u05E9\u05DC \u05D4\u05DC\u05DE"\u05E1), \u05D5\u05D2\u05D5\u05D3\u05DC \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D5\u05D0 \u05DE\u05E1\u05E4\u05E8 \u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05D1\u05E7\u05DC\u05E4\u05D9. \u05D7\u05D5\u05D6\u05E7 \u05E6\u05D1\u05E2 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05E2\u05D5\u05DC\u05D4 \u05E2\u05DD \u05E6\u05E4\u05D9\u05E4\u05D5\u05EA \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05E1\u05D1\u05D9\u05D1\u05D4 (\u05E0\u05E8\u05DE\u05DC \u05D1\u05EA\u05D5\u05DA \u05DB\u05DC \u05E4\u05D0\u05E0\u05DC \u05D1\u05E0\u05E4\u05E8\u05D3). \u05D4\u05E7\u05D5 \u05D4\u05DE\u05DC\u05D0 \u05D1\u05DB\u05DC \u05E4\u05D0\u05E0\u05DC \u05D4\u05D5\u05D0 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05DE\u05E9\u05D5\u05E7\u05DC\u05DC; \u05D4\u05E7\u05D5 \u05D4\u05DE\u05E7\u05D5\u05D5\u05E7\u05D5 \u05D4\u05D5\u05D0 \u05DE\u05DE\u05D5\u05E6\u05E2 \u05DB\u05DC \u05D4\u05DE\u05E6\u05D1\u05D9\u05E2\u05D9\u05DD (5.09). \u05E6\u05D1\u05E2 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D4 \u05D4\u05D5\u05D0 \u05E6\u05D1\u05E2 \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05DE\u05E4\u05D4: \u05D0\u05D7\u05D5\u05D6 \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05DC\u05D2\u05D5\u05E9 \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5 \u05D1\u05D7\u05DE\u05E9 \u05DE\u05D3\u05E8\u05D2\u05D5\u05EA \u05D0\u05D3\u05D5\u05DD-\u05E1\u05D2\u05D5\u05DC-\u05DB\u05D7\u05D5\u05DC (\u05D2\u05D1\u05D5\u05DC\u05D5\u05EA: 0, 30, 45, 55, 85, 100 \u05D0\u05D7\u05D5\u05D6\u05D9\u05DD), \u05D5\u05D9\u05E8\u05D5\u05E7 \u05DC\u05E7\u05DC\u05E4\u05D9 \u05E9\u05D1\u05D4 \u05DE\u05E2\u05DC 80% \u05DE\u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05DC\u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA, \u05D0\u05D5 \u05D0\u05E4\u05D5\u05E8-\u05DB\u05D7\u05DC\u05D7\u05DC \u05DC\u05E7\u05DC\u05E4\u05D9 \u05E9\u05D1\u05D4 \u05DE\u05E2\u05DC 80% \u05DE\u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05DC\u05E9\u05F4\u05E1 \u05D5\u05D9\u05D4\u05D3\u05D5\u05EA \u05D4\u05EA\u05D5\u05E8\u05D4. \u05E9\u05E0\u05D9 \u05D4\u05D7\u05E8\u05D9\u05D2\u05D9\u05DD \u05D7\u05DC\u05D9\u05DD \u05DB\u05D0\u05E9\u05E8 \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05D1\u05DE\u05E6\u05D1 "\u05D1\u05E0\u05E4\u05E8\u05D3", \u05D2\u05DD \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05DE\u05E4\u05DC\u05D2\u05D5\u05EA; \u05DB\u05E9\u05D4\u05DF \u05DE\u05E9\u05D5\u05DC\u05D1\u05D5\u05EA \u05D4\u05D7\u05E8\u05D9\u05D2\u05D9\u05DD \u05D0\u05D9\u05E0\u05DD \u05D7\u05DC\u05D9\u05DD \u05D5\u05D4\u05DE\u05DB\u05E0\u05D4 \u05D4\u05D5\u05D0 \u05DB\u05DC \u05D4\u05DB\u05E9\u05E8\u05D9\u05DD. \u05D4\u05E1\u05E3 \u05D4\u05D5\u05D0 \u05DE\u05E2\u05DC 80% \u05D1\u05D3\u05D9\u05D5\u05E7, \u05DC\u05D0 80% \u05D5\u05DE\u05E2\u05DC\u05D4. \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05D2\u05D5\u05E9\u05D9\u05DD \u05E0\u05D9\u05EA\u05DF \u05DC\u05D4\u05E4\u05E8\u05D9\u05D3 \u05D0\u05EA \u05E9\u05F4\u05E1 \u05D5\u05D9\u05D4\u05D3\u05D5\u05EA \u05D4\u05EA\u05D5\u05E8\u05D4 \u05DC\u05D2\u05D5\u05E9 \u05D7\u05E8\u05D3\u05D9 \u05D0\u05D5 \u05DC\u05E9\u05DC\u05D1 \u05D0\u05D5\u05EA\u05DF \u05D1\u05D2\u05D5\u05E9 \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5. \u05D0\u05EA \u05D4\u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05E0\u05D9\u05EA\u05DF \u05DC\u05D4\u05E4\u05E8\u05D9\u05D3 \u05D0\u05D5 \u05DC\u05E9\u05DC\u05D1 \u05D1\u05D2\u05D5\u05E9 \u05D0\u05D9\u05D6\u05E0\u05E7\u05D5\u05D8. \u05D4\u05D2\u05D5\u05E9\u05D9\u05DD \u05D0\u05D9\u05E0\u05DD \u05D7\u05D5\u05E4\u05E4\u05D9\u05DD, \u05D5\u05DB\u05DC \u05E7\u05D5\u05DC \u05D1\u05E2\u05DC \u05DE\u05D3\u05D3 \u05E0\u05E1\u05E4\u05E8 \u05E4\u05E2\u05DD \u05D0\u05D7\u05EA. \u05D4\u05D0\u05D7\u05D5\u05D6 \u05D1\u05DB\u05DC \u05E7\u05DC\u05E4\u05D9 \u05D5\u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05DE\u05D7\u05D5\u05E9\u05D1\u05D9\u05DD \u05DE\u05E1\u05DB\u05D5\u05DE\u05D9 \u05E7\u05D5\u05DC\u05D5\u05EA \u05DE\u05D3\u05D5\u05D9\u05E7\u05D9\u05DD. \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05DE\u05E4\u05DC\u05D2\u05D5\u05EA \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D5\u05D4\u05DE\u05D9\u05DC\u05D5\u05D9 \u05D4\u05E9\u05E7\u05D5\u05E3 \u05D0\u05E4\u05D5\u05E8\u05D9\u05DD, \u05D5\u05E7\u05D5 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D0\u05E4\u05D5\u05E8 \u05DB\u05D4\u05D4. \u05E7\u05D5 \u05DE\u05EA\u05D7\u05EA \u05DC\u05E1\u05DE\u05DC \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05DE\u05E6\u05D9\u05D9\u05DF \u05D0\u05EA \u05D4\u05D2\u05D5\u05E9: \u05D0\u05D9\u05D6\u05E0\u05E7\u05D5\u05D8 \u05D0\u05D3\u05D5\u05DD, \u05E0\u05EA\u05E0\u05D9\u05D4\u05D5 \u05DB\u05D7\u05D5\u05DC, \u05E2\u05E8\u05D1\u05D9\u05D5\u05EA \u05D9\u05E8\u05D5\u05E7 \u05D5\u05D7\u05E8\u05D3\u05D9\u05DD \u05D0\u05E4\u05D5\u05E8-\u05DB\u05D7\u05DC\u05D7\u05DC. \u05D2\u05DD \u05D1\u05EA\u05E6\u05D5\u05D2\u05EA \u05D2\u05D5\u05E9\u05D9\u05DD \u05D4\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05D5\u05EA \u05D0\u05E4\u05D5\u05E8\u05D5\u05EA \u05D5\u05E7\u05D5\u05D5\u05D9 \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D0\u05E4\u05D5\u05E8\u05D9\u05DD \u05DB\u05D4\u05D9\u05DD; \u05D4\u05E1\u05DE\u05DC \u05D1\u05DB\u05D5\u05EA\u05E8\u05EA \u05DE\u05E6\u05D9\u05D9\u05DF \u05D0\u05EA \u05E6\u05D1\u05E2 \u05D4\u05D2\u05D5\u05E9. \u05D4\u05DE\u05D9\u05DC\u05D5\u05D9 \u05D4\u05E9\u05E7\u05D5\u05E3 \u05DE\u05EA\u05D7\u05EA \u05DC\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05D5\u05D0 \u05D0\u05E4\u05D5\u05E8 \u05E0\u05D9\u05D8\u05E8\u05DC\u05D9 \u05D1\u05E9\u05EA\u05D9 \u05D4\u05EA\u05E6\u05D5\u05D2\u05D5\u05EA. \u05E6\u05D1\u05E2\u05D9 \u05D4\u05E0\u05E7\u05D5\u05D3\u05D5\u05EA \u05DE\u05DE\u05E9\u05D9\u05DB\u05D9\u05DD \u05DC\u05EA\u05D0\u05E8 \u05D0\u05EA \u05E9\u05D9\u05D5\u05DA \u05D4\u05E7\u05DC\u05E4\u05D9 \u05D1\u05DE\u05E4\u05D4 \u05D5\u05DC\u05D0 \u05D0\u05EA \u05E6\u05D1\u05E2 \u05D4\u05D2\u05D5\u05E9.<br>
       <b>\u05D4\u05D9\u05E1\u05D8\u05D5\u05D2\u05E8\u05DE\u05EA \u05D4\u05E2\u05E9\u05D9\u05E8\u05D5\u05E0\u05D9\u05DD:</b> \u05DE\u05E2\u05DC \u05DB\u05DC \u05E4\u05D0\u05E0\u05DC \u05DE\u05D5\u05E6\u05D2\u05EA \u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05E7\u05D5\u05DC\u05D5\u05EA \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D0\u05D5 \u05D4\u05D2\u05D5\u05E9 \u05DC\u05E4\u05D9 \u05E2\u05E9\u05D9\u05E8\u05D5\u05DF \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05E9\u05DC \u05D0\u05D6\u05D5\u05E8 \u05D4\u05E7\u05DC\u05E4\u05D9. \u05E2\u05E9\u05D9\u05E8\u05D5\u05DF d \u05DE\u05DB\u05E1\u05D4 \u05D0\u05EA \u05D4\u05EA\u05D7\u05D5\u05DD [d-1, d) \u05D1\u05E1\u05D5\u05DC\u05DD \u05D4\u05DE\u05D5\u05E8\u05D7\u05D1 0-10, \u05DB\u05D0\u05E9\u05E8 10 \u05E0\u05DB\u05DC\u05DC \u05D1\u05E2\u05E9\u05D9\u05E8\u05D5\u05DF \u05D4\u05D0\u05D7\u05E8\u05D5\u05DF (\u05D1\u05E7\u05D9\u05E8\u05D5\u05D1, \u05D0\u05E9\u05DB\u05D5\u05DC \u05E8\u05E9\u05DE\u05D9 d). \u05D1\u05DB\u05DC \u05E2\u05E9\u05D9\u05E8\u05D5\u05DF \u05DE\u05E1\u05D5\u05DB\u05DE\u05D9\u05DD \u05E7\u05D5\u05DC\u05D5\u05EA \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05E9\u05D1\u05EA\u05D7\u05D5\u05DD, \u05D7\u05DC\u05E7\u05D9 \u05E1\u05DA \u05E7\u05D5\u05DC\u05D5\u05EA \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D1\u05DB\u05DC \u05D4\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05D4\u05DE\u05D5\u05E6\u05D2\u05D5\u05EA \u05D1\u05E2\u05DC\u05D5\u05EA \u05D4\u05DE\u05D3\u05D3, \u05DB\u05DA \u05E9\u05D4\u05E2\u05DE\u05D5\u05D3\u05D5\u05EA \u05E0\u05E1\u05DB\u05DE\u05D5\u05EA \u05DC-100%. \u05DB\u05DC \u05D4\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05D1\u05E2\u05DC\u05D5\u05EA \u05D4\u05DE\u05D3\u05D3 \u05E0\u05DB\u05DC\u05DC\u05D5\u05EA; \u05DE\u05D9\u05E7\u05D5\u05D3 \u05D1\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D0\u05D9\u05E0\u05D5 \u05DE\u05E9\u05E0\u05D4 \u05D0\u05EA \u05D4\u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05E9\u05DC\u05D4. \u05D2\u05D5\u05D1\u05D4 \u05D4\u05E2\u05DE\u05D5\u05D3\u05D5\u05EA \u05DE\u05E0\u05D5\u05E8\u05DE\u05DC \u05DC\u05E2\u05DE\u05D5\u05D3\u05D4 \u05D4\u05D2\u05D1\u05D5\u05D4\u05D4 \u05D1\u05D0\u05D5\u05EA\u05D5 \u05E4\u05D0\u05E0\u05DC, \u05DC\u05DB\u05DF \u05D0\u05E4\u05E9\u05E8 \u05DC\u05D4\u05E9\u05D5\u05D5\u05EA \u05D0\u05EA \u05E6\u05D5\u05E8\u05EA \u05D4\u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05D0\u05DA \u05DC\u05D0 \u05D2\u05D5\u05D1\u05D4 \u05DE\u05D5\u05D7\u05DC\u05D8 \u05D1\u05D9\u05DF \u05E4\u05D0\u05E0\u05DC\u05D9\u05DD; \u05D4\u05E2\u05E8\u05DA \u05D4\u05DE\u05D3\u05D5\u05D9\u05E7 \u05DE\u05D5\u05E4\u05D9\u05E2 \u05D1\u05E8\u05D9\u05D7\u05D5\u05E3 \u05D0\u05D5 \u05D1\u05E0\u05D2\u05D9\u05E2\u05D4. \u05D4\u05E7\u05D5 \u05D4\u05D0\u05E0\u05DB\u05D9 \u05DE\u05E1\u05DE\u05DF \u05D0\u05EA \u05D4\u05DE\u05DE\u05D5\u05E6\u05E2 \u05D4\u05DE\u05E9\u05D5\u05E7\u05DC\u05DC. \u05D4\u05DE\u05D9\u05DC\u05D5\u05D9 \u05D4\u05E9\u05E7\u05D5\u05E3 \u05DE\u05EA\u05D7\u05EA \u05DC\u05E7\u05D5 \u05D4\u05D0\u05D5\u05E4\u05E7\u05D9 \u05D1\u05EA\u05E8\u05E9\u05D9\u05DD \u05D4\u05DE\u05E4\u05DC\u05D2\u05D4 \u05D0\u05D5 \u05D4\u05D2\u05D5\u05E9 \u05D4\u05D5\u05D0 \u05E8\u05E7 \u05D4\u05D3\u05D2\u05E9\u05D4 \u05D7\u05D6\u05D5\u05EA\u05D9\u05EA, \u05DC\u05D0 \u05DB\u05DE\u05D5\u05EA \u05E7\u05D5\u05DC\u05D5\u05EA.<br>
       <b>\u05D7\u05E9\u05D5\u05D1:</b> \u05D4\u05D0\u05E9\u05DB\u05D5\u05DC \u05DE\u05EA\u05D9\u05D9\u05D7\u05E1 \u05DC\u05D0\u05D6\u05D5\u05E8 \u05E9\u05D1\u05D5 \u05E0\u05DE\u05E6\u05D0\u05EA \u05D4\u05E7\u05DC\u05E4\u05D9, \u05DB\u05DC\u05D5\u05DE\u05E8 \u05DC\u05D0\u05D6\u05D5\u05E8 \u05D4\u05DE\u05D2\u05D5\u05E8\u05D9\u05DD \u05E9\u05DC \u05D4\u05DE\u05E6\u05D1\u05D9\u05E2\u05D9\u05DD \u2014 \u05DC\u05D0 \u05DC\u05DE\u05E6\u05D1\u05D9\u05E2\u05D9\u05DD \u05E2\u05E6\u05DE\u05DD. \u05D6\u05D4\u05D5 \u05E7\u05E9\u05E8 \u05D0\u05E7\u05D5\u05DC\u05D5\u05D2\u05D9 \u05D1\u05DC\u05D1\u05D3. \u05DE\u05EA\u05D5\u05DA 12,018 \u05E7\u05DC\u05E4\u05D9\u05D5\u05EA: 10,895 \u05DE\u05DE\u05D5\u05E4\u05D5\u05EA \u05DC\u05D0\u05D6\u05D5\u05E8 \u05E1\u05D8\u05D8\u05D9\u05E1\u05D8\u05D9, 1,020 \u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05DC\u05DC\u05D0 \u05DE\u05D9\u05E4\u05D5\u05D9 \u05D0\u05D6\u05D5\u05E8\u05D9 \u05E7\u05D9\u05D1\u05DC\u05D5 \u05D0\u05E9\u05DB\u05D5\u05DC \u05D1\u05E8\u05DE\u05EA \u05D4\u05D9\u05D9\u05E9\u05D5\u05D1, \u05D5-103 \u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05DC\u05DC\u05D0 \u05DB\u05DC \u05DE\u05D3\u05D3 \u05D0\u05D9\u05E0\u05DF \u05DE\u05D5\u05E6\u05D2\u05D5\u05EA. \u05DE\u05E1\u05DA \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05D1\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA (5,241,352) \u05E0\u05DB\u05E0\u05E1\u05D5 \u05DC\u05DE\u05DE\u05D5\u05E6\u05E2 5,198,349 \u05E7\u05D5\u05DC\u05D5\u05EA \u05D1\u05E2\u05DC\u05D9 \u05DE\u05D3\u05D3; 43,003 \u05E7\u05D5\u05DC\u05D5\u05EA \u05DC\u05DC\u05D0 \u05DE\u05D3\u05D3 \u05D0\u05D9\u05E0\u05DD \u05E0\u05E1\u05E4\u05E8\u05D9\u05DD. \u05DB-450 \u05D0\u05DC\u05E3 \u05E7\u05D5\u05DC\u05D5\u05EA \u05D1\u05DE\u05E2\u05D8\u05E4\u05D5\u05EA \u05DB\u05E4\u05D5\u05DC\u05D5\u05EA \u05D5\u05D1\u05D7\u05D5"\u05DC \u05D0\u05D9\u05E0\u05DD \u05D1\u05DE\u05D9\u05E4\u05D5\u05D9 \u05D4\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA \u05D5\u05D0\u05D9\u05E0\u05DD \u05DE\u05D5\u05E4\u05D9\u05E2\u05D9\u05DD \u05DB\u05D0\u05DF; \u05E1\u05DA \u05D4\u05E7\u05D5\u05DC\u05D5\u05EA \u05D4\u05DB\u05E9\u05E8\u05D9\u05DD \u05D4\u05D0\u05E8\u05E6\u05D9 5.69 \u05DE\u05D9\u05DC\u05D9\u05D5\u05DF.<br>
       <b>\u05DE\u05E7\u05D5\u05E8\u05D5\u05EA:</b> \u05EA\u05D5\u05E6\u05D0\u05D5\u05EA \u05E1\u05D5\u05E4\u05D9\u05D5\u05EA \u05E9\u05DC \u05D5\u05E2\u05D3\u05EA \u05D4\u05D1\u05D7\u05D9\u05E8\u05D5\u05EA \u05D4\u05DE\u05E8\u05DB\u05D6\u05D9\u05EA (\u05DB\u05E0\u05E1\u05EA 26); \u05D4\u05DE\u05D3\u05D3 \u05D4\u05D7\u05D1\u05E8\u05EA\u05D9-\u05DB\u05DC\u05DB\u05DC\u05D9 \u05E9\u05DC \u05D4\u05DC\u05DE"\u05E1 (2021), \u05D1\u05E1\u05D5\u05DC\u05DD \u05D4\u05DE\u05D5\u05E8\u05D7\u05D1 \u05E9\u05DC \u05D4\u05D0\u05EA\u05E8.`
@@ -352,7 +352,7 @@ function init(host, onLanguage) {
       tipIndex: "Index",
       tipValid: "valid",
       tipBallot: "Ballot",
-      modal: `<b>Labels and zoom:</b> City on the first line, polling-place name on the second. Labels are chosen automatically, prioritizing isolated points, avoiding collisions and repeated places in the same panel. Long names are shortened only on the chart; full names appear on hover or tap. Zoom buttons and double-click zoom both axes together; drag to pan while zoomed. Histograms and means always refer to all indexed votes, not just the visible zoom window.<br><b>How it is computed:</b> for each party, the weighted average of the socio-economic index of the ballot's area (the weight is the party's votes in that ballot). Each dot is a ballot: the X axis is the party's vote share in that ballot, the Y axis is the index on the extended 0\u201310 scale (a continuous ranking within the official CBS cluster), and dot size is the number of valid votes in the ballot. Dot color strength rises with the vote density around it (normalized within each panel). The solid line in each panel is the weighted average; the dashed line is the all-voter average (5.09). Dot color is the ballot's map color: the Netanyahu bloc's vote share on a five-step red-purple-blue scale (boundaries: 0, 30, 45, 55, 85, 100 percent), green for a ballot where Arab parties take over 80% of valid votes, or blue-grey where Shas and UTJ take over 80%. Both exceptions apply while Arab parties are Separate, including in the Parties view. When Arab parties are merged, neither exception applies and the denominator is all valid votes. The threshold is strictly over 80%, not 80% or more. In the blocs view, Shas and UTJ can form a separate Haredi bloc or be merged into the Netanyahu bloc. Arab parties can be separate or merged into the Eisenkot bloc. Blocs do not overlap, and each indexed vote is counted once. Ballot shares and weighted averages use exact vote totals. In the Parties view, histograms and transparent fills are grey, with darker grey mean lines. An underline below each party logo identifies its bloc: Eisenkot red, Netanyahu blue, Arabs green and Haredim blue-grey. In the Blocs view, histograms are also grey and mean lines darker grey; the header marker identifies the bloc color. The transparent fill below the mean is neutral grey in both views. Dot colors still describe the ballot map color, not the bloc color.<br>
+      modal: `<b>Labels and zoom:</b> City on the first line, polling-place name on the second. Labels are chosen automatically, prioritizing isolated points, avoiding collisions and repeated places in the same panel. Long names are shortened only on the chart; full names appear on hover or tap. Tap or click a ballot to focus its panel and zoom to it. Scroll the wheel over the chart or pinch with two fingers to zoom around that point. Drag to pan while zoomed; Reset returns to the full ranges. Both axes zoom together. Histograms and means always refer to all indexed votes, not just the visible zoom window.<br><b>How it is computed:</b> for each party, the weighted average of the socio-economic index of the ballot's area (the weight is the party's votes in that ballot). Each dot is a ballot: the X axis is the party's vote share in that ballot, the Y axis is the index on the extended 0\u201310 scale (a continuous ranking within the official CBS cluster), and dot size is the number of valid votes in the ballot. Dot color strength rises with the vote density around it (normalized within each panel). The solid line in each panel is the weighted average; the dashed line is the all-voter average (5.09). Dot color is the ballot's map color: the Netanyahu bloc's vote share on a five-step red-purple-blue scale (boundaries: 0, 30, 45, 55, 85, 100 percent), green for a ballot where Arab parties take over 80% of valid votes, or blue-grey where Shas and UTJ take over 80%. Both exceptions apply while Arab parties are Separate, including in the Parties view. When Arab parties are merged, neither exception applies and the denominator is all valid votes. The threshold is strictly over 80%, not 80% or more. In the blocs view, Shas and UTJ can form a separate Haredi bloc or be merged into the Netanyahu bloc. Arab parties can be separate or merged into the Eisenkot bloc. Blocs do not overlap, and each indexed vote is counted once. Ballot shares and weighted averages use exact vote totals. In the Parties view, histograms and transparent fills are grey, with darker grey mean lines. An underline below each party logo identifies its bloc: Eisenkot red, Netanyahu blue, Arabs green and Haredim blue-grey. In the Blocs view, histograms are also grey and mean lines darker grey; the header marker identifies the bloc color. The transparent fill below the mean is neutral grey in both views. Dot colors still describe the ballot map color, not the bloc color.<br>
       <b>Decile histogram:</b> above each panel, the distribution of the party's or bloc's votes across the index decile of the ballot's area. Decile d covers the range [d-1, d) on the extended 0-10 scale, with 10 included in the last bin (roughly official cluster d). Each bar sums the party's votes in ballots within that range, divided by the party's total votes in all displayed indexed ballots, so the bars sum to 100%. All indexed ballots are included; focusing a party does not change its distribution. Bar heights are normalized to the tallest bar in the same panel, so the shape of the distribution is comparable but absolute heights are not; the exact value appears on hover or tap. The vertical line shows the weighted average. The faint fill below the horizontal line in party or bloc plots is a visual guide, not a vote quantity.<br>
       <b>Important:</b> the index describes the area where the ballot is located, i.e. the voters' area of residence \u2014 not the voters themselves. This is an ecological correlation only. Of 12,018 ballots: 10,895 are mapped to a statistical area, 1,020 without an area mapping got their locality's index, and 103 ballots with no index are not shown. Of all votes cast in ballots (5,241,352), 5,198,349 indexed votes entered the average; 43,003 votes without an index are not counted. About 450k votes in double envelopes and abroad are not in the ballot mapping and do not appear here; the national valid-vote total is 5.69 million.<br>
       <b>Sources:</b> final results of the Central Elections Committee (26th Knesset); CBS socio-economic index (2021), the site\u2019s extended scale.`
@@ -492,9 +492,9 @@ function init(host, onLanguage) {
   function drawAll() {
     const dpr = window.devicePixelRatio || 1;
     const { x0, x1, y0, y1 } = ranges();
-    document2.getElementById("zoomlevel").textContent = zoom + "\xD7";
+    document2.getElementById("zoomlevel").textContent = +zoom.toFixed(1) + "\xD7";
     document2.getElementById("zoomout").disabled = zoom === 1;
-    document2.getElementById("zoomin").disabled = zoom === 8;
+    document2.getElementById("zoomin").disabled = zoom >= 32;
     document2.getElementById("zoomreset").disabled = zoom === 1;
     panels.forEach((o) => {
       const w = o.cv.parentElement.clientWidth - 8;
@@ -681,6 +681,17 @@ function init(host, onLanguage) {
         ctx.fillStyle = "#6b7280";
         ctx.fillText(gapS, w - 6, Y(avg) + 13);
       }
+      if (selectedBallot) {
+        const p = o.pts.find((p2) => p2.d[4] + "|" + p2.d[5] === selectedBallot);
+        if (p) {
+          ctx.globalAlpha = 1;
+          ctx.strokeStyle = "#111827";
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r + 3, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
       drawLabels(o, ctx, w, Y(avg), Y(NAT));
       o.el.querySelector(".xaxis").dataset.shown = shown;
     });
@@ -688,7 +699,7 @@ function init(host, onLanguage) {
     layoutRail();
   }
   function drawLabels(o, ctx, w, meanY, natY) {
-    const font = zoom > 2 ? 10.5 : 9, lh = font + 2, gap = 4;
+    const font = zoom > 8 ? 12 : zoom > 2 ? 10.5 : 9, lh = font + 2, gap = 4;
     const text = (d) => {
       const m = labelData[d[4] + "|" + d[5]];
       return state.lang === "he" ? [names[d[4]], m?.[0] || "\u05E7\u05DC\u05E4\u05D9 " + d[5]] : [m?.[1] || "", m?.[2] || "Ballot " + d[5]];
@@ -710,7 +721,7 @@ function init(host, onLanguage) {
       }
       return Math.min(100, Math.sqrt(dist)) + 30 / (1 + n);
     };
-    const candidates = o.pts.map((p) => ({ ...p, score: near(p) })).sort((a, b) => b.score - a.score || b.d[2] - a.d[2] || a.d[4] - b.d[4] || String(a.d[5]).localeCompare(String(b.d[5])));
+    const candidates = o.pts.map((p) => ({ ...p, score: near(p) })).sort((a, b) => Number(b.d[4] + "|" + b.d[5] === selectedBallot) - Number(a.d[4] + "|" + a.d[5] === selectedBallot) || b.score - a.score || b.d[2] - a.d[2] || a.d[4] - b.d[4] || String(a.d[5]).localeCompare(String(b.d[5])));
     const occupied = [], used = /* @__PURE__ */ new Set();
     ctx.font = font + "px Heebo, sans-serif";
     ctx.direction = state.lang === "he" ? "rtl" : "ltr";
@@ -741,7 +752,7 @@ function init(host, onLanguage) {
         if (box.y < meanY + 19 && box.y + bh > meanY - 20 || box.y < natY + 4 && box.y + bh > natY - 4) continue;
         let covered = 0;
         for (let gx = Math.floor((box.x - 2) / cs); gx <= Math.floor((box.x + bw + 2) / cs); gx++) for (let gy = Math.floor((box.y - 2) / cs); gy <= Math.floor((box.y + bh + 2) / cs); gy++) for (const q of grid.get(gx + "|" + gy) || []) if (q.x > box.x - 2 && q.x < box.x + bw + 2 && q.y > box.y - 2 && q.y < box.y + bh + 2) covered++;
-        if (covered > 1) continue;
+        if (covered > 1 && p.d[4] + "|" + p.d[5] !== selectedBallot) continue;
         best = box;
         break;
       }
@@ -767,7 +778,7 @@ function init(host, onLanguage) {
     o.cv.dataset.zoom = zoom;
   }
   function setZoom(z, x = 50, y = 5) {
-    zoom = Math.max(1, Math.min(8, z));
+    zoom = Math.max(1, Math.min(32, z));
     centerX = x;
     centerY = y;
     clampCenter();
@@ -776,16 +787,73 @@ function init(host, onLanguage) {
   }
   document2.getElementById("zoomin").onclick = () => setZoom(zoom * 2, centerX, centerY);
   document2.getElementById("zoomout").onclick = () => setZoom(zoom / 2, centerX, centerY);
-  document2.getElementById("zoomreset").onclick = () => setZoom(1);
-  document2.addEventListener("dblclick", (e) => {
-    const o = panels.find((p) => p.cv === e.target);
-    if (!o) return;
-    const r = o.cv.getBoundingClientRect(), v = ranges();
-    setZoom(zoom * 2, v.x0 + (e.clientX - r.left) / r.width * (v.x1 - v.x0), v.y1 - (e.clientY - r.top) / r.height * (v.y1 - v.y0));
+  document2.getElementById("zoomreset").onclick = () => {
+    selectedBallot = null;
+    setZoom(1);
+  };
+  function plotAt(target) {
+    return panels.find((p) => p.cv === target);
+  }
+  function plotValue(o, cx, cy) {
+    const r = o.cv.getBoundingClientRect(), v = ranges(), x = (cx - r.left - 5) / (o.w - 10), y = (cy - r.top - PAD_T) / (PLOT_H - PAD_T - PAD_B);
+    return { x: v.x0 + x * (v.x1 - v.x0), y: v.y1 - y * (v.y1 - v.y0), fx: x, fy: y };
+  }
+  function zoomAnchor(o, cx, cy, z) {
+    const p = plotValue(o, cx, cy);
+    zoom = Math.max(1, Math.min(32, z));
+    centerX = p.x + (0.5 - p.fx) * 100 / zoom;
+    centerY = p.y + (p.fy - 0.5) * 10 / zoom;
+    clampCenter();
+    tip.style.display = "none";
+    drawAll();
+  }
+  function nearest(o, cx, cy) {
+    const r = o.cv.getBoundingClientRect();
+    let best = null, dist = Infinity;
+    for (const p of o.pts) {
+      const d = (p.x - (cx - r.left)) ** 2 + (p.y - (cy - r.top)) ** 2;
+      if (d < dist) {
+        dist = d;
+        best = p;
+      }
+    }
+    return best && dist <= Math.max(12, best.r + 5) ** 2 ? best : null;
+  }
+  function zoomBallot(o, cx, cy) {
+    const p = nearest(o, cx, cy);
+    if (!p) return false;
+    selectedBallot = p.d[4] + "|" + p.d[5];
+    const i = panels.indexOf(o);
+    zoom = Math.min(32, zoom < 4 ? 4 : zoom * 2);
+    centerX = p.d[0];
+    centerY = p.d[1];
+    clampCenter();
+    state.focus = i;
+    tip.style.display = "none";
+    build();
+    return true;
+  }
+  document2.addEventListener("click", (e) => {
+    if (Date.now() - lastTouchAt < 700) return;
+    const o = plotAt(e.target);
+    if (o && !suppressClick) zoomBallot(o, e.clientX, e.clientY);
+    suppressClick = false;
   });
-  let drag = null;
+  host.addEventListener("wheel", (e) => {
+    const o = plotAt(e.target);
+    if (!o) return;
+    e.preventDefault();
+    zoomAnchor(o, e.clientX, e.clientY, zoom * Math.exp(-e.deltaY * 3e-3));
+  }, { passive: false });
+  document2.addEventListener("dblclick", (e) => {
+    const o = plotAt(e.target);
+    if (!o) return;
+    e.preventDefault();
+    zoomAnchor(o, e.clientX, e.clientY, zoom * 2);
+  });
+  let drag = null, suppressClick = false;
   document2.addEventListener("pointerdown", (e) => {
-    if (zoom === 1 || !panels.some((p) => p.cv === e.target)) return;
+    if (e.pointerType === "touch" || zoom === 1 || !plotAt(e.target)) return;
     drag = { x: e.clientX, y: e.clientY, cx: centerX, cy: centerY, cv: e.target, moved: false };
     e.target.setPointerCapture(e.pointerId);
   });
@@ -802,13 +870,16 @@ function init(host, onLanguage) {
     drawAll();
   });
   document2.addEventListener("pointerup", (e) => {
-    if (drag?.moved) tip.style.display = "none";
+    if (drag?.moved) {
+      tip.style.display = "none";
+      suppressClick = true;
+    }
     drag = null;
   });
   function applyStaticTexts() {
     onLanguage(state.lang);
     document2.querySelector("[data-lang=he]").textContent = state.lang === "en" ? "HE" : "\u05E2\u05D1";
-    document2.getElementById("zoomcaption").textContent = state.lang === "he" ? "\u05D6\u05D5\u05DD \u05E7\u05DC\u05E4\u05D9\u05D5\u05EA" : "Ballot zoom";
+    document2.getElementById("zoomcaption").textContent = state.lang === "he" ? "\u05DC\u05D7\u05E6\u05D5 \u05E2\u05DC \u05E7\u05DC\u05E4\u05D9 \u05DC\u05D6\u05D5\u05DD" : "Tap a ballot to zoom";
     document2.getElementById("zoomreset").textContent = state.lang === "he" ? "\u05D0\u05D9\u05E4\u05D5\u05E1" : "Reset";
     document2.getElementById("zoomin").title = state.lang === "he" ? "\u05D4\u05EA\u05E7\u05E8\u05D1\u05D5\u05EA \u05DC\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA" : "Zoom in";
     document2.getElementById("zoomout").title = state.lang === "he" ? "\u05D4\u05EA\u05E8\u05D7\u05E7\u05D5\u05EA \u05DE\u05D4\u05E7\u05DC\u05E4\u05D9\u05D5\u05EA" : "Zoom out";
@@ -969,32 +1040,75 @@ function init(host, onLanguage) {
       showTip(o, cx, cy);
     });
   });
-  let touchPress = null;
-  document2.addEventListener("touchstart", (e) => {
-    const p = e.changedTouches[0];
-    touchPress = { target: e.target, x: p.clientX, y: p.clientY, moved: false };
-  }, { passive: true });
-  document2.addEventListener("touchmove", (e) => {
+  let touchPress = null, pinch = null;
+  const twoTouch = (ts) => ({ x: (ts[0].clientX + ts[1].clientX) / 2, y: (ts[0].clientY + ts[1].clientY) / 2, d: Math.hypot(ts[0].clientX - ts[1].clientX, ts[0].clientY - ts[1].clientY) });
+  host.addEventListener("touchstart", (e) => {
+    lastTouchAt = Date.now();
+    const p = e.touches[0], o = plotAt(e.target);
+    if (e.touches.length === 2 && o) {
+      e.preventDefault();
+      const m = twoTouch(e.touches), v = plotValue(o, m.x, m.y);
+      pinch = { ...m, z: zoom, v, o };
+      if (touchPress) touchPress.moved = true;
+      tip.style.display = "none";
+      return;
+    }
+    touchPress = { target: e.target, x: p.clientX, y: p.clientY, moved: false, cx: centerX, cy: centerY };
+  }, { passive: false });
+  host.addEventListener("touchmove", (e) => {
+    lastTouchAt = Date.now();
+    if (pinch && e.touches.length === 2) {
+      e.preventDefault();
+      const m = twoTouch(e.touches), r = pinch.o.cv.getBoundingClientRect();
+      zoom = Math.max(1, Math.min(32, pinch.z * m.d / pinch.d));
+      const fx = (m.x - r.left - 5) / (pinch.o.w - 10), fy = (m.y - r.top - PAD_T) / (PLOT_H - PAD_T - PAD_B);
+      centerX = pinch.v.x + (0.5 - fx) * 100 / zoom;
+      centerY = pinch.v.y + (fy - 0.5) * 10 / zoom;
+      clampCenter();
+      drawAll();
+      return;
+    }
     if (!touchPress) return;
-    const p = e.changedTouches[0];
-    if (Math.abs(p.clientX - touchPress.x) + Math.abs(p.clientY - touchPress.y) > 7) {
+    const p = e.touches[0], dx = p.clientX - touchPress.x, dy = p.clientY - touchPress.y;
+    if (Math.abs(dx) + Math.abs(dy) > 7) {
       touchPress.moved = true;
       tip.style.display = "none";
+      const o = plotAt(touchPress.target);
+      if (o && zoom > 1) {
+        e.preventDefault();
+        centerX = touchPress.cx - dx / (o.w - 10) * 100 / zoom;
+        centerY = touchPress.cy + dy / (PLOT_H - PAD_T - PAD_B) * 10 / zoom;
+        clampCenter();
+        drawAll();
+      }
     }
-  }, { passive: true });
-  document2.addEventListener("touchend", (e) => {
+  }, { passive: false });
+  host.addEventListener("touchend", (e) => {
+    lastTouchAt = Date.now();
+    if (pinch) {
+      e.preventDefault();
+      pinch = null;
+      touchPress = null;
+      return;
+    }
     if (!touchPress) return;
     const p = e.changedTouches[0], target = touchPress.target;
     if (!touchPress.moved) {
       if (target.classList?.contains("hbar")) showBarTip(target, p.clientX, p.clientY);
       else {
-        const o = panels.find((p2) => p2.cv === target);
-        if (o) showTip(o, p.clientX, p.clientY);
-        else tip.style.display = "none";
+        const o = plotAt(target);
+        if (o) {
+          e.preventDefault();
+          if (!zoomBallot(o, p.clientX, p.clientY)) showTip(o, p.clientX, p.clientY);
+        } else tip.style.display = "none";
       }
     }
     touchPress = null;
-  }, { passive: true });
+  }, { passive: false });
+  host.addEventListener("touchcancel", () => {
+    touchPress = null;
+    pinch = null;
+  });
 }
 init(document.querySelector(".chart"), () => {
 });
