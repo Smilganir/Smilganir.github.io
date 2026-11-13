@@ -117,7 +117,7 @@
 
 .chart h1{font-size:17px;line-height:1.3}.chart .sub{display:none}.chart .controls{margin-top:8px}.chart .legend{gap:8px 14px;font-size:11.5px}@media(max-width:640px){.chart h1{font-size:16px}}
 
-.chart .ramp{display:inline-flex;overflow:hidden;flex-shrink:0}.chart .ramp i{display:block;height:100%}
+.chart .ramp{width:90px;display:inline-flex;overflow:hidden;flex-shrink:0}.chart .ramp i{display:block;height:100%}
 
 .chart .zoomtools{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#64748b;margin-inline-start:auto}.chart .zoomtools button{background:white;border:1px solid #dce1e8;border-radius:5px;min-width:27px;height:27px;padding:2px 6px;color:#334155;cursor:pointer}.chart .zoomtools button:disabled{opacity:.35;cursor:default}.chart .zoomtools #zoomcaption{direction:rtl}.chart .plot{touch-action:pan-y}.chart .plot[data-zoom]:not([data-zoom="1"]){touch-action:none;cursor:grab}.chart .plot[data-zoom]:not([data-zoom="1"]):active{cursor:grabbing}
 </style></head><body><div class="chart" dir="rtl">
@@ -397,7 +397,7 @@ function init(host, onLanguage) {
   document2.fonts && document2.fonts.ready.then(() => layoutRail());
   function legend() {
     const L = document2.getElementById("legend");
-    const ramp = `<span class="ramp" dir="ltr" aria-label="0-30%, 30-45%, 45-55%, 55-85%, 85-100%">${BUCKETS.map((b, i) => `<i style="background:${b[1]};flex:${(BUCKETS[i + 1]?.[0] || 100) - b[0]}"></i>`).join("")}</span>`;
+    const ramp = `<span class="ramp" dir="ltr" aria-label="0-30%, 30-45%, 45-55%, 55-85%, 85-100%">${BUCKETS.map((b, i) => `<i style="background:${b[1]};flex:1 1 0"></i>`).join("")}</span>`;
     L.innerHTML = `<span class="it"><span class="hkey"><i style="height:4px"></i><i style="height:9px"></i><i style="height:6px"></i><i style="height:12px"></i></span>${t("histKey")}</span><span class="it">${ramp}${t("rampCap")}</span>` + (state.arab === "sep" ? `<span class="it"><span class="dotk" style="background:${ARAB_GREY}"></span>${t("arabGrey")}</span><span class="it"><span class="dotk" style="background:${HAREDI_BLOC_COLOR}"></span>${t("harediDot")}</span>` : "") + `<span class="it"><span class="solline"></span>${t("wavg")}</span>
       <span class="it"><span class="dashline"></span>${t("navg")}</span>
       ${state.view === "density" ? `<span class="it"><span class="densg"></span>${t("densKey")}</span>` : `<span class="it"><span class="szl" style="width:10px;height:10px;opacity:.2"></span> <span class="szl" style="width:10px;height:10px;opacity:.55"></span> <span class="szl" style="width:10px;height:10px;opacity:1"></span> ${t("strKey")}</span>
